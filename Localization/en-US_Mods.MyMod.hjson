@@ -1,0 +1,64 @@
+Items: {
+	TestTileItem: {
+		Tooltip: ""
+		DisplayName: Test Tile Item
+	}
+
+	LaserTrap: {
+		Tooltip: ""
+		DisplayName: Laser Trap
+	}
+
+	LaserTest: {
+		Tooltip: ""
+		DisplayName: Laser Test
+	}
+
+	CENSORED_Spear: {
+		DisplayName: C E N S O R E D_ Spear
+		Tooltip: ""
+	}
+
+	SinTest_Weapon: {
+		Tooltip: ""
+		DisplayName: Sin Test_ Weapon
+	}
+
+	CircleTest_Weapon: {
+		DisplayName: Circle Test_ Weapon
+		Tooltip: ""
+	}
+
+	TrackWeapon: {
+		Tooltip: ""
+		DisplayName: Track Weapon
+	}
+
+	LightningStaff: {
+		Tooltip: ""
+		DisplayName: Lightning Staff
+	}
+}
+
+Projectiles: {
+	Laser.DisplayName: Laser
+	CENSORED.DisplayName: C E N S O R E D
+	SinTest.DisplayName: Sin Test
+	CircleTest.DisplayName: Circle Test
+	TrackBullet.DisplayName: Track Bullet
+	LightningBall.DisplayName: Lightning Ball
+}
+
+Buffs: {
+	Panic: {
+		Description: Mods.MyMod.Buffs.Panic.Description
+		DisplayName: Panic
+	}
+
+	LightningBallBuff: {
+		Description: Mods.MyMod.Buffs.LightningBallBuff.Description
+		DisplayName: Lightning Ball Buff
+	}
+}
+
+NPCs.TestSilme.DisplayName: Test Silme
