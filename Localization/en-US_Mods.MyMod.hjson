@@ -38,6 +38,21 @@ Items: {
 		Tooltip: ""
 		DisplayName: Lightning Staff
 	}
+
+	TDragon1Staff: {
+		DisplayName: T Dragon1 Staff
+		Tooltip: ""
+	}
+
+	GoldenCudgel: {
+		DisplayName: Golden Cudgel
+		Tooltip: ""
+	}
+
+	TestLance: {
+		DisplayName: Test Lance
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -47,6 +62,9 @@ Projectiles: {
 	CircleTest.DisplayName: Circle Test
 	TrackBullet.DisplayName: Track Bullet
 	LightningBall.DisplayName: Lightning Ball
+	TestLogicProj.DisplayName: Test Logic Proj
+	GoldenCudgelProj.DisplayName: Golden Cudgel Proj
+	TestLanceProj.DisplayName: Test Lance Proj
 }
 
 Buffs: {
@@ -58,6 +76,11 @@ Buffs: {
 	LightningBallBuff: {
 		Description: Mods.MyMod.Buffs.LightningBallBuff.Description
 		DisplayName: Lightning Ball Buff
+	}
+
+	TDragon1Buff: {
+		DisplayName: T Dragon1 Buff
+		Description: Mods.MyMod.Buffs.TDragon1Buff.Description
 	}
 }
 
