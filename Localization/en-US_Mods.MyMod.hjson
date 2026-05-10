@@ -53,6 +53,11 @@ Items: {
 		DisplayName: Test Lance
 		Tooltip: ""
 	}
+
+	TestLaser: {
+		DisplayName: Test Laser
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -65,6 +70,7 @@ Projectiles: {
 	TestLogicProj.DisplayName: Test Logic Proj
 	GoldenCudgelProj.DisplayName: Golden Cudgel Proj
 	TestLanceProj.DisplayName: Test Lance Proj
+	TestLaserProj.DisplayName: Test Laser Proj
 }
 
 Buffs: {
