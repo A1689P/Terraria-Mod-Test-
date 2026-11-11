@@ -1,15 +1,13 @@
-using Microsoft.Xna.Framework;
 using MyMod.MyProjectiles;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace MyMod.MyItems.Weapons
 {
+    // 测试追踪武器
     public class TrackWeapon : ModItem
     {
-
         public override void SetDefaults()
         {
             Item.shoot = ModContent.ProjectileType<TrackBullet>();

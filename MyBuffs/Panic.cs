@@ -26,10 +26,10 @@ namespace MyMod.MyBuffs
             
             // 决定这个buff在专家模式会不会持续时间加长，false是不会，true是会
             // 这个持续时间，专家翻倍，大师三倍
-            //BuffID.Sets.LongerExpertDebuff[Type] = false;
+            BuffID.Sets.LongerExpertDebuff[Type] = false;
             
             // 如果这个属性为true，pvp的时候就可以给对手加上这个debuff/buff
-            Main.pvpBuff[Type] = true;
+            Main.pvpBuff[Type] = false;
             
             // 死亡后是否不清除buff，true为不清除，false清除，默认清除
             Main.persistentBuff[Type] = false;

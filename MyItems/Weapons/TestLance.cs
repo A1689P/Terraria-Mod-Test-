@@ -1,5 +1,3 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using MyMod.MyProjectiles;
 using Terraria;
 using Terraria.ID;
@@ -7,6 +5,7 @@ using Terraria.ModLoader;
 
 namespace MyMod.MyItems.Weapons
 {
+    // 测试骑枪
     public class TestLance : ModItem
     {
         public override void SetDefaults()

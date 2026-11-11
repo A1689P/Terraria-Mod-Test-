@@ -1,14 +1,4 @@
 Items: {
-	TestTileItem: {
-		Tooltip: ""
-		DisplayName: Test Tile Item
-	}
-
-	LaserTrap: {
-		Tooltip: ""
-		DisplayName: Laser Trap
-	}
-
 	LaserTest: {
 		Tooltip: ""
 		DisplayName: Laser Test
@@ -44,11 +34,6 @@ Items: {
 		Tooltip: ""
 	}
 
-	GoldenCudgel: {
-		DisplayName: Golden Cudgel
-		Tooltip: ""
-	}
-
 	TestLance: {
 		DisplayName: Test Lance
 		Tooltip: ""
@@ -56,6 +41,16 @@ Items: {
 
 	TestLaser: {
 		DisplayName: Test Laser
+		Tooltip: ""
+	}
+
+	TestPotion: {
+		DisplayName: Test Potion
+		Tooltip: ""
+	}
+
+	DragonStaff: {
+		DisplayName: Dragon Staff
 		Tooltip: ""
 	}
 }
@@ -71,6 +66,9 @@ Projectiles: {
 	GoldenCudgelProj.DisplayName: Golden Cudgel Proj
 	TestLanceProj.DisplayName: Test Lance Proj
 	TestLaserProj.DisplayName: Test Laser Proj
+	DragonBody.DisplayName: Dragon Body
+	DragonHead.DisplayName: Dragon Head
+	DragonTail.DisplayName: Dragon Tail
 }
 
 Buffs: {
@@ -84,9 +82,14 @@ Buffs: {
 		DisplayName: Lightning Ball Buff
 	}
 
-	TDragon1Buff: {
-		DisplayName: T Dragon1 Buff
-		Description: Mods.MyMod.Buffs.TDragon1Buff.Description
+	DragonBuff: {
+		DisplayName: Dragon Buff
+		Description: Mods.MyMod.Buffs.DragonBuff.Description
+	}
+
+	TestPotionBuff: {
+		DisplayName: Test Potion Buff
+		Description: Mods.MyMod.Buffs.TestPotionBuff.Description
 	}
 }
 

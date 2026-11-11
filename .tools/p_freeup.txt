@@ -1,0 +1,379 @@
+﻿=== System.Void Terraria.Player::FreeUpPetsAndMinions(Terraria.Item)
+  param Terraria.Item sItem
+  local List`1 V_0
+  local Single V_1
+  local Single V_2
+  local Single V_3
+  local Int32 V_4
+  local Int32 V_5
+  local Int32 V_6
+  local Int32 V_7
+  local Int32 V_8
+  local Int32 V_9
+  local Int32 V_10
+  local Projectile V_11
+  local Int32 V_12
+  local Projectile V_13
+  local Int32 V_14
+  local Projectile V_15
+  IL_0000: ldsfld       Sets::MinionSacrificable
+  IL_0005: ldarg.1      
+  IL_0006: ldfld        Item::shoot
+  IL_000b: ldelem.u1    
+  IL_000c: brfalse      IL_0326
+  IL_0011: newobj       List`1::.ctor
+  IL_0016: stloc.0      
+  IL_0017: ldc.r4       0
+  IL_001c: stloc.1      
+  IL_001d: ldc.i4.0     
+  IL_001e: stloc.s      V_6
+  IL_0020: br           IL_00c6
+  IL_0025: ldsfld       Main::projectile
+  IL_002a: ldloc.s      V_6
+  IL_002c: ldelem.ref   
+  IL_002d: ldfld        Entity::active
+  IL_0032: brfalse      IL_00c0
+  IL_0037: ldsfld       Main::projectile
+  IL_003c: ldloc.s      V_6
+  IL_003e: ldelem.ref   
+  IL_003f: ldfld        Projectile::owner
+  IL_0044: ldarg.0      
+  IL_0045: ldfld        Entity::whoAmI
+  IL_004a: bne.un.s     IL_00c0
+  IL_004c: ldsfld       Main::projectile
+  IL_0051: ldloc.s      V_6
+  IL_0053: ldelem.ref   
+  IL_0054: ldfld        Projectile::minion
+  IL_0059: brfalse.s    IL_00c0
+  IL_005b: ldc.i4.0     
+  IL_005c: stloc.s      V_7
+  IL_005e: br.s         IL_0094
+  IL_0060: ldsfld       Main::projectile
+  IL_0065: ldloc.0      
+  IL_0066: ldloc.s      V_7
+  IL_0068: callvirt     List`1::get_Item
+  IL_006d: ldelem.ref   
+  IL_006e: ldfld        Projectile::minionSlots
+  IL_0073: ldsfld       Main::projectile
+  IL_0078: ldloc.s      V_6
+  IL_007a: ldelem.ref   
+  IL_007b: ldfld        Projectile::minionSlots
+  IL_0080: ble.un.s     IL_008e
+  IL_0082: ldloc.0      
+  IL_0083: ldloc.s      V_7
+  IL_0085: ldloc.s      V_6
+  IL_0087: callvirt     List`1::Insert
+  IL_008c: br.s         IL_009e
+  IL_008e: ldloc.s      V_7
+  IL_0090: ldc.i4.1     
+  IL_0091: add          
+  IL_0092: stloc.s      V_7
+  IL_0094: ldloc.s      V_7
+  IL_0096: ldloc.0      
+  IL_0097: callvirt     List`1::get_Count
+  IL_009c: blt.s        IL_0060
+  IL_009e: ldloc.s      V_7
+  IL_00a0: ldloc.0      
+  IL_00a1: callvirt     List`1::get_Count
+  IL_00a6: bne.un.s     IL_00b0
+  IL_00a8: ldloc.0      
+  IL_00a9: ldloc.s      V_6
+  IL_00ab: callvirt     List`1::Add
+  IL_00b0: ldloc.1      
+  IL_00b1: ldsfld       Main::projectile
+  IL_00b6: ldloc.s      V_6
+  IL_00b8: ldelem.ref   
+  IL_00b9: ldfld        Projectile::minionSlots
+  IL_00be: add          
+  IL_00bf: stloc.1      
+  IL_00c0: ldloc.s      V_6
+  IL_00c2: ldc.i4.1     
+  IL_00c3: add          
+  IL_00c4: stloc.s      V_6
+  IL_00c6: ldloc.s      V_6
+  IL_00c8: ldc.i4       1000
+  IL_00cd: blt          IL_0025
+  IL_00d2: ldsfld       Sets::StaffMinionSlotsRequired
+  IL_00d7: ldarg.1      
+  IL_00d8: ldfld        Item::type
+  IL_00dd: ldelem.r4    
+  IL_00de: stloc.2      
+  IL_00df: ldc.r4       0
+  IL_00e4: stloc.3      
+  IL_00e5: ldc.i4       388
+  IL_00ea: stloc.s      V_4
+  IL_00ec: ldc.i4.m1    
+  IL_00ed: stloc.s      V_5
+  IL_00ef: ldc.i4.0     
+  IL_00f0: stloc.s      V_8
+  IL_00f2: br.s         IL_016a
+  IL_00f4: ldsfld       Main::projectile
+  IL_00f9: ldloc.0      
+  IL_00fa: ldloc.s      V_8
+  IL_00fc: callvirt     List`1::get_Item
+  IL_0101: ldelem.ref   
+  IL_0102: ldfld        Projectile::type
+  IL_0107: dup          
+  IL_0108: ldc.i4       626
+  IL_010d: bne.un.s     IL_011d
+  IL_010f: ldloc.0      
+  IL_0110: ldloc.s      V_8
+  IL_0112: callvirt     List`1::RemoveAt
+  IL_0117: ldloc.s      V_8
+  IL_0119: ldc.i4.1     
+  IL_011a: sub          
+  IL_011b: stloc.s      V_8
+  IL_011d: ldc.i4       627
+  IL_0122: bne.un.s     IL_0164
+  IL_0124: ldsfld       Main::projectile
+  IL_0129: ldsfld       Main::projectile
+  IL_012e: ldloc.0      
+  IL_012f: ldloc.s      V_8
+  IL_0131: callvirt     List`1::get_Item
+  IL_0136: ldelem.ref   
+  IL_0137: ldfld        Projectile::localAI
+  IL_013c: ldc.i4.1     
+  IL_013d: ldelem.r4    
+  IL_013e: conv.i4      
+  IL_013f: ldelem.ref   
+  IL_0140: ldfld        Projectile::type
+  IL_0145: ldc.i4       628
+  IL_014a: bne.un.s     IL_0156
+  IL_014c: ldloc.0      
+  IL_014d: ldloc.s      V_8
+  IL_014f: callvirt     List`1::get_Item
+  IL_0154: stloc.s      V_5
+  IL_0156: ldloc.0      
+  IL_0157: ldloc.s      V_8
+  IL_0159: callvirt     List`1::RemoveAt
+  IL_015e: ldloc.s      V_8
+  IL_0160: ldc.i4.1     
+  IL_0161: sub          
+  IL_0162: stloc.s      V_8
+  IL_0164: ldloc.s      V_8
+  IL_0166: ldc.i4.1     
+  IL_0167: add          
+  IL_0168: stloc.s      V_8
+  IL_016a: ldloc.s      V_8
+  IL_016c: ldloc.0      
+  IL_016d: callvirt     List`1::get_Count
+  IL_0172: blt.s        IL_00f4
+  IL_0174: ldloc.s      V_5
+  IL_0176: ldc.i4.m1    
+  IL_0177: beq.s        IL_01a8
+  IL_0179: ldloc.0      
+  IL_017a: ldloc.s      V_5
+  IL_017c: callvirt     List`1::Add
+  IL_0181: ldloc.0      
+  IL_0182: ldsfld       Main::projectile
+  IL_0187: ldloc.s      V_5
+  IL_0189: ldelem.ref   
+  IL_018a: ldfld        Projectile::owner
+  IL_018f: ldsfld       Main::projectile
+  IL_0194: ldloc.s      V_5
+  IL_0196: ldelem.ref   
+  IL_0197: ldfld        Projectile::ai
+  IL_019c: ldc.i4.0     
+  IL_019d: ldelem.r4    
+  IL_019e: call         Projectile::GetByUUID
+  IL_01a3: callvirt     List`1::Add
+  IL_01a8: ldc.i4.0     
+  IL_01a9: stloc.s      V_9
+  IL_01ab: br           IL_0301
+  IL_01b0: ldloc.1      
+  IL_01b1: ldloc.3      
+  IL_01b2: sub          
+  IL_01b3: ldarg.0      
+  IL_01b4: ldfld        Player::maxMinions
+  IL_01b9: conv.r4      
+  IL_01ba: ldloc.2      
+  IL_01bb: sub          
+  IL_01bc: ldc.r4       1E-05
+  IL_01c1: add          
+  IL_01c2: ble.un       IL_030e
+  IL_01c7: ldsfld       Main::projectile
+  IL_01cc: ldloc.0      
+  IL_01cd: ldloc.s      V_9
+  IL_01cf: callvirt     List`1::get_Item
+  IL_01d4: ldelem.ref   
+  IL_01d5: ldfld        Projectile::type
+  IL_01da: stloc.s      V_10
+  IL_01dc: ldloc.s      V_10
+  IL_01de: ldloc.s      V_4
+  IL_01e0: beq          IL_02fb
+  IL_01e5: ldsfld       Sets::MinionCannotBeFreed
+  IL_01ea: ldloc.s      V_10
+  IL_01ec: ldelem.u1    
+  IL_01ed: brtrue       IL_02fb
+  IL_01f2: ldloc.s      V_10
+  IL_01f4: ldc.i4       388
+  IL_01f9: bne.un.s     IL_020b
+  IL_01fb: ldloc.s      V_4
+  IL_01fd: ldc.i4       387
+  IL_0202: bne.un.s     IL_020b
+  IL_0204: ldc.i4       388
+  IL_0209: stloc.s      V_4
+  IL_020b: ldloc.s      V_10
+  IL_020d: ldc.i4       387
+  IL_0212: bne.un.s     IL_0224
+  IL_0214: ldloc.s      V_4
+  IL_0216: ldc.i4       388
+  IL_021b: bne.un.s     IL_0224
+  IL_021d: ldc.i4       387
+  IL_0222: stloc.s      V_4
+  IL_0224: ldloc.3      
+  IL_0225: ldsfld       Main::projectile
+  IL_022a: ldloc.0      
+  IL_022b: ldloc.s      V_9
+  IL_022d: callvirt     List`1::get_Item
+  IL_0232: ldelem.ref   
+  IL_0233: ldfld        Projectile::minionSlots
+  IL_0238: add          
+  IL_0239: stloc.3      
+  IL_023a: ldloc.s      V_10
+  IL_023c: ldc.i4       626
+  IL_0241: beq.s        IL_024f
+  IL_0243: ldloc.s      V_10
+  IL_0245: ldc.i4       627
+  IL_024a: bne.un       IL_02e8
+  IL_024f: ldsfld       Main::projectile
+  IL_0254: ldloc.0      
+  IL_0255: ldloc.s      V_9
+  IL_0257: callvirt     List`1::get_Item
+  IL_025c: ldelem.ref   
+  IL_025d: stloc.s      V_11
+  IL_025f: ldloc.s      V_11
+  IL_0261: ldfld        Projectile::owner
+  IL_0266: ldloc.s      V_11
+  IL_0268: ldfld        Projectile::ai
+  IL_026d: ldc.i4.0     
+  IL_026e: ldelem.r4    
+  IL_026f: call         Projectile::GetByUUID
+  IL_0274: stloc.s      V_12
+  IL_0276: ldsfld       Main::projectile
+  IL_027b: ldloc.s      V_12
+  IL_027d: call         Utils::IndexInRange
+  IL_0282: brfalse.s    IL_02e8
+  IL_0284: ldsfld       Main::projectile
+  IL_0289: ldloc.s      V_12
+  IL_028b: ldelem.ref   
+  IL_028c: stloc.s      V_13
+  IL_028e: ldloc.s      V_13
+  IL_0290: ldfld        Projectile::type
+  IL_0295: ldc.i4       625
+  IL_029a: beq.s        IL_02ae
+  IL_029c: ldloc.s      V_13
+  IL_029e: ldfld        Projectile::localAI
+  IL_02a3: ldc.i4.1     
+  IL_02a4: ldloc.s      V_11
+  IL_02a6: ldfld        Projectile::localAI
+  IL_02ab: ldc.i4.1     
+  IL_02ac: ldelem.r4    
+  IL_02ad: stelem.r4    
+  IL_02ae: ldsfld       Main::projectile
+  IL_02b3: ldloc.s      V_11
+  IL_02b5: ldfld        Projectile::localAI
+  IL_02ba: ldc.i4.1     
+  IL_02bb: ldelem.r4    
+  IL_02bc: conv.i4      
+  IL_02bd: ldelem.ref   
+  IL_02be: stloc.s      V_13
+  IL_02c0: ldloc.s      V_13
+  IL_02c2: ldfld        Projectile::ai
+  IL_02c7: ldc.i4.0     
+  IL_02c8: ldloc.s      V_11
+  IL_02ca: ldfld        Projectile::ai
+  IL_02cf: ldc.i4.0     
+  IL_02d0: ldelem.r4    
+  IL_02d1: stelem.r4    
+  IL_02d2: ldloc.s      V_13
+  IL_02d4: ldfld        Projectile::ai
+  IL_02d9: ldc.i4.1     
+  IL_02da: ldc.r4       1
+  IL_02df: stelem.r4    
+  IL_02e0: ldloc.s      V_13
+  IL_02e2: ldc.i4.1     
+  IL_02e3: stfld        Projectile::netUpdate
+  IL_02e8: ldsfld       Main::projectile
+  IL_02ed: ldloc.0      
+  IL_02ee: ldloc.s      V_9
+  IL_02f0: callvirt     List`1::get_Item
+  IL_02f5: ldelem.ref   
+  IL_02f6: callvirt     Projectile::Kill
+  IL_02fb: ldloc.s      V_9
+  IL_02fd: ldc.i4.1     
+  IL_02fe: add          
+  IL_02ff: stloc.s      V_9
+  IL_0301: ldloc.s      V_9
+  IL_0303: ldloc.0      
+  IL_0304: callvirt     List`1::get_Count
+  IL_0309: blt          IL_01b0
+  IL_030e: ldloc.0      
+  IL_030f: callvirt     List`1::Clear
+  IL_0314: ldloc.1      
+  IL_0315: ldloc.2      
+  IL_0316: add          
+  IL_0317: ldc.r4       9
+  IL_031c: blt.un.s     IL_0325
+  IL_031e: ldarg.0      
+  IL_031f: ldc.i4.6     
+  IL_0320: call         AchievementsHelper::HandleSpecialEvent
+  IL_0325: ret          
+  IL_0326: ldc.i4.0     
+  IL_0327: stloc.s      V_14
+  IL_0329: br           IL_03c3
+  IL_032e: ldsfld       Main::projectile
+  IL_0333: ldloc.s      V_14
+  IL_0335: ldelem.ref   
+  IL_0336: stloc.s      V_15
+  IL_0338: ldloc.s      V_15
+  IL_033a: ldfld        Entity::active
+  IL_033f: brfalse.s    IL_03bd
+  IL_0341: ldloc.s      V_15
+  IL_0343: ldfld        Projectile::owner
+  IL_0348: ldarg.0      
+  IL_0349: ldfld        Entity::whoAmI
+  IL_034e: bne.un.s     IL_03bd
+  IL_0350: ldloc.s      V_15
+  IL_0352: ldfld        Projectile::type
+  IL_0357: ldarg.1      
+  IL_0358: ldfld        Item::shoot
+  IL_035d: bne.un.s     IL_0366
+  IL_035f: ldloc.s      V_15
+  IL_0361: callvirt     Projectile::Kill
+  IL_0366: ldarg.1      
+  IL_0367: ldfld        Item::shoot
+  IL_036c: ldc.i4.s     72
+  IL_036e: bne.un.s     IL_038d
+  IL_0370: ldloc.s      V_15
+  IL_0372: ldfld        Projectile::type
+  IL_0377: ldc.i4.s     86
+  IL_0379: beq.s        IL_0386
+  IL_037b: ldloc.s      V_15
+  IL_037d: ldfld        Projectile::type
+  IL_0382: ldc.i4.s     87
+  IL_0384: bne.un.s     IL_038d
+  IL_0386: ldloc.s      V_15
+  IL_0388: callvirt     Projectile::Kill
+  IL_038d: ldarg.1      
+  IL_038e: ldfld        Item::type
+  IL_0393: ldc.i4       5131
+  IL_0398: bne.un.s     IL_03bd
+  IL_039a: ldloc.s      V_15
+  IL_039c: ldfld        Projectile::type
+  IL_03a1: ldc.i4       881
+  IL_03a6: beq.s        IL_03b6
+  IL_03a8: ldloc.s      V_15
+  IL_03aa: ldfld        Projectile::type
+  IL_03af: ldc.i4       934
+  IL_03b4: bne.un.s     IL_03bd
+  IL_03b6: ldloc.s      V_15
+  IL_03b8: callvirt     Projectile::Kill
+  IL_03bd: ldloc.s      V_14
+  IL_03bf: ldc.i4.1     
+  IL_03c0: add          
+  IL_03c1: stloc.s      V_14
+  IL_03c3: ldloc.s      V_14
+  IL_03c5: ldc.i4       1000
+  IL_03ca: blt          IL_032e
+  IL_03cf: ret          

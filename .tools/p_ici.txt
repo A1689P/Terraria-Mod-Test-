@@ -1,0 +1,2301 @@
+﻿=== System.Void Terraria.Player::ItemCheck_Inner()
+  local Single V_0
+  local Item V_1
+  local ItemCheckContext V_2
+  local Boolean V_3
+  local Int32 V_4
+  local Boolean V_5
+  local Boolean V_6
+  local Item V_7
+  local Rectangle V_8
+  local Int32 V_9
+  local Item V_10
+  local Int32 V_11
+  local Int32 V_12
+  local Int32 V_13
+  local Boolean V_14
+  local Int32 V_15
+  local Nullable`1 V_16
+  local Boolean V_17
+  local Int32 V_18
+  local Int32 V_19
+  local Int32 V_20
+  local Color V_21
+  local Int32 V_22
+  local Int32 V_23
+  local Vector2 V_24
+  local Vector2 V_25
+  local Int32 V_26
+  local Nullable`1 V_27
+  local Vector2 V_28
+  local Int32 V_29
+  local Int32 V_30
+  local Color V_31
+  local Int32 V_32
+  local Boolean V_33
+  local Int32 V_34
+  local Int32 V_35
+  local Int32 V_36
+  local Int32 V_37
+  local Int32 V_38
+  local Int32 V_39
+  local Single V_40
+  local Single V_41
+  local Single V_42
+  local Vector2 V_43
+  local Int32 V_44
+  local Int32 V_45
+  local Vector2 V_46
+  local Int32 V_47
+  local Int32 V_48
+  local Int32 V_49
+  local Boolean V_50
+  local Nullable`1 V_51
+  IL_0000: ldarg.0      
+  IL_0001: call         Player::get_CCed
+  IL_0006: brfalse.s    IL_0022
+  IL_0008: ldarg.0      
+  IL_0009: ldc.i4.0     
+  IL_000a: stfld        Player::channel
+  IL_000f: ldarg.0      
+  IL_0010: ldarg.0      
+  IL_0011: ldc.i4.0     
+  IL_0012: dup          
+  IL_0013: stloc.s      V_9
+  IL_0015: stfld        Player::itemAnimationMax
+  IL_001a: ldloc.s      V_9
+  IL_001c: stfld        Player::itemAnimation
+  IL_0021: ret          
+  IL_0022: ldarg.0      
+  IL_0023: call         Player::get_HeightOffsetHitboxCenter
+  IL_0028: stloc.0      
+  IL_0029: ldarg.0      
+  IL_002a: ldfld        Player::inventory
+  IL_002f: ldarg.0      
+  IL_0030: ldfld        Player::selectedItem
+  IL_0035: ldelem.ref   
+  IL_0036: stloc.1      
+  IL_0037: ldloca.s     V_2
+  IL_0039: initobj      Terraria.Player/ItemCheckContext
+  IL_003f: ldc.i4.0     
+  IL_0040: stloc.3      
+  IL_0041: ldsfld       Main::myPlayer
+  IL_0046: ldarg.0      
+  IL_0047: ldfld        Entity::whoAmI
+  IL_004c: bne.un       IL_04fe
+  IL_0051: call         PlayerInput::get_ShouldFastUseItem
+  IL_0056: brfalse.s    IL_0061
+  IL_0058: ldarg.0      
+  IL_0059: ldc.i4.1     
+  IL_005a: stfld        Player::controlUseItem
+  IL_005f: ldc.i4.1     
+  IL_0060: stloc.3      
+  IL_0061: ldarg.0      
+  IL_0062: ldfld        Player::cursorItemIconEnabled
+  IL_0067: brtrue.s     IL_00a2
+  IL_0069: ldloc.1      
+  IL_006a: ldfld        Item::stack
+  IL_006f: ldc.i4.0     
+  IL_0070: ble.s        IL_00a2
+  IL_0072: ldloc.1      
+  IL_0073: ldfld        Item::fishingPole
+  IL_0078: ldc.i4.0     
+  IL_0079: ble.s        IL_00a2
+  IL_007b: ldarg.0      
+  IL_007c: ldloca.s     V_10
+  IL_007e: call         Player::Fishing_GetBait
+  IL_0083: ldloc.s      V_10
+  IL_0085: brfalse.s    IL_00a2
+  IL_0087: ldarg.0      
+  IL_0088: ldc.i4.1     
+  IL_0089: stfld        Player::cursorItemIconEnabled
+  IL_008e: ldarg.0      
+  IL_008f: ldloc.s      V_10
+  IL_0091: ldfld        Item::type
+  IL_0096: stfld        Player::cursorItemIconID
+  IL_009b: ldarg.0      
+  IL_009c: ldc.i4.6     
+  IL_009d: stfld        Player::cursorItemIconPush
+  IL_00a2: ldarg.0      
+  IL_00a3: ldfld        Player::cursorItemIconEnabled
+  IL_00a8: brtrue       IL_04fe
+  IL_00ad: ldloc.1      
+  IL_00ae: ldfld        Item::stack
+  IL_00b3: ldc.i4.0     
+  IL_00b4: ble          IL_04fe
+  IL_00b9: ldloc.1      
+  IL_00ba: ldfld        Item::type
+  IL_00bf: ldc.i4       779
+  IL_00c4: beq.s        IL_00d6
+  IL_00c6: ldloc.1      
+  IL_00c7: ldfld        Item::type
+  IL_00cc: ldc.i4       5134
+  IL_00d1: bne.un       IL_04fe
+  IL_00d6: ldc.i4.s     54
+  IL_00d8: stloc.s      V_11
+  IL_00da: br.s         IL_012e
+  IL_00dc: ldarg.0      
+  IL_00dd: ldfld        Player::inventory
+  IL_00e2: ldloc.s      V_11
+  IL_00e4: ldelem.ref   
+  IL_00e5: ldfld        Item::ammo
+  IL_00ea: ldloc.1      
+  IL_00eb: ldfld        Item::useAmmo
+  IL_00f0: bne.un.s     IL_0128
+  IL_00f2: ldarg.0      
+  IL_00f3: ldfld        Player::inventory
+  IL_00f8: ldloc.s      V_11
+  IL_00fa: ldelem.ref   
+  IL_00fb: ldfld        Item::stack
+  IL_0100: ldc.i4.0     
+  IL_0101: ble.s        IL_0128
+  IL_0103: ldarg.0      
+  IL_0104: ldc.i4.1     
+  IL_0105: stfld        Player::cursorItemIconEnabled
+  IL_010a: ldarg.0      
+  IL_010b: ldarg.0      
+  IL_010c: ldfld        Player::inventory
+  IL_0111: ldloc.s      V_11
+  IL_0113: ldelem.ref   
+  IL_0114: ldfld        Item::type
+  IL_0119: stfld        Player::cursorItemIconID
+  IL_011e: ldarg.0      
+  IL_011f: ldc.i4.s     10
+  IL_0121: stfld        Player::cursorItemIconPush
+  IL_0126: br.s         IL_0134
+  IL_0128: ldloc.s      V_11
+  IL_012a: ldc.i4.1     
+  IL_012b: add          
+  IL_012c: stloc.s      V_11
+  IL_012e: ldloc.s      V_11
+  IL_0130: ldc.i4.s     58
+  IL_0132: blt.s        IL_00dc
+  IL_0134: ldarg.0      
+  IL_0135: ldfld        Player::cursorItemIconEnabled
+  IL_013a: brtrue       IL_04fe
+  IL_013f: ldc.i4.0     
+  IL_0140: stloc.s      V_12
+  IL_0142: br.s         IL_0199
+  IL_0144: ldarg.0      
+  IL_0145: ldfld        Player::inventory
+  IL_014a: ldloc.s      V_12
+  IL_014c: ldelem.ref   
+  IL_014d: ldfld        Item::ammo
+  IL_0152: ldloc.1      
+  IL_0153: ldfld        Item::useAmmo
+  IL_0158: bne.un.s     IL_0193
+  IL_015a: ldarg.0      
+  IL_015b: ldfld        Player::inventory
+  IL_0160: ldloc.s      V_12
+  IL_0162: ldelem.ref   
+  IL_0163: ldfld        Item::stack
+  IL_0168: ldc.i4.0     
+  IL_0169: ble.s        IL_0193
+  IL_016b: ldarg.0      
+  IL_016c: ldc.i4.1     
+  IL_016d: stfld        Player::cursorItemIconEnabled
+  IL_0172: ldarg.0      
+  IL_0173: ldarg.0      
+  IL_0174: ldfld        Player::inventory
+  IL_0179: ldloc.s      V_12
+  IL_017b: ldelem.ref   
+  IL_017c: ldfld        Item::type
+  IL_0181: stfld        Player::cursorItemIconID
+  IL_0186: ldarg.0      
+  IL_0187: ldc.i4.s     10
+  IL_0189: stfld        Player::cursorItemIconPush
+  IL_018e: br           IL_04fe
+  IL_0193: ldloc.s      V_12
+  IL_0195: ldc.i4.1     
+  IL_0196: add          
+  IL_0197: stloc.s      V_12
+  IL_0199: ldloc.s      V_12
+  IL_019b: ldc.i4.s     54
+  IL_019d: blt.s        IL_0144
+  IL_019f: br           IL_04fe
+  IL_01a4: ldarg.0      
+  IL_01a5: ldfld        Player::itemAnimation
+  IL_01aa: brtrue.s     IL_020a
+  IL_01ac: ldarg.0      
+  IL_01ad: ldfld        Player::reuseDelay
+  IL_01b2: brtrue.s     IL_020a
+  IL_01b4: ldarg.0      
+  IL_01b5: ldfld        Player::controlUseItem
+  IL_01ba: brfalse.s    IL_01c4
+  IL_01bc: ldarg.0      
+  IL_01bd: ldfld        Player::selectItemOnNextUse
+  IL_01c2: brfalse.s    IL_020a
+  IL_01c4: ldarg.0      
+  IL_01c5: ldc.i4.0     
+  IL_01c6: stfld        Player::selectItemOnNextUse
+  IL_01cb: ldarg.0      
+  IL_01cc: ldfld        Player::selectedItem
+  IL_01d1: stloc.s      V_13
+  IL_01d3: ldarg.0      
+  IL_01d4: call         Player::SmartSelectLookup
+  IL_01d9: ldarg.0      
+  IL_01da: ldfld        Player::selectedItem
+  IL_01df: ldloc.s      V_13
+  IL_01e1: beq.s        IL_020a
+  IL_01e3: ldarg.0      
+  IL_01e4: ldfld        Player::inventory
+  IL_01e9: ldarg.0      
+  IL_01ea: ldfld        Player::selectedItem
+  IL_01ef: ldelem.ref   
+  IL_01f0: stloc.1      
+  IL_01f1: ldarg.0      
+  IL_01f2: ldc.i4.1     
+  IL_01f3: stfld        Player::releaseUseItem
+  IL_01f8: ldarg.0      
+  IL_01f9: ldarg.0      
+  IL_01fa: ldc.i4.0     
+  IL_01fb: dup          
+  IL_01fc: stloc.s      V_9
+  IL_01fe: stfld        Player::itemTimeMax
+  IL_0203: ldloc.s      V_9
+  IL_0205: stfld        Player::itemTime
+  IL_020a: ldarg.0      
+  IL_020b: call         Player::ItemCheck_HandleMount
+  IL_0210: ldarg.0      
+  IL_0211: ldloc.1      
+  IL_0212: ldc.i4.0     
+  IL_0213: call         Player::GetWeaponDamage
+  IL_0218: stloc.s      V_4
+  IL_021a: ldarg.0      
+  IL_021b: ldloc.1      
+  IL_021c: call         Player::ItemCheck_HandleMPItemAnimation
+  IL_0221: ldarg.0      
+  IL_0222: ldloc.1      
+  IL_0223: call         Player::ItemCheck_HackHoldStyles
+  IL_0228: ldarg.0      
+  IL_0229: ldfld        Player::itemAnimation
+  IL_022e: ldc.i4.0     
+  IL_022f: bge.s        IL_0238
+  IL_0231: ldarg.0      
+  IL_0232: ldc.i4.0     
+  IL_0233: stfld        Player::itemAnimation
+  IL_0238: ldarg.0      
+  IL_0239: ldfld        Player::itemTime
+  IL_023e: ldc.i4.0     
+  IL_023f: bge.s        IL_0248
+  IL_0241: ldarg.0      
+  IL_0242: ldc.i4.0     
+  IL_0243: stfld        Player::itemTime
+  IL_0248: ldarg.0      
+  IL_0249: ldfld        Player::itemAnimation
+  IL_024e: brtrue.s     IL_025f
+  IL_0250: ldarg.0      
+  IL_0251: ldfld        Player::reuseDelay
+  IL_0256: ldc.i4.0     
+  IL_0257: ble.s        IL_025f
+  IL_0259: ldarg.0      
+  IL_025a: call         Player::ApplyReuseDelay
+  IL_025f: ldarg.0      
+  IL_0260: ldloc.1      
+  IL_0261: call         Player::UpdatePlacementPreview
+  IL_0266: ldarg.0      
+  IL_0267: ldfld        Player::itemAnimation
+  IL_026c: brtrue.s     IL_027e
+  IL_026e: ldarg.0      
+  IL_026f: ldfld        Player::altFunctionUse
+  IL_0274: ldc.i4.2     
+  IL_0275: bne.un.s     IL_027e
+  IL_0277: ldarg.0      
+  IL_0278: ldc.i4.0     
+  IL_0279: stfld        Player::altFunctionUse
+  IL_027e: ldc.i4.1     
+  IL_027f: stloc.s      V_5
+  IL_0281: ldarg.0      
+  IL_0282: ldfld        Player::gravDir
+  IL_0287: ldc.r4       -1
+  IL_028c: bne.un.s     IL_0299
+  IL_028e: ldarg.0      
+  IL_028f: call         GolfHelper::IsPlayerHoldingClub
+  IL_0294: brfalse.s    IL_0299
+  IL_0296: ldc.i4.0     
+  IL_0297: stloc.s      V_5
+  IL_0299: ldloc.s      V_5
+  IL_029b: brfalse      IL_0429
+  IL_02a0: ldarg.0      
+  IL_02a1: ldfld        Player::controlUseItem
+  IL_02a6: brfalse      IL_0429
+  IL_02ab: ldarg.0      
+  IL_02ac: ldfld        Player::releaseUseItem
+  IL_02b1: brfalse      IL_0429
+  IL_02b6: ldarg.0      
+  IL_02b7: ldfld        Player::itemAnimation
+  IL_02bc: brtrue       IL_0429
+  IL_02c1: ldloc.1      
+  IL_02c2: ldfld        Item::useStyle
+  IL_02c7: brfalse      IL_0429
+  IL_02cc: ldarg.0      
+  IL_02cd: ldfld        Player::altFunctionUse
+  IL_02d2: ldc.i4.1     
+  IL_02d3: bne.un.s     IL_02dc
+  IL_02d5: ldarg.0      
+  IL_02d6: ldc.i4.2     
+  IL_02d7: stfld        Player::altFunctionUse
+  IL_02dc: ldloc.1      
+  IL_02dd: ldfld        Item::shoot
+  IL_02e2: brtrue.s     IL_02ef
+  IL_02e4: ldarg.0      
+  IL_02e5: ldc.r4       0
+  IL_02ea: stfld        Player::itemRotation
+  IL_02ef: ldarg.0      
+  IL_02f0: ldloc.1      
+  IL_02f1: call         Player::ItemCheck_CheckCanUse
+  IL_02f6: stloc.s      V_14
+  IL_02f8: ldloc.1      
+  IL_02f9: ldfld        Item::potion
+  IL_02fe: ldloc.s      V_14
+  IL_0300: and          
+  IL_0301: brfalse.s    IL_030a
+  IL_0303: ldarg.0      
+  IL_0304: ldloc.1      
+  IL_0305: call         Player::ApplyPotionDelay
+  IL_030a: ldloc.1      
+  IL_030b: ldfld        Item::mana
+  IL_0310: ldc.i4.0     
+  IL_0311: cgt          
+  IL_0313: ldloc.s      V_14
+  IL_0315: and          
+  IL_0316: brfalse.s    IL_0349
+  IL_0318: ldarg.0      
+  IL_0319: ldfld        Entity::whoAmI
+  IL_031e: ldsfld       Main::myPlayer
+  IL_0323: bne.un.s     IL_0349
+  IL_0325: ldloc.1      
+  IL_0326: ldfld        Item::buffType
+  IL_032b: brfalse.s    IL_0349
+  IL_032d: ldloc.1      
+  IL_032e: ldfld        Item::buffTime
+  IL_0333: brfalse.s    IL_0349
+  IL_0335: ldarg.0      
+  IL_0336: ldloc.1      
+  IL_0337: ldfld        Item::buffType
+  IL_033c: ldloc.1      
+  IL_033d: ldfld        Item::buffTime
+  IL_0342: ldc.i4.1     
+  IL_0343: ldc.i4.0     
+  IL_0344: call         Player::AddBuff
+  IL_0349: ldloc.1      
+  IL_034a: ldfld        Item::shoot
+  IL_034f: ldc.i4.0     
+  IL_0350: ble.s        IL_0369
+  IL_0352: ldsfld       Sets::MinionTargettingFeature
+  IL_0357: ldloc.1      
+  IL_0358: ldfld        Item::shoot
+  IL_035d: ldelem.u1    
+  IL_035e: brfalse.s    IL_0369
+  IL_0360: ldarg.0      
+  IL_0361: ldfld        Player::altFunctionUse
+  IL_0366: ldc.i4.2     
+  IL_0367: beq.s        IL_0370
+  IL_0369: ldarg.0      
+  IL_036a: ldloc.1      
+  IL_036b: call         Player::ItemCheck_ApplyPetBuffs
+  IL_0370: ldarg.0      
+  IL_0371: ldfld        Entity::whoAmI
+  IL_0376: ldsfld       Main::myPlayer
+  IL_037b: bne.un.s     IL_03ba
+  IL_037d: ldarg.0      
+  IL_037e: ldfld        Player::gravDir
+  IL_0383: ldc.r4       1
+  IL_0388: bne.un.s     IL_03ba
+  IL_038a: ldloc.1      
+  IL_038b: ldfld        Item::mountType
+  IL_0390: ldc.i4.m1    
+  IL_0391: beq.s        IL_03ba
+  IL_0393: ldarg.0      
+  IL_0394: ldfld        Player::mount
+  IL_0399: ldloc.1      
+  IL_039a: ldfld        Item::mountType
+  IL_039f: ldarg.0      
+  IL_03a0: callvirt     Mount::CanMount
+  IL_03a5: brfalse.s    IL_03ba
+  IL_03a7: ldarg.0      
+  IL_03a8: ldfld        Player::mount
+  IL_03ad: ldloc.1      
+  IL_03ae: ldfld        Item::mountType
+  IL_03b3: ldarg.0      
+  IL_03b4: ldc.i4.0     
+  IL_03b5: callvirt     Mount::SetMount
+  IL_03ba: ldloc.1      
+  IL_03bb: ldfld        Item::shoot
+  IL_03c0: ldc.i4.0     
+  IL_03c1: ble.s        IL_03df
+  IL_03c3: ldsfld       Sets::MinionTargettingFeature
+  IL_03c8: ldloc.1      
+  IL_03c9: ldfld        Item::shoot
+  IL_03ce: ldelem.u1    
+  IL_03cf: brfalse.s    IL_03df
+  IL_03d1: ldarg.0      
+  IL_03d2: ldfld        Player::altFunctionUse
+  IL_03d7: ldc.i4.2     
+  IL_03d8: ceq          
+  IL_03da: ldc.i4.0     
+  IL_03db: ceq          
+  IL_03dd: br.s         IL_03e0
+  IL_03df: ldc.i4.1     
+  IL_03e0: ldloc.s      V_14
+  IL_03e2: and          
+  IL_03e3: brfalse.s    IL_041e
+  IL_03e5: ldarg.0      
+  IL_03e6: ldfld        Entity::whoAmI
+  IL_03eb: ldsfld       Main::myPlayer
+  IL_03f0: bne.un.s     IL_041e
+  IL_03f2: ldloc.1      
+  IL_03f3: ldfld        Item::shoot
+  IL_03f8: ldc.i4.0     
+  IL_03f9: blt.s        IL_041e
+  IL_03fb: ldsfld       Sets::LightPet
+  IL_0400: ldloc.1      
+  IL_0401: ldfld        Item::shoot
+  IL_0406: ldelem.u1    
+  IL_0407: brtrue.s     IL_0417
+  IL_0409: ldsfld       Main::projPet
+  IL_040e: ldloc.1      
+  IL_040f: ldfld        Item::shoot
+  IL_0414: ldelem.u1    
+  IL_0415: brfalse.s    IL_041e
+  IL_0417: ldarg.0      
+  IL_0418: ldloc.1      
+  IL_0419: call         Player::FreeUpPetsAndMinions
+  IL_041e: ldloc.s      V_14
+  IL_0420: brfalse.s    IL_0429
+  IL_0422: ldarg.0      
+  IL_0423: ldloc.1      
+  IL_0424: call         Player::ItemCheck_StartActualUse
+  IL_0429: ldarg.0      
+  IL_042a: ldfld        Player::controlUseItem
+  IL_042f: stloc.s      V_6
+  IL_0431: ldarg.0      
+  IL_0432: ldfld        Player::mount
+  IL_0437: callvirt     Mount::get_Active
+  IL_043c: brfalse.s    IL_045f
+  IL_043e: ldarg.0      
+  IL_043f: ldfld        Player::mount
+  IL_0444: callvirt     Mount::get_Type
+  IL_0449: ldc.i4.8     
+  IL_044a: bne.un.s     IL_045f
+  IL_044c: ldarg.0      
+  IL_044d: ldfld        Player::controlUseItem
+  IL_0452: brtrue.s     IL_045c
+  IL_0454: ldarg.0      
+  IL_0455: ldfld        Player::controlUseTile
+  IL_045a: br.s         IL_045d
+  IL_045c: ldc.i4.1     
+  IL_045d: stloc.s      V_6
+  IL_045f: ldloc.s      V_6
+  IL_0461: brtrue.s     IL_046a
+  IL_0463: ldarg.0      
+  IL_0464: ldc.i4.0     
+  IL_0465: stfld        Player::channel
+  IL_046a: ldarg.0      
+  IL_046b: ldfld        Player::itemAnimation
+  IL_0470: ldc.i4.0     
+  IL_0471: bgt.s        IL_0476
+  IL_0473: ldloc.1      
+  IL_0474: br.s         IL_047c
+  IL_0476: ldarg.0      
+  IL_0477: ldfld        Player::lastVisualizedSelectedItem
+  IL_047c: stloc.s      V_7
+  IL_047e: ldloc.s      V_7
+  IL_0480: ldfld        Item::type
+  IL_0485: ldarg.0      
+  IL_0486: call         Item::GetDrawHitbox
+  IL_048b: stloc.s      V_8
+  IL_048d: ldarg.0      
+  IL_048e: ldflda       Player::compositeFrontArm
+  IL_0493: ldc.i4.0     
+  IL_0494: stfld        CompositeArmData::enabled
+  IL_0499: ldarg.0      
+  IL_049a: ldflda       Player::compositeBackArm
+  IL_049f: ldc.i4.0     
+  IL_04a0: stfld        CompositeArmData::enabled
+  IL_04a5: ldarg.0      
+  IL_04a6: ldfld        Player::itemAnimation
+  IL_04ab: ldc.i4.0     
+  IL_04ac: ble          IL_0531
+  IL_04b1: ldloc.1      
+  IL_04b2: ldfld        Item::mana
+  IL_04b7: ldc.i4.0     
+  IL_04b8: ble.s        IL_04c1
+  IL_04ba: ldarg.0      
+  IL_04bb: ldloc.1      
+  IL_04bc: call         Player::ItemCheck_ApplyManaRegenDelay
+  IL_04c1: ldsfld       Main::dedServ
+  IL_04c6: brfalse.s    IL_04e2
+  IL_04c8: ldarg.0      
+  IL_04c9: ldloc.1      
+  IL_04ca: ldfld        Entity::height
+  IL_04cf: stfld        Player::itemHeight
+  IL_04d4: ldarg.0      
+  IL_04d5: ldloc.1      
+  IL_04d6: ldfld        Entity::width
+  IL_04db: stfld        Player::itemWidth
+  IL_04e0: br.s         IL_0531
+  IL_04e2: ldarg.0      
+  IL_04e3: ldloc.s      V_8
+  IL_04e5: ldfld        Rectangle::Height
+  IL_04ea: stfld        Player::itemHeight
+  IL_04ef: ldarg.0      
+  IL_04f0: ldloc.s      V_8
+  IL_04f2: ldfld        Rectangle::Width
+  IL_04f7: stfld        Player::itemWidth
+  IL_04fc: br.s         IL_0531
+  IL_04fe: ldarg.0      
+  IL_04ff: ldfld        Player::itemAnimation
+  IL_0504: ldc.i4.0     
+  IL_0505: ble.s        IL_0542
+  IL_0507: ldarg.0      
+  IL_0508: ldarg.0      
+  IL_0509: ldfld        Player::itemAnimation
+  IL_050e: ldc.i4.1     
+  IL_050f: sub          
+  IL_0510: stfld        Player::itemAnimation
+  IL_0515: ldarg.0      
+  IL_0516: ldfld        Player::itemAnimation
+  IL_051b: brtrue.s     IL_0542
+  IL_051d: ldarg.0      
+  IL_051e: ldfld        Entity::whoAmI
+  IL_0523: ldsfld       Main::myPlayer
+  IL_0528: bne.un.s     IL_0542
+  IL_052a: call         PlayerInput::TryEndingFastUse
+  IL_052f: br.s         IL_0542
+  IL_0531: ldarg.0      
+  IL_0532: ldarg.0      
+  IL_0533: ldfld        Player::controlUseItem
+  IL_0538: ldc.i4.0     
+  IL_0539: ceq          
+  IL_053b: stfld        Player::releaseUseItem
+  IL_0540: br.s         IL_05b9
+  IL_0542: ldarg.0      
+  IL_0543: ldfld        Player::itemTime
+  IL_0548: ldc.i4.0     
+  IL_0549: ble          IL_01a4
+  IL_054e: ldarg.0      
+  IL_054f: ldarg.0      
+  IL_0550: ldfld        Player::itemTime
+  IL_0555: ldc.i4.1     
+  IL_0556: sub          
+  IL_0557: stfld        Player::itemTime
+  IL_055c: ldarg.0      
+  IL_055d: call         Player::get_ItemTimeIsZero
+  IL_0562: brfalse      IL_01a4
+  IL_0567: ldarg.0      
+  IL_0568: ldfld        Entity::whoAmI
+  IL_056d: ldsfld       Main::myPlayer
+  IL_0572: bne.un       IL_01a4
+  IL_0577: ldarg.0      
+  IL_0578: ldfld        Player::JustDroppedAnItem
+  IL_057d: brtrue       IL_01a4
+  IL_0582: ldloc.1      
+  IL_0583: ldfld        Item::type
+  IL_0588: stloc.s      V_15
+  IL_058a: ldloc.s      V_15
+  IL_058c: ldc.i4.s     65
+  IL_058e: beq.s        IL_05ae
+  IL_0590: ldloc.s      V_15
+  IL_0592: ldc.i4       724
+  IL_0597: beq.s        IL_05ae
+  IL_0599: ldloc.s      V_15
+  IL_059b: ldc.i4       989
+  IL_05a0: beq.s        IL_05ae
+  IL_05a2: ldloc.s      V_15
+  IL_05a4: ldc.i4       1226
+  IL_05a9: bne.un       IL_01a4
+  IL_05ae: ldarg.0      
+  IL_05af: call         Player::EmitMaxManaEffect
+  IL_05b4: br           IL_01a4
+  IL_05b9: ldloc.1      
+  IL_05ba: ldarg.0      
+  IL_05bb: call         ItemLoader::HoldItem
+  IL_05c0: ldarg.0      
+  IL_05c1: ldfld        Player::itemAnimation
+  IL_05c6: ldc.i4.0     
+  IL_05c7: ble.s        IL_05d6
+  IL_05c9: ldarg.0      
+  IL_05ca: ldloc.0      
+  IL_05cb: ldloc.s      V_7
+  IL_05cd: ldloc.s      V_8
+  IL_05cf: call         Player::ItemCheck_ApplyUseStyle
+  IL_05d4: br.s         IL_05e1
+  IL_05d6: ldarg.0      
+  IL_05d7: ldloc.0      
+  IL_05d8: ldloc.s      V_7
+  IL_05da: ldloc.s      V_8
+  IL_05dc: call         Player::ItemCheck_ApplyHoldStyle
+  IL_05e1: ldarg.0      
+  IL_05e2: ldfld        Player::JustDroppedAnItem
+  IL_05e7: brtrue       IL_18c2
+  IL_05ec: ldarg.0      
+  IL_05ed: ldloc.1      
+  IL_05ee: call         Player::ItemCheck_EmitHeldItemLight
+  IL_05f3: ldarg.0      
+  IL_05f4: ldloc.1      
+  IL_05f5: call         Player::ItemCheck_EmitFoodParticles
+  IL_05fa: ldarg.0      
+  IL_05fb: ldloc.1      
+  IL_05fc: call         Player::ItemCheck_EmitDrinkParticles
+  IL_0601: ldarg.0      
+  IL_0602: ldfld        Entity::whoAmI
+  IL_0607: ldsfld       Main::myPlayer
+  IL_060c: pop          
+  IL_060d: pop          
+  IL_060e: ldarg.0      
+  IL_060f: ldloca.s     V_2
+  IL_0611: ldloc.1      
+  IL_0612: ldloc.s      V_4
+  IL_0614: ldloc.s      V_8
+  IL_0616: call         Player::ItemCheck_OwnerOnlyCode
+  IL_061b: ldarg.0      
+  IL_061c: call         Player::get_ItemTimeIsZero
+  IL_0621: brfalse      IL_0966
+  IL_0626: ldarg.0      
+  IL_0627: ldfld        Player::itemAnimation
+  IL_062c: ldc.i4.0     
+  IL_062d: ble          IL_0966
+  IL_0632: ldloc.1      
+  IL_0633: ldarg.0      
+  IL_0634: call         ItemLoader::UseItem
+  IL_0639: stloc.s      V_16
+  IL_063b: ldc.i4.1     
+  IL_063c: stloc.s      V_17
+  IL_063e: ldloca.s     V_16
+  IL_0640: call         Nullable`1::GetValueOrDefault
+  IL_0645: ldloc.s      V_17
+  IL_0647: ceq          
+  IL_0649: ldloca.s     V_16
+  IL_064b: call         Nullable`1::get_HasValue
+  IL_0650: and          
+  IL_0651: brfalse.s    IL_0665
+  IL_0653: ldarg.0      
+  IL_0654: ldloc.1      
+  IL_0655: ldc.r4       1
+  IL_065a: ldc.i4.0     
+  IL_065b: newobj       Nullable`1::.ctor
+  IL_0660: call         Player::ApplyItemTime
+  IL_0665: ldloc.1      
+  IL_0666: ldfld        Item::hairDye
+  IL_066b: ldc.i4.0     
+  IL_066c: blt.s        IL_06be
+  IL_066e: ldarg.0      
+  IL_066f: ldloc.1      
+  IL_0670: ldc.r4       1
+  IL_0675: ldloca.s     V_16
+  IL_0677: initobj      System.Nullable`1<System.Boolean>
+  IL_067d: ldloc.s      V_16
+  IL_067f: call         Player::ApplyItemTime
+  IL_0684: ldarg.0      
+  IL_0685: ldfld        Entity::whoAmI
+  IL_068a: ldsfld       Main::myPlayer
+  IL_068f: bne.un.s     IL_06be
+  IL_0691: ldarg.0      
+  IL_0692: ldloc.1      
+  IL_0693: ldfld        Item::hairDye
+  IL_0698: stfld        Player::hairDye
+  IL_069d: ldc.i4.4     
+  IL_069e: ldc.i4.m1    
+  IL_069f: ldc.i4.m1    
+  IL_06a0: ldnull       
+  IL_06a1: ldarg.0      
+  IL_06a2: ldfld        Entity::whoAmI
+  IL_06a7: ldc.r4       0
+  IL_06ac: ldc.r4       0
+  IL_06b1: ldc.r4       0
+  IL_06b6: ldc.i4.0     
+  IL_06b7: ldc.i4.0     
+  IL_06b8: ldc.i4.0     
+  IL_06b9: call         NetMessage::SendData
+  IL_06be: ldloc.1      
+  IL_06bf: ldfld        Item::healLife
+  IL_06c4: ldc.i4.0     
+  IL_06c5: bgt.s        IL_06d0
+  IL_06c7: ldloc.1      
+  IL_06c8: ldfld        Item::healMana
+  IL_06cd: ldc.i4.0     
+  IL_06ce: ble.s        IL_0714
+  IL_06d0: ldarg.0      
+  IL_06d1: ldloc.1      
+  IL_06d2: call         Player::ApplyLifeAndOrMana
+  IL_06d7: ldarg.0      
+  IL_06d8: ldloc.1      
+  IL_06d9: ldc.r4       1
+  IL_06de: ldloca.s     V_16
+  IL_06e0: initobj      System.Nullable`1<System.Boolean>
+  IL_06e6: ldloc.s      V_16
+  IL_06e8: call         Player::ApplyItemTime
+  IL_06ed: ldsfld       Main::myPlayer
+  IL_06f2: ldarg.0      
+  IL_06f3: ldfld        Entity::whoAmI
+  IL_06f8: bne.un.s     IL_0714
+  IL_06fa: ldloc.1      
+  IL_06fb: ldfld        Item::type
+  IL_0700: ldc.i4.s     126
+  IL_0702: bne.un.s     IL_0714
+  IL_0704: ldarg.0      
+  IL_0705: ldfld        Player::breath
+  IL_070a: brtrue.s     IL_0714
+  IL_070c: ldarg.0      
+  IL_070d: ldc.i4.s     25
+  IL_070f: call         AchievementsHelper::HandleSpecialEvent
+  IL_0714: ldloc.1      
+  IL_0715: ldfld        Item::buffType
+  IL_071a: ldc.i4.0     
+  IL_071b: ble.s        IL_0768
+  IL_071d: ldarg.0      
+  IL_071e: ldfld        Entity::whoAmI
+  IL_0723: ldsfld       Main::myPlayer
+  IL_0728: bne.un.s     IL_0752
+  IL_072a: ldloc.1      
+  IL_072b: ldfld        Item::buffType
+  IL_0730: ldc.i4.s     90
+  IL_0732: beq.s        IL_0752
+  IL_0734: ldloc.1      
+  IL_0735: ldfld        Item::buffType
+  IL_073a: ldc.i4.s     27
+  IL_073c: beq.s        IL_0752
+  IL_073e: ldarg.0      
+  IL_073f: ldloc.1      
+  IL_0740: ldfld        Item::buffType
+  IL_0745: ldloc.1      
+  IL_0746: ldfld        Item::buffTime
+  IL_074b: ldc.i4.1     
+  IL_074c: ldc.i4.0     
+  IL_074d: call         Player::AddBuff
+  IL_0752: ldarg.0      
+  IL_0753: ldloc.1      
+  IL_0754: ldc.r4       1
+  IL_0759: ldloca.s     V_16
+  IL_075b: initobj      System.Nullable`1<System.Boolean>
+  IL_0761: ldloc.s      V_16
+  IL_0763: call         Player::ApplyItemTime
+  IL_0768: ldloc.1      
+  IL_0769: ldfld        Item::type
+  IL_076e: ldc.i4       678
+  IL_0773: bne.un       IL_0966
+  IL_0778: ldsfld       Main::getGoodWorld
+  IL_077d: brfalse      IL_089b
+  IL_0782: ldarg.0      
+  IL_0783: ldloc.1      
+  IL_0784: ldc.r4       1
+  IL_0789: ldloca.s     V_16
+  IL_078b: initobj      System.Nullable`1<System.Boolean>
+  IL_0791: ldloc.s      V_16
+  IL_0793: call         Player::ApplyItemTime
+  IL_0798: ldarg.0      
+  IL_0799: ldfld        Entity::whoAmI
+  IL_079e: ldsfld       Main::myPlayer
+  IL_07a3: bne.un       IL_0966
+  IL_07a8: ldc.i4.0     
+  IL_07a9: stloc.s      V_18
+  IL_07ab: br           IL_088e
+  IL_07b0: ldc.i4.0     
+  IL_07b1: stloc.s      V_19
+  IL_07b3: ldc.i4       108000
+  IL_07b8: stloc.s      V_20
+  IL_07ba: call         Main::get_rand
+  IL_07bf: ldc.i4.s     18
+  IL_07c1: callvirt     UnifiedRandom::Next
+  IL_07c6: stloc.s      V_9
+  IL_07c8: ldloc.s      V_9
+  IL_07ca: switch       IL_0819, IL_081f, IL_0825, IL_082b, IL_0830, IL_0836, IL_083c, IL_0842, IL_0847, IL_084d, IL_0852, IL_0857, IL_085d, IL_0863, IL_0868, IL_086e, IL_0873, IL_0879
+  IL_0817: br.s         IL_087c
+  IL_0819: ldc.i4.s     16
+  IL_081b: stloc.s      V_19
+  IL_081d: br.s         IL_087c
+  IL_081f: ldc.i4.s     111
+  IL_0821: stloc.s      V_19
+  IL_0823: br.s         IL_087c
+  IL_0825: ldc.i4.s     114
+  IL_0827: stloc.s      V_19
+  IL_0829: br.s         IL_087c
+  IL_082b: ldc.i4.8     
+  IL_082c: stloc.s      V_19
+  IL_082e: br.s         IL_087c
+  IL_0830: ldc.i4.s     105
+  IL_0832: stloc.s      V_19
+  IL_0834: br.s         IL_087c
+  IL_0836: ldc.i4.s     17
+  IL_0838: stloc.s      V_19
+  IL_083a: br.s         IL_087c
+  IL_083c: ldc.i4.s     116
+  IL_083e: stloc.s      V_19
+  IL_0840: br.s         IL_087c
+  IL_0842: ldc.i4.5     
+  IL_0843: stloc.s      V_19
+  IL_0845: br.s         IL_087c
+  IL_0847: ldc.i4.s     113
+  IL_0849: stloc.s      V_19
+  IL_084b: br.s         IL_087c
+  IL_084d: ldc.i4.7     
+  IL_084e: stloc.s      V_19
+  IL_0850: br.s         IL_087c
+  IL_0852: ldc.i4.6     
+  IL_0853: stloc.s      V_19
+  IL_0855: br.s         IL_087c
+  IL_0857: ldc.i4.s     104
+  IL_0859: stloc.s      V_19
+  IL_085b: br.s         IL_087c
+  IL_085d: ldc.i4.s     115
+  IL_085f: stloc.s      V_19
+  IL_0861: br.s         IL_087c
+  IL_0863: ldc.i4.2     
+  IL_0864: stloc.s      V_19
+  IL_0866: br.s         IL_087c
+  IL_0868: ldc.i4.s     9
+  IL_086a: stloc.s      V_19
+  IL_086c: br.s         IL_087c
+  IL_086e: ldc.i4.3     
+  IL_086f: stloc.s      V_19
+  IL_0871: br.s         IL_087c
+  IL_0873: ldc.i4.s     117
+  IL_0875: stloc.s      V_19
+  IL_0877: br.s         IL_087c
+  IL_0879: ldc.i4.1     
+  IL_087a: stloc.s      V_19
+  IL_087c: ldarg.0      
+  IL_087d: ldloc.s      V_19
+  IL_087f: ldloc.s      V_20
+  IL_0881: ldc.i4.1     
+  IL_0882: ldc.i4.0     
+  IL_0883: call         Player::AddBuff
+  IL_0888: ldloc.s      V_18
+  IL_088a: ldc.i4.1     
+  IL_088b: add          
+  IL_088c: stloc.s      V_18
+  IL_088e: ldloc.s      V_18
+  IL_0890: ldc.i4.3     
+  IL_0891: blt          IL_07b0
+  IL_0896: br           IL_0966
+  IL_089b: ldarg.0      
+  IL_089c: ldloc.1      
+  IL_089d: ldc.r4       1
+  IL_08a2: ldloca.s     V_16
+  IL_08a4: initobj      System.Nullable`1<System.Boolean>
+  IL_08aa: ldloc.s      V_16
+  IL_08ac: call         Player::ApplyItemTime
+  IL_08b1: ldarg.0      
+  IL_08b2: ldfld        Entity::whoAmI
+  IL_08b7: ldsfld       Main::myPlayer
+  IL_08bc: bne.un       IL_0966
+  IL_08c1: ldarg.0      
+  IL_08c2: ldc.i4.s     20
+  IL_08c4: ldc.i4       216000
+  IL_08c9: ldc.i4.1     
+  IL_08ca: ldc.i4.0     
+  IL_08cb: call         Player::AddBuff
+  IL_08d0: ldarg.0      
+  IL_08d1: ldc.i4.s     22
+  IL_08d3: ldc.i4       216000
+  IL_08d8: ldc.i4.1     
+  IL_08d9: ldc.i4.0     
+  IL_08da: call         Player::AddBuff
+  IL_08df: ldarg.0      
+  IL_08e0: ldc.i4.s     23
+  IL_08e2: ldc.i4       216000
+  IL_08e7: ldc.i4.1     
+  IL_08e8: ldc.i4.0     
+  IL_08e9: call         Player::AddBuff
+  IL_08ee: ldarg.0      
+  IL_08ef: ldc.i4.s     24
+  IL_08f1: ldc.i4       216000
+  IL_08f6: ldc.i4.1     
+  IL_08f7: ldc.i4.0     
+  IL_08f8: call         Player::AddBuff
+  IL_08fd: ldarg.0      
+  IL_08fe: ldc.i4.s     30
+  IL_0900: ldc.i4       216000
+  IL_0905: ldc.i4.1     
+  IL_0906: ldc.i4.0     
+  IL_0907: call         Player::AddBuff
+  IL_090c: ldarg.0      
+  IL_090d: ldc.i4.s     31
+  IL_090f: ldc.i4       216000
+  IL_0914: ldc.i4.1     
+  IL_0915: ldc.i4.0     
+  IL_0916: call         Player::AddBuff
+  IL_091b: ldarg.0      
+  IL_091c: ldc.i4.s     32
+  IL_091e: ldc.i4       216000
+  IL_0923: ldc.i4.1     
+  IL_0924: ldc.i4.0     
+  IL_0925: call         Player::AddBuff
+  IL_092a: ldarg.0      
+  IL_092b: ldc.i4.s     33
+  IL_092d: ldc.i4       216000
+  IL_0932: ldc.i4.1     
+  IL_0933: ldc.i4.0     
+  IL_0934: call         Player::AddBuff
+  IL_0939: ldarg.0      
+  IL_093a: ldc.i4.s     35
+  IL_093c: ldc.i4       216000
+  IL_0941: ldc.i4.1     
+  IL_0942: ldc.i4.0     
+  IL_0943: call         Player::AddBuff
+  IL_0948: ldarg.0      
+  IL_0949: ldc.i4.s     36
+  IL_094b: ldc.i4       216000
+  IL_0950: ldc.i4.1     
+  IL_0951: ldc.i4.0     
+  IL_0952: call         Player::AddBuff
+  IL_0957: ldarg.0      
+  IL_0958: ldc.i4.s     68
+  IL_095a: ldc.i4       216000
+  IL_095f: ldc.i4.1     
+  IL_0960: ldc.i4.0     
+  IL_0961: call         Player::AddBuff
+  IL_0966: ldloc.1      
+  IL_0967: ldfld        Item::type
+  IL_096c: ldc.i4.s     50
+  IL_096e: beq.s        IL_099a
+  IL_0970: ldloc.1      
+  IL_0971: ldfld        Item::type
+  IL_0976: ldc.i4       3124
+  IL_097b: beq.s        IL_099a
+  IL_097d: ldloc.1      
+  IL_097e: ldfld        Item::type
+  IL_0983: ldc.i4       3199
+  IL_0988: beq.s        IL_099a
+  IL_098a: ldloc.1      
+  IL_098b: ldfld        Item::type
+  IL_0990: ldc.i4       5358
+  IL_0995: bne.un       IL_0ad8
+  IL_099a: ldarg.0      
+  IL_099b: ldfld        Player::itemAnimation
+  IL_09a0: ldc.i4.0     
+  IL_09a1: ble          IL_0ad8
+  IL_09a6: call         Main::get_rand
+  IL_09ab: ldc.i4.2     
+  IL_09ac: callvirt     UnifiedRandom::Next
+  IL_09b1: brtrue.s     IL_09eb
+  IL_09b3: ldarg.0      
+  IL_09b4: ldfld        Entity::position
+  IL_09b9: ldarg.0      
+  IL_09ba: ldfld        Entity::width
+  IL_09bf: ldarg.0      
+  IL_09c0: ldfld        Entity::height
+  IL_09c5: ldc.i4.s     15
+  IL_09c7: ldc.r4       0
+  IL_09cc: ldc.r4       0
+  IL_09d1: ldc.i4       150
+  IL_09d6: ldloca.s     V_21
+  IL_09d8: initobj      Microsoft.Xna.Framework.Color
+  IL_09de: ldloc.s      V_21
+  IL_09e0: ldc.r4       1.1
+  IL_09e5: call         Dust::NewDust
+  IL_09ea: pop          
+  IL_09eb: ldarg.0      
+  IL_09ec: call         Player::get_ItemTimeIsZero
+  IL_09f1: brfalse.s    IL_0a0e
+  IL_09f3: ldarg.0      
+  IL_09f4: ldloc.1      
+  IL_09f5: ldc.r4       1
+  IL_09fa: ldloca.s     V_16
+  IL_09fc: initobj      System.Nullable`1<System.Boolean>
+  IL_0a02: ldloc.s      V_16
+  IL_0a04: call         Player::ApplyItemTime
+  IL_0a09: br           IL_0ad8
+  IL_0a0e: ldarg.0      
+  IL_0a0f: ldfld        Player::itemTime
+  IL_0a14: ldarg.0      
+  IL_0a15: ldfld        Player::itemTimeMax
+  IL_0a1a: ldc.i4.2     
+  IL_0a1b: div          
+  IL_0a1c: bne.un       IL_0ad8
+  IL_0a21: ldc.i4.0     
+  IL_0a22: stloc.s      V_22
+  IL_0a24: br.s         IL_0a7c
+  IL_0a26: ldarg.0      
+  IL_0a27: ldfld        Entity::position
+  IL_0a2c: ldarg.0      
+  IL_0a2d: ldfld        Entity::width
+  IL_0a32: ldarg.0      
+  IL_0a33: ldfld        Entity::height
+  IL_0a38: ldc.i4.s     15
+  IL_0a3a: ldarg.0      
+  IL_0a3b: ldflda       Entity::velocity
+  IL_0a40: ldfld        Vector2::X
+  IL_0a45: ldc.r4       0.5
+  IL_0a4a: mul          
+  IL_0a4b: ldarg.0      
+  IL_0a4c: ldflda       Entity::velocity
+  IL_0a51: ldfld        Vector2::Y
+  IL_0a56: ldc.r4       0.5
+  IL_0a5b: mul          
+  IL_0a5c: ldc.i4       150
+  IL_0a61: ldloca.s     V_21
+  IL_0a63: initobj      Microsoft.Xna.Framework.Color
+  IL_0a69: ldloc.s      V_21
+  IL_0a6b: ldc.r4       1.5
+  IL_0a70: call         Dust::NewDust
+  IL_0a75: pop          
+  IL_0a76: ldloc.s      V_22
+  IL_0a78: ldc.i4.1     
+  IL_0a79: add          
+  IL_0a7a: stloc.s      V_22
+  IL_0a7c: ldloc.s      V_22
+  IL_0a7e: ldc.i4.s     70
+  IL_0a80: blt.s        IL_0a26
+  IL_0a82: ldarg.0      
+  IL_0a83: call         Player::RemoveAllGrapplingHooks
+  IL_0a88: ldarg.0      
+  IL_0a89: ldc.i4.2     
+  IL_0a8a: call         Player::Spawn
+  IL_0a8f: ldc.i4.0     
+  IL_0a90: stloc.s      V_23
+  IL_0a92: br.s         IL_0ad2
+  IL_0a94: ldarg.0      
+  IL_0a95: ldfld        Entity::position
+  IL_0a9a: ldarg.0      
+  IL_0a9b: ldfld        Entity::width
+  IL_0aa0: ldarg.0      
+  IL_0aa1: ldfld        Entity::height
+  IL_0aa6: ldc.i4.s     15
+  IL_0aa8: ldc.r4       0
+  IL_0aad: ldc.r4       0
+  IL_0ab2: ldc.i4       150
+  IL_0ab7: ldloca.s     V_21
+  IL_0ab9: initobj      Microsoft.Xna.Framework.Color
+  IL_0abf: ldloc.s      V_21
+  IL_0ac1: ldc.r4       1.5
+  IL_0ac6: call         Dust::NewDust
+  IL_0acb: pop          
+  IL_0acc: ldloc.s      V_23
+  IL_0ace: ldc.i4.1     
+  IL_0acf: add          
+  IL_0ad0: stloc.s      V_23
+  IL_0ad2: ldloc.s      V_23
+  IL_0ad4: ldc.i4.s     70
+  IL_0ad6: blt.s        IL_0a94
+  IL_0ad8: ldloc.1      
+  IL_0ad9: ldfld        Item::type
+  IL_0ade: ldc.i4       4263
+  IL_0ae3: beq.s        IL_0af5
+  IL_0ae5: ldloc.1      
+  IL_0ae6: ldfld        Item::type
+  IL_0aeb: ldc.i4       5360
+  IL_0af0: bne.un       IL_0c6a
+  IL_0af5: ldarg.0      
+  IL_0af6: ldfld        Player::itemAnimation
+  IL_0afb: ldc.i4.0     
+  IL_0afc: ble          IL_0c6a
+  IL_0b01: call         Vector2::get_UnitY
+  IL_0b06: ldarg.0      
+  IL_0b07: ldfld        Player::itemAnimation
+  IL_0b0c: conv.r4      
+  IL_0b0d: ldc.r4       6.2831855
+  IL_0b12: mul          
+  IL_0b13: ldc.r4       30
+  IL_0b18: div          
+  IL_0b19: conv.r8      
+  IL_0b1a: ldloca.s     V_25
+  IL_0b1c: initobj      Microsoft.Xna.Framework.Vector2
+  IL_0b22: ldloc.s      V_25
+  IL_0b24: call         Utils::RotatedBy
+  IL_0b29: ldc.r4       15
+  IL_0b2e: ldc.r4       0
+  IL_0b33: newobj       Vector2::.ctor
+  IL_0b38: call         Vector2::op_Multiply
+  IL_0b3d: stloc.s      V_24
+  IL_0b3f: ldc.i4.0     
+  IL_0b40: stloc.s      V_26
+  IL_0b42: br           IL_0bf1
+  IL_0b47: call         Main::get_rand
+  IL_0b4c: ldc.i4.3     
+  IL_0b4d: callvirt     UnifiedRandom::Next
+  IL_0b52: brtrue       IL_0beb
+  IL_0b57: ldarg.0      
+  IL_0b58: call         Entity::get_Bottom
+  IL_0b5d: ldloc.s      V_24
+  IL_0b5f: call         Vector2::op_Addition
+  IL_0b64: call         Dust::dustWater
+  IL_0b69: ldloca.s     V_27
+  IL_0b6b: initobj      System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_0b71: ldloc.s      V_27
+  IL_0b73: ldc.i4.0     
+  IL_0b74: ldloca.s     V_21
+  IL_0b76: initobj      Microsoft.Xna.Framework.Color
+  IL_0b7c: ldloc.s      V_21
+  IL_0b7e: ldc.r4       1
+  IL_0b83: call         Dust::NewDustPerfect
+  IL_0b88: dup          
+  IL_0b89: ldflda       Dust::velocity
+  IL_0b8e: ldflda       Vector2::Y
+  IL_0b93: dup          
+  IL_0b94: ldind.r4     
+  IL_0b95: ldc.r4       0
+  IL_0b9a: mul          
+  IL_0b9b: stind.r4     
+  IL_0b9c: dup          
+  IL_0b9d: ldflda       Dust::velocity
+  IL_0ba2: ldflda       Vector2::Y
+  IL_0ba7: dup          
+  IL_0ba8: ldind.r4     
+  IL_0ba9: ldc.r4       4.5
+  IL_0bae: sub          
+  IL_0baf: stind.r4     
+  IL_0bb0: dup          
+  IL_0bb1: ldflda       Dust::velocity
+  IL_0bb6: ldflda       Vector2::X
+  IL_0bbb: dup          
+  IL_0bbc: ldind.r4     
+  IL_0bbd: ldc.r4       1.5
+  IL_0bc2: mul          
+  IL_0bc3: stind.r4     
+  IL_0bc4: dup          
+  IL_0bc5: ldc.r4       0.8
+  IL_0bca: stfld        Dust::scale
+  IL_0bcf: dup          
+  IL_0bd0: ldc.i4       130
+  IL_0bd5: stfld        Dust::alpha
+  IL_0bda: dup          
+  IL_0bdb: ldc.i4.1     
+  IL_0bdc: stfld        Dust::noGravity
+  IL_0be1: ldc.r4       1.1
+  IL_0be6: stfld        Dust::fadeIn
+  IL_0beb: ldloc.s      V_26
+  IL_0bed: ldc.i4.1     
+  IL_0bee: add          
+  IL_0bef: stloc.s      V_26
+  IL_0bf1: ldloc.s      V_26
+  IL_0bf3: ldc.i4.2     
+  IL_0bf4: blt          IL_0b47
+  IL_0bf9: ldarg.0      
+  IL_0bfa: call         Player::get_ItemTimeIsZero
+  IL_0bff: brfalse.s    IL_0c19
+  IL_0c01: ldarg.0      
+  IL_0c02: ldloc.1      
+  IL_0c03: ldc.r4       1
+  IL_0c08: ldloca.s     V_16
+  IL_0c0a: initobj      System.Nullable`1<System.Boolean>
+  IL_0c10: ldloc.s      V_16
+  IL_0c12: call         Player::ApplyItemTime
+  IL_0c17: br.s         IL_0c6a
+  IL_0c19: ldarg.0      
+  IL_0c1a: ldfld        Player::itemTime
+  IL_0c1f: ldloc.1      
+  IL_0c20: ldfld        Item::useTime
+  IL_0c25: ldc.i4.2     
+  IL_0c26: div          
+  IL_0c27: bne.un.s     IL_0c6a
+  IL_0c29: ldsfld       Main::netMode
+  IL_0c2e: brtrue.s     IL_0c38
+  IL_0c30: ldarg.0      
+  IL_0c31: call         Player::MagicConch
+  IL_0c36: br.s         IL_0c6a
+  IL_0c38: ldsfld       Main::netMode
+  IL_0c3d: ldc.i4.1     
+  IL_0c3e: bne.un.s     IL_0c6a
+  IL_0c40: ldarg.0      
+  IL_0c41: ldfld        Entity::whoAmI
+  IL_0c46: ldsfld       Main::myPlayer
+  IL_0c4b: bne.un.s     IL_0c6a
+  IL_0c4d: ldc.i4.s     73
+  IL_0c4f: ldc.i4.m1    
+  IL_0c50: ldc.i4.m1    
+  IL_0c51: ldnull       
+  IL_0c52: ldc.i4.1     
+  IL_0c53: ldc.r4       0
+  IL_0c58: ldc.r4       0
+  IL_0c5d: ldc.r4       0
+  IL_0c62: ldc.i4.0     
+  IL_0c63: ldc.i4.0     
+  IL_0c64: ldc.i4.0     
+  IL_0c65: call         NetMessage::SendData
+  IL_0c6a: ldloc.1      
+  IL_0c6b: ldfld        Item::type
+  IL_0c70: ldc.i4       4819
+  IL_0c75: beq.s        IL_0c87
+  IL_0c77: ldloc.1      
+  IL_0c78: ldfld        Item::type
+  IL_0c7d: ldc.i4       5361
+  IL_0c82: bne.un       IL_0df9
+  IL_0c87: ldarg.0      
+  IL_0c88: ldfld        Player::itemAnimation
+  IL_0c8d: ldc.i4.0     
+  IL_0c8e: ble          IL_0df9
+  IL_0c93: call         Vector2::get_UnitY
+  IL_0c98: ldarg.0      
+  IL_0c99: ldfld        Player::itemAnimation
+  IL_0c9e: conv.r4      
+  IL_0c9f: ldc.r4       6.2831855
+  IL_0ca4: mul          
+  IL_0ca5: ldc.r4       30
+  IL_0caa: div          
+  IL_0cab: conv.r8      
+  IL_0cac: ldloca.s     V_25
+  IL_0cae: initobj      Microsoft.Xna.Framework.Vector2
+  IL_0cb4: ldloc.s      V_25
+  IL_0cb6: call         Utils::RotatedBy
+  IL_0cbb: ldc.r4       15
+  IL_0cc0: ldc.r4       0
+  IL_0cc5: newobj       Vector2::.ctor
+  IL_0cca: call         Vector2::op_Multiply
+  IL_0ccf: stloc.s      V_28
+  IL_0cd1: ldc.i4.0     
+  IL_0cd2: stloc.s      V_29
+  IL_0cd4: br           IL_0d80
+  IL_0cd9: call         Main::get_rand
+  IL_0cde: ldc.i4.3     
+  IL_0cdf: callvirt     UnifiedRandom::Next
+  IL_0ce4: brtrue       IL_0d7a
+  IL_0ce9: ldarg.0      
+  IL_0cea: call         Entity::get_Bottom
+  IL_0cef: ldloc.s      V_28
+  IL_0cf1: call         Vector2::op_Addition
+  IL_0cf6: ldc.i4.s     35
+  IL_0cf8: ldloca.s     V_27
+  IL_0cfa: initobj      System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_0d00: ldloc.s      V_27
+  IL_0d02: ldc.i4.0     
+  IL_0d03: ldloca.s     V_21
+  IL_0d05: initobj      Microsoft.Xna.Framework.Color
+  IL_0d0b: ldloc.s      V_21
+  IL_0d0d: ldc.r4       1
+  IL_0d12: call         Dust::NewDustPerfect
+  IL_0d17: dup          
+  IL_0d18: ldflda       Dust::velocity
+  IL_0d1d: ldflda       Vector2::Y
+  IL_0d22: dup          
+  IL_0d23: ldind.r4     
+  IL_0d24: ldc.r4       0
+  IL_0d29: mul          
+  IL_0d2a: stind.r4     
+  IL_0d2b: dup          
+  IL_0d2c: ldflda       Dust::velocity
+  IL_0d31: ldflda       Vector2::Y
+  IL_0d36: dup          
+  IL_0d37: ldind.r4     
+  IL_0d38: ldc.r4       4.5
+  IL_0d3d: sub          
+  IL_0d3e: stind.r4     
+  IL_0d3f: dup          
+  IL_0d40: ldflda       Dust::velocity
+  IL_0d45: ldflda       Vector2::X
+  IL_0d4a: dup          
+  IL_0d4b: ldind.r4     
+  IL_0d4c: ldc.r4       1.5
+  IL_0d51: mul          
+  IL_0d52: stind.r4     
+  IL_0d53: dup          
+  IL_0d54: ldc.r4       0.8
+  IL_0d59: stfld        Dust::scale
+  IL_0d5e: dup          
+  IL_0d5f: ldc.i4       130
+  IL_0d64: stfld        Dust::alpha
+  IL_0d69: dup          
+  IL_0d6a: ldc.i4.1     
+  IL_0d6b: stfld        Dust::noGravity
+  IL_0d70: ldc.r4       1.1
+  IL_0d75: stfld        Dust::fadeIn
+  IL_0d7a: ldloc.s      V_29
+  IL_0d7c: ldc.i4.1     
+  IL_0d7d: add          
+  IL_0d7e: stloc.s      V_29
+  IL_0d80: ldloc.s      V_29
+  IL_0d82: ldc.i4.2     
+  IL_0d83: blt          IL_0cd9
+  IL_0d88: ldarg.0      
+  IL_0d89: call         Player::get_ItemTimeIsZero
+  IL_0d8e: brfalse.s    IL_0da8
+  IL_0d90: ldarg.0      
+  IL_0d91: ldloc.1      
+  IL_0d92: ldc.r4       1
+  IL_0d97: ldloca.s     V_16
+  IL_0d99: initobj      System.Nullable`1<System.Boolean>
+  IL_0d9f: ldloc.s      V_16
+  IL_0da1: call         Player::ApplyItemTime
+  IL_0da6: br.s         IL_0df9
+  IL_0da8: ldarg.0      
+  IL_0da9: ldfld        Player::itemTime
+  IL_0dae: ldloc.1      
+  IL_0daf: ldfld        Item::useTime
+  IL_0db4: ldc.i4.2     
+  IL_0db5: div          
+  IL_0db6: bne.un.s     IL_0df9
+  IL_0db8: ldsfld       Main::netMode
+  IL_0dbd: brtrue.s     IL_0dc7
+  IL_0dbf: ldarg.0      
+  IL_0dc0: call         Player::DemonConch
+  IL_0dc5: br.s         IL_0df9
+  IL_0dc7: ldsfld       Main::netMode
+  IL_0dcc: ldc.i4.1     
+  IL_0dcd: bne.un.s     IL_0df9
+  IL_0dcf: ldarg.0      
+  IL_0dd0: ldfld        Entity::whoAmI
+  IL_0dd5: ldsfld       Main::myPlayer
+  IL_0dda: bne.un.s     IL_0df9
+  IL_0ddc: ldc.i4.s     73
+  IL_0dde: ldc.i4.m1    
+  IL_0ddf: ldc.i4.m1    
+  IL_0de0: ldnull       
+  IL_0de1: ldc.i4.2     
+  IL_0de2: ldc.r4       0
+  IL_0de7: ldc.r4       0
+  IL_0dec: ldc.r4       0
+  IL_0df1: ldc.i4.0     
+  IL_0df2: ldc.i4.0     
+  IL_0df3: ldc.i4.0     
+  IL_0df4: call         NetMessage::SendData
+  IL_0df9: ldloc.1      
+  IL_0dfa: ldfld        Item::type
+  IL_0dff: ldc.i4       5359
+  IL_0e04: bne.un       IL_0f59
+  IL_0e09: ldarg.0      
+  IL_0e0a: ldfld        Player::itemAnimation
+  IL_0e0f: ldc.i4.0     
+  IL_0e10: ble          IL_0f59
+  IL_0e15: call         Main::get_rand
+  IL_0e1a: ldc.i4.2     
+  IL_0e1b: callvirt     UnifiedRandom::Next
+  IL_0e20: brtrue       IL_0ee8
+  IL_0e25: call         Main::get_rand
+  IL_0e2a: ldc.i4.4     
+  IL_0e2b: callvirt     UnifiedRandom::Next
+  IL_0e30: stloc.s      V_30
+  IL_0e32: call         Color::get_Green
+  IL_0e37: stloc.s      V_31
+  IL_0e39: ldloc.s      V_30
+  IL_0e3b: switch       IL_0e52, IL_0e52, IL_0e64, IL_0e6d
+  IL_0e50: br.s         IL_0e74
+  IL_0e52: ldloca.s     V_31
+  IL_0e54: ldc.i4.s     100
+  IL_0e56: ldc.i4       255
+  IL_0e5b: ldc.i4.s     100
+  IL_0e5d: call         Color::.ctor
+  IL_0e62: br.s         IL_0e74
+  IL_0e64: call         Color::get_Yellow
+  IL_0e69: stloc.s      V_31
+  IL_0e6b: br.s         IL_0e74
+  IL_0e6d: call         Color::get_White
+  IL_0e72: stloc.s      V_31
+  IL_0e74: call         Main::get_rand
+  IL_0e79: ldarg.0      
+  IL_0e7a: call         Entity::get_Hitbox
+  IL_0e7f: call         Utils::NextVector2FromRectangle
+  IL_0e84: ldc.i4       267
+  IL_0e89: ldloca.s     V_27
+  IL_0e8b: initobj      System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_0e91: ldloc.s      V_27
+  IL_0e93: ldc.i4.0     
+  IL_0e94: ldloca.s     V_21
+  IL_0e96: initobj      Microsoft.Xna.Framework.Color
+  IL_0e9c: ldloc.s      V_21
+  IL_0e9e: ldc.r4       1
+  IL_0ea3: call         Dust::NewDustPerfect
+  IL_0ea8: dup          
+  IL_0ea9: ldc.i4.1     
+  IL_0eaa: stfld        Dust::noGravity
+  IL_0eaf: dup          
+  IL_0eb0: ldloc.s      V_31
+  IL_0eb2: stfld        Dust::color
+  IL_0eb7: dup          
+  IL_0eb8: dup          
+  IL_0eb9: ldfld        Dust::velocity
+  IL_0ebe: ldc.r4       2
+  IL_0ec3: call         Vector2::op_Multiply
+  IL_0ec8: stfld        Dust::velocity
+  IL_0ecd: ldc.r4       0.8
+  IL_0ed2: call         Main::get_rand
+  IL_0ed7: call         Utils::NextFloat
+  IL_0edc: ldc.r4       0.6
+  IL_0ee1: mul          
+  IL_0ee2: add          
+  IL_0ee3: stfld        Dust::scale
+  IL_0ee8: ldarg.0      
+  IL_0ee9: call         Player::get_ItemTimeIsZero
+  IL_0eee: brfalse.s    IL_0f08
+  IL_0ef0: ldarg.0      
+  IL_0ef1: ldloc.1      
+  IL_0ef2: ldc.r4       1
+  IL_0ef7: ldloca.s     V_16
+  IL_0ef9: initobj      System.Nullable`1<System.Boolean>
+  IL_0eff: ldloc.s      V_16
+  IL_0f01: call         Player::ApplyItemTime
+  IL_0f06: br.s         IL_0f59
+  IL_0f08: ldarg.0      
+  IL_0f09: ldfld        Player::itemTime
+  IL_0f0e: ldloc.1      
+  IL_0f0f: ldfld        Item::useTime
+  IL_0f14: ldc.i4.2     
+  IL_0f15: div          
+  IL_0f16: bne.un.s     IL_0f59
+  IL_0f18: ldsfld       Main::netMode
+  IL_0f1d: brtrue.s     IL_0f27
+  IL_0f1f: ldarg.0      
+  IL_0f20: call         Player::Shellphone_Spawn
+  IL_0f25: br.s         IL_0f59
+  IL_0f27: ldsfld       Main::netMode
+  IL_0f2c: ldc.i4.1     
+  IL_0f2d: bne.un.s     IL_0f59
+  IL_0f2f: ldarg.0      
+  IL_0f30: ldfld        Entity::whoAmI
+  IL_0f35: ldsfld       Main::myPlayer
+  IL_0f3a: bne.un.s     IL_0f59
+  IL_0f3c: ldc.i4.s     73
+  IL_0f3e: ldc.i4.m1    
+  IL_0f3f: ldc.i4.m1    
+  IL_0f40: ldnull       
+  IL_0f41: ldc.i4.3     
+  IL_0f42: ldc.r4       0
+  IL_0f47: ldc.r4       0
+  IL_0f4c: ldc.r4       0
+  IL_0f51: ldc.i4.0     
+  IL_0f52: ldc.i4.0     
+  IL_0f53: ldc.i4.0     
+  IL_0f54: call         NetMessage::SendData
+  IL_0f59: ldloc.1      
+  IL_0f5a: ldfld        Item::type
+  IL_0f5f: ldc.i4       2350
+  IL_0f64: bne.un       IL_1172
+  IL_0f69: ldarg.0      
+  IL_0f6a: ldfld        Player::itemAnimation
+  IL_0f6f: ldc.i4.0     
+  IL_0f70: ble          IL_1172
+  IL_0f75: ldarg.0      
+  IL_0f76: call         Player::get_ItemTimeIsZero
+  IL_0f7b: brfalse      IL_1028
+  IL_0f80: ldarg.0      
+  IL_0f81: ldloc.1      
+  IL_0f82: ldc.r4       1
+  IL_0f87: ldloca.s     V_16
+  IL_0f89: initobj      System.Nullable`1<System.Boolean>
+  IL_0f8f: ldloc.s      V_16
+  IL_0f91: call         Player::ApplyItemTime
+  IL_0f96: ldsflda      SoundID::Item3
+  IL_0f9b: ldarg.0      
+  IL_0f9c: ldfld        Entity::position
+  IL_0fa1: newobj       Nullable`1::.ctor
+  IL_0fa6: ldnull       
+  IL_0fa7: call         SoundEngine::PlaySound
+  IL_0fac: pop          
+  IL_0fad: ldc.i4.0     
+  IL_0fae: stloc.s      V_32
+  IL_0fb0: br.s         IL_101d
+  IL_0fb2: ldsfld       Main::dust
+  IL_0fb7: ldarg.0      
+  IL_0fb8: ldfld        Entity::position
+  IL_0fbd: ldarg.0      
+  IL_0fbe: ldfld        Entity::width
+  IL_0fc3: ldarg.0      
+  IL_0fc4: ldfld        Entity::height
+  IL_0fc9: ldc.i4.s     15
+  IL_0fcb: ldarg.0      
+  IL_0fcc: ldflda       Entity::velocity
+  IL_0fd1: ldfld        Vector2::X
+  IL_0fd6: ldc.r4       0.2
+  IL_0fdb: mul          
+  IL_0fdc: ldarg.0      
+  IL_0fdd: ldflda       Entity::velocity
+  IL_0fe2: ldfld        Vector2::Y
+  IL_0fe7: ldc.r4       0.2
+  IL_0fec: mul          
+  IL_0fed: ldc.i4       150
+  IL_0ff2: call         Color::get_Cyan
+  IL_0ff7: ldc.r4       1.2
+  IL_0ffc: call         Dust::NewDust
+  IL_1001: ldelem.ref   
+  IL_1002: dup          
+  IL_1003: ldfld        Dust::velocity
+  IL_1008: ldc.r4       0.5
+  IL_100d: call         Vector2::op_Multiply
+  IL_1012: stfld        Dust::velocity
+  IL_1017: ldloc.s      V_32
+  IL_1019: ldc.i4.1     
+  IL_101a: add          
+  IL_101b: stloc.s      V_32
+  IL_101d: ldloc.s      V_32
+  IL_101f: ldc.i4.s     10
+  IL_1021: blt.s        IL_0fb2
+  IL_1023: br           IL_1172
+  IL_1028: ldarg.0      
+  IL_1029: ldfld        Player::itemTime
+  IL_102e: ldc.i4.s     20
+  IL_1030: bne.un       IL_1172
+  IL_1035: ldarg.0      
+  IL_1036: call         Player::get_HeldItem
+  IL_103b: ldfld        Item::UseSound
+  IL_1040: ldarg.0      
+  IL_1041: ldfld        Entity::position
+  IL_1046: newobj       Nullable`1::.ctor
+  IL_104b: call         SoundEngine::PlaySound
+  IL_1050: pop          
+  IL_1051: ldc.i4.0     
+  IL_1052: stloc.s      V_35
+  IL_1054: br.s         IL_10c1
+  IL_1056: ldsfld       Main::dust
+  IL_105b: ldarg.0      
+  IL_105c: ldfld        Entity::position
+  IL_1061: ldarg.0      
+  IL_1062: ldfld        Entity::width
+  IL_1067: ldarg.0      
+  IL_1068: ldfld        Entity::height
+  IL_106d: ldc.i4.s     15
+  IL_106f: ldarg.0      
+  IL_1070: ldflda       Entity::velocity
+  IL_1075: ldfld        Vector2::X
+  IL_107a: ldc.r4       0.2
+  IL_107f: mul          
+  IL_1080: ldarg.0      
+  IL_1081: ldflda       Entity::velocity
+  IL_1086: ldfld        Vector2::Y
+  IL_108b: ldc.r4       0.2
+  IL_1090: mul          
+  IL_1091: ldc.i4       150
+  IL_1096: call         Color::get_Cyan
+  IL_109b: ldc.r4       1.2
+  IL_10a0: call         Dust::NewDust
+  IL_10a5: ldelem.ref   
+  IL_10a6: dup          
+  IL_10a7: ldfld        Dust::velocity
+  IL_10ac: ldc.r4       0.5
+  IL_10b1: call         Vector2::op_Multiply
+  IL_10b6: stfld        Dust::velocity
+  IL_10bb: ldloc.s      V_35
+  IL_10bd: ldc.i4.1     
+  IL_10be: add          
+  IL_10bf: stloc.s      V_35
+  IL_10c1: ldloc.s      V_35
+  IL_10c3: ldc.i4.s     70
+  IL_10c5: blt.s        IL_1056
+  IL_10c7: ldarg.0      
+  IL_10c8: call         Player::RemoveAllGrapplingHooks
+  IL_10cd: ldarg.0      
+  IL_10ce: ldfld        Player::immune
+  IL_10d3: stloc.s      V_33
+  IL_10d5: ldarg.0      
+  IL_10d6: ldfld        Player::immuneTime
+  IL_10db: stloc.s      V_34
+  IL_10dd: ldarg.0      
+  IL_10de: ldc.i4.2     
+  IL_10df: call         Player::Spawn
+  IL_10e4: ldarg.0      
+  IL_10e5: ldloc.s      V_33
+  IL_10e7: stfld        Player::immune
+  IL_10ec: ldarg.0      
+  IL_10ed: ldloc.s      V_34
+  IL_10ef: stfld        Player::immuneTime
+  IL_10f4: ldc.i4.0     
+  IL_10f5: stloc.s      V_36
+  IL_10f7: br.s         IL_114c
+  IL_10f9: ldsfld       Main::dust
+  IL_10fe: ldarg.0      
+  IL_10ff: ldfld        Entity::position
+  IL_1104: ldarg.0      
+  IL_1105: ldfld        Entity::width
+  IL_110a: ldarg.0      
+  IL_110b: ldfld        Entity::height
+  IL_1110: ldc.i4.s     15
+  IL_1112: ldc.r4       0
+  IL_1117: ldc.r4       0
+  IL_111c: ldc.i4       150
+  IL_1121: call         Color::get_Cyan
+  IL_1126: ldc.r4       1.2
+  IL_112b: call         Dust::NewDust
+  IL_1130: ldelem.ref   
+  IL_1131: dup          
+  IL_1132: ldfld        Dust::velocity
+  IL_1137: ldc.r4       0.5
+  IL_113c: call         Vector2::op_Multiply
+  IL_1141: stfld        Dust::velocity
+  IL_1146: ldloc.s      V_36
+  IL_1148: ldc.i4.1     
+  IL_1149: add          
+  IL_114a: stloc.s      V_36
+  IL_114c: ldloc.s      V_36
+  IL_114e: ldc.i4.s     70
+  IL_1150: blt.s        IL_10f9
+  IL_1152: ldloc.1      
+  IL_1153: ldarg.0      
+  IL_1154: call         ItemLoader::ConsumeItem
+  IL_1159: brfalse.s    IL_1172
+  IL_115b: ldloc.1      
+  IL_115c: ldfld        Item::stack
+  IL_1161: ldc.i4.0     
+  IL_1162: ble.s        IL_1172
+  IL_1164: ldloc.1      
+  IL_1165: dup          
+  IL_1166: ldfld        Item::stack
+  IL_116b: ldc.i4.1     
+  IL_116c: sub          
+  IL_116d: stfld        Item::stack
+  IL_1172: ldloc.1      
+  IL_1173: ldfld        Item::type
+  IL_1178: ldc.i4       4870
+  IL_117d: bne.un       IL_1371
+  IL_1182: ldarg.0      
+  IL_1183: ldfld        Player::itemAnimation
+  IL_1188: ldc.i4.0     
+  IL_1189: ble          IL_1371
+  IL_118e: ldarg.0      
+  IL_118f: call         Player::get_ItemTimeIsZero
+  IL_1194: brfalse      IL_1241
+  IL_1199: ldarg.0      
+  IL_119a: ldloc.1      
+  IL_119b: ldc.r4       1
+  IL_11a0: ldloca.s     V_16
+  IL_11a2: initobj      System.Nullable`1<System.Boolean>
+  IL_11a8: ldloc.s      V_16
+  IL_11aa: call         Player::ApplyItemTime
+  IL_11af: ldsflda      SoundID::Item3
+  IL_11b4: ldarg.0      
+  IL_11b5: ldfld        Entity::position
+  IL_11ba: newobj       Nullable`1::.ctor
+  IL_11bf: ldnull       
+  IL_11c0: call         SoundEngine::PlaySound
+  IL_11c5: pop          
+  IL_11c6: ldc.i4.0     
+  IL_11c7: stloc.s      V_37
+  IL_11c9: br.s         IL_1236
+  IL_11cb: ldsfld       Main::dust
+  IL_11d0: ldarg.0      
+  IL_11d1: ldfld        Entity::position
+  IL_11d6: ldarg.0      
+  IL_11d7: ldfld        Entity::width
+  IL_11dc: ldarg.0      
+  IL_11dd: ldfld        Entity::height
+  IL_11e2: ldc.i4.s     15
+  IL_11e4: ldarg.0      
+  IL_11e5: ldflda       Entity::velocity
+  IL_11ea: ldfld        Vector2::X
+  IL_11ef: ldc.r4       0.2
+  IL_11f4: mul          
+  IL_11f5: ldarg.0      
+  IL_11f6: ldflda       Entity::velocity
+  IL_11fb: ldfld        Vector2::Y
+  IL_1200: ldc.r4       0.2
+  IL_1205: mul          
+  IL_1206: ldc.i4       150
+  IL_120b: call         Color::get_Cyan
+  IL_1210: ldc.r4       1.2
+  IL_1215: call         Dust::NewDust
+  IL_121a: ldelem.ref   
+  IL_121b: dup          
+  IL_121c: ldfld        Dust::velocity
+  IL_1221: ldc.r4       0.5
+  IL_1226: call         Vector2::op_Multiply
+  IL_122b: stfld        Dust::velocity
+  IL_1230: ldloc.s      V_37
+  IL_1232: ldc.i4.1     
+  IL_1233: add          
+  IL_1234: stloc.s      V_37
+  IL_1236: ldloc.s      V_37
+  IL_1238: ldc.i4.s     10
+  IL_123a: blt.s        IL_11cb
+  IL_123c: br           IL_1371
+  IL_1241: ldarg.0      
+  IL_1242: ldfld        Player::itemTime
+  IL_1247: ldc.i4.s     20
+  IL_1249: bne.un       IL_1371
+  IL_124e: ldarg.0      
+  IL_124f: call         Player::get_HeldItem
+  IL_1254: ldfld        Item::UseSound
+  IL_1259: ldarg.0      
+  IL_125a: ldfld        Entity::position
+  IL_125f: newobj       Nullable`1::.ctor
+  IL_1264: call         SoundEngine::PlaySound
+  IL_1269: pop          
+  IL_126a: ldc.i4.0     
+  IL_126b: stloc.s      V_38
+  IL_126d: br.s         IL_12da
+  IL_126f: ldsfld       Main::dust
+  IL_1274: ldarg.0      
+  IL_1275: ldfld        Entity::position
+  IL_127a: ldarg.0      
+  IL_127b: ldfld        Entity::width
+  IL_1280: ldarg.0      
+  IL_1281: ldfld        Entity::height
+  IL_1286: ldc.i4.s     15
+  IL_1288: ldarg.0      
+  IL_1289: ldflda       Entity::velocity
+  IL_128e: ldfld        Vector2::X
+  IL_1293: ldc.r4       0.2
+  IL_1298: mul          
+  IL_1299: ldarg.0      
+  IL_129a: ldflda       Entity::velocity
+  IL_129f: ldfld        Vector2::Y
+  IL_12a4: ldc.r4       0.2
+  IL_12a9: mul          
+  IL_12aa: ldc.i4       150
+  IL_12af: call         Color::get_Cyan
+  IL_12b4: ldc.r4       1.2
+  IL_12b9: call         Dust::NewDust
+  IL_12be: ldelem.ref   
+  IL_12bf: dup          
+  IL_12c0: ldfld        Dust::velocity
+  IL_12c5: ldc.r4       0.5
+  IL_12ca: call         Vector2::op_Multiply
+  IL_12cf: stfld        Dust::velocity
+  IL_12d4: ldloc.s      V_38
+  IL_12d6: ldc.i4.1     
+  IL_12d7: add          
+  IL_12d8: stloc.s      V_38
+  IL_12da: ldloc.s      V_38
+  IL_12dc: ldc.i4.s     70
+  IL_12de: blt.s        IL_126f
+  IL_12e0: ldarg.0      
+  IL_12e1: ldfld        Entity::whoAmI
+  IL_12e6: ldsfld       Main::myPlayer
+  IL_12eb: bne.un.s     IL_12f3
+  IL_12ed: ldarg.0      
+  IL_12ee: call         Player::DoPotionOfReturnTeleportationAndSetTheComebackPoint
+  IL_12f3: ldc.i4.0     
+  IL_12f4: stloc.s      V_39
+  IL_12f6: br.s         IL_134b
+  IL_12f8: ldsfld       Main::dust
+  IL_12fd: ldarg.0      
+  IL_12fe: ldfld        Entity::position
+  IL_1303: ldarg.0      
+  IL_1304: ldfld        Entity::width
+  IL_1309: ldarg.0      
+  IL_130a: ldfld        Entity::height
+  IL_130f: ldc.i4.s     15
+  IL_1311: ldc.r4       0
+  IL_1316: ldc.r4       0
+  IL_131b: ldc.i4       150
+  IL_1320: call         Color::get_Cyan
+  IL_1325: ldc.r4       1.2
+  IL_132a: call         Dust::NewDust
+  IL_132f: ldelem.ref   
+  IL_1330: dup          
+  IL_1331: ldfld        Dust::velocity
+  IL_1336: ldc.r4       0.5
+  IL_133b: call         Vector2::op_Multiply
+  IL_1340: stfld        Dust::velocity
+  IL_1345: ldloc.s      V_39
+  IL_1347: ldc.i4.1     
+  IL_1348: add          
+  IL_1349: stloc.s      V_39
+  IL_134b: ldloc.s      V_39
+  IL_134d: ldc.i4.s     70
+  IL_134f: blt.s        IL_12f8
+  IL_1351: ldloc.1      
+  IL_1352: ldarg.0      
+  IL_1353: call         ItemLoader::ConsumeItem
+  IL_1358: brfalse.s    IL_1371
+  IL_135a: ldloc.1      
+  IL_135b: ldfld        Item::stack
+  IL_1360: ldc.i4.0     
+  IL_1361: ble.s        IL_1371
+  IL_1363: ldloc.1      
+  IL_1364: dup          
+  IL_1365: ldfld        Item::stack
+  IL_136a: ldc.i4.1     
+  IL_136b: sub          
+  IL_136c: stfld        Item::stack
+  IL_1371: ldloc.1      
+  IL_1372: ldfld        Item::type
+  IL_1377: ldc.i4       2351
+  IL_137c: bne.un       IL_1417
+  IL_1381: ldarg.0      
+  IL_1382: ldfld        Player::itemAnimation
+  IL_1387: ldc.i4.0     
+  IL_1388: ble          IL_1417
+  IL_138d: ldarg.0      
+  IL_138e: call         Player::get_ItemTimeIsZero
+  IL_1393: brfalse.s    IL_13ad
+  IL_1395: ldarg.0      
+  IL_1396: ldloc.1      
+  IL_1397: ldc.r4       1
+  IL_139c: ldloca.s     V_16
+  IL_139e: initobj      System.Nullable`1<System.Boolean>
+  IL_13a4: ldloc.s      V_16
+  IL_13a6: call         Player::ApplyItemTime
+  IL_13ab: br.s         IL_1417
+  IL_13ad: ldarg.0      
+  IL_13ae: ldfld        Player::itemTime
+  IL_13b3: ldc.i4.2     
+  IL_13b4: bne.un.s     IL_1417
+  IL_13b6: ldsfld       Main::netMode
+  IL_13bb: brtrue.s     IL_13c5
+  IL_13bd: ldarg.0      
+  IL_13be: call         Player::TeleportationPotion
+  IL_13c3: br.s         IL_13f7
+  IL_13c5: ldsfld       Main::netMode
+  IL_13ca: ldc.i4.1     
+  IL_13cb: bne.un.s     IL_13f7
+  IL_13cd: ldarg.0      
+  IL_13ce: ldfld        Entity::whoAmI
+  IL_13d3: ldsfld       Main::myPlayer
+  IL_13d8: bne.un.s     IL_13f7
+  IL_13da: ldc.i4.s     73
+  IL_13dc: ldc.i4.m1    
+  IL_13dd: ldc.i4.m1    
+  IL_13de: ldnull       
+  IL_13df: ldc.i4.0     
+  IL_13e0: ldc.r4       0
+  IL_13e5: ldc.r4       0
+  IL_13ea: ldc.r4       0
+  IL_13ef: ldc.i4.0     
+  IL_13f0: ldc.i4.0     
+  IL_13f1: ldc.i4.0     
+  IL_13f2: call         NetMessage::SendData
+  IL_13f7: ldloc.1      
+  IL_13f8: ldarg.0      
+  IL_13f9: call         ItemLoader::ConsumeItem
+  IL_13fe: brfalse.s    IL_1417
+  IL_1400: ldloc.1      
+  IL_1401: ldfld        Item::stack
+  IL_1406: ldc.i4.0     
+  IL_1407: ble.s        IL_1417
+  IL_1409: ldloc.1      
+  IL_140a: dup          
+  IL_140b: ldfld        Item::stack
+  IL_1410: ldc.i4.1     
+  IL_1411: sub          
+  IL_1412: stfld        Item::stack
+  IL_1417: ldloc.1      
+  IL_1418: ldfld        Item::type
+  IL_141d: ldc.i4       2756
+  IL_1422: bne.un       IL_1612
+  IL_1427: ldarg.0      
+  IL_1428: ldfld        Player::itemAnimation
+  IL_142d: ldc.i4.0     
+  IL_142e: ble          IL_1612
+  IL_1433: ldarg.0      
+  IL_1434: call         Player::get_ItemTimeIsZero
+  IL_1439: brfalse.s    IL_1456
+  IL_143b: ldarg.0      
+  IL_143c: ldloc.1      
+  IL_143d: ldc.r4       1
+  IL_1442: ldloca.s     V_16
+  IL_1444: initobj      System.Nullable`1<System.Boolean>
+  IL_144a: ldloc.s      V_16
+  IL_144c: call         Player::ApplyItemTime
+  IL_1451: br           IL_1612
+  IL_1456: ldarg.0      
+  IL_1457: ldfld        Player::itemTime
+  IL_145c: ldc.i4.2     
+  IL_145d: bne.un.s     IL_14cf
+  IL_145f: ldarg.0      
+  IL_1460: ldfld        Entity::whoAmI
+  IL_1465: ldsfld       Main::myPlayer
+  IL_146a: bne.un.s     IL_14a4
+  IL_146c: ldarg.0      
+  IL_146d: ldarg.0      
+  IL_146e: call         Player::get_Male
+  IL_1473: ldc.i4.0     
+  IL_1474: ceq          
+  IL_1476: call         Player::set_Male
+  IL_147b: ldsfld       Main::netMode
+  IL_1480: ldc.i4.1     
+  IL_1481: bne.un.s     IL_14a4
+  IL_1483: ldc.i4.4     
+  IL_1484: ldc.i4.m1    
+  IL_1485: ldc.i4.m1    
+  IL_1486: ldnull       
+  IL_1487: ldarg.0      
+  IL_1488: ldfld        Entity::whoAmI
+  IL_148d: ldc.r4       0
+  IL_1492: ldc.r4       0
+  IL_1497: ldc.r4       0
+  IL_149c: ldc.i4.0     
+  IL_149d: ldc.i4.0     
+  IL_149e: ldc.i4.0     
+  IL_149f: call         NetMessage::SendData
+  IL_14a4: ldloc.1      
+  IL_14a5: ldarg.0      
+  IL_14a6: call         ItemLoader::ConsumeItem
+  IL_14ab: brfalse      IL_1612
+  IL_14b0: ldloc.1      
+  IL_14b1: ldfld        Item::stack
+  IL_14b6: ldc.i4.0     
+  IL_14b7: ble          IL_1612
+  IL_14bc: ldloc.1      
+  IL_14bd: dup          
+  IL_14be: ldfld        Item::stack
+  IL_14c3: ldc.i4.1     
+  IL_14c4: sub          
+  IL_14c5: stfld        Item::stack
+  IL_14ca: br           IL_1612
+  IL_14cf: ldarg.0      
+  IL_14d0: ldfld        Player::itemTimeMax
+  IL_14d5: conv.r4      
+  IL_14d6: stloc.s      V_40
+  IL_14d8: ldloc.s      V_40
+  IL_14da: ldarg.0      
+  IL_14db: ldfld        Player::itemTime
+  IL_14e0: conv.r4      
+  IL_14e1: sub          
+  IL_14e2: ldloc.s      V_40
+  IL_14e4: div          
+  IL_14e5: stloc.s      V_40
+  IL_14e7: ldc.r4       44
+  IL_14ec: stloc.s      V_41
+  IL_14ee: ldc.r4       9.424778
+  IL_14f3: stloc.s      V_42
+  IL_14f5: ldc.r4       15
+  IL_14fa: ldc.r4       0
+  IL_14ff: newobj       Vector2::.ctor
+  IL_1504: ldloc.s      V_42
+  IL_1506: ldloc.s      V_40
+  IL_1508: mul          
+  IL_1509: conv.r8      
+  IL_150a: ldloca.s     V_25
+  IL_150c: initobj      Microsoft.Xna.Framework.Vector2
+  IL_1512: ldloc.s      V_25
+  IL_1514: call         Utils::RotatedBy
+  IL_1519: stloc.s      V_43
+  IL_151b: ldloca.s     V_43
+  IL_151d: ldflda       Vector2::X
+  IL_1522: dup          
+  IL_1523: ldind.r4     
+  IL_1524: ldarg.0      
+  IL_1525: ldfld        Entity::direction
+  IL_152a: conv.r4      
+  IL_152b: mul          
+  IL_152c: stind.r4     
+  IL_152d: ldc.i4.0     
+  IL_152e: stloc.s      V_44
+  IL_1530: br           IL_160a
+  IL_1535: ldc.i4       221
+  IL_153a: stloc.s      V_45
+  IL_153c: ldloc.s      V_44
+  IL_153e: ldc.i4.1     
+  IL_153f: bne.un.s     IL_1558
+  IL_1541: ldloca.s     V_43
+  IL_1543: ldflda       Vector2::X
+  IL_1548: dup          
+  IL_1549: ldind.r4     
+  IL_154a: ldc.r4       -1
+  IL_154f: mul          
+  IL_1550: stind.r4     
+  IL_1551: ldc.i4       219
+  IL_1556: stloc.s      V_45
+  IL_1558: ldloca.s     V_46
+  IL_155a: ldloc.s      V_43
+  IL_155c: ldfld        Vector2::X
+  IL_1561: ldloc.s      V_41
+  IL_1563: ldc.r4       1
+  IL_1568: ldloc.s      V_40
+  IL_156a: sub          
+  IL_156b: mul          
+  IL_156c: ldloc.s      V_41
+  IL_156e: sub          
+  IL_156f: ldarg.0      
+  IL_1570: ldfld        Entity::height
+  IL_1575: ldc.i4.2     
+  IL_1576: div          
+  IL_1577: conv.r4      
+  IL_1578: add          
+  IL_1579: call         Vector2::.ctor
+  IL_157e: ldloc.s      V_46
+  IL_1580: ldarg.0      
+  IL_1581: call         Entity::get_Center
+  IL_1586: call         Vector2::op_Addition
+  IL_158b: stloc.s      V_46
+  IL_158d: ldloc.s      V_46
+  IL_158f: ldc.i4.0     
+  IL_1590: ldc.i4.0     
+  IL_1591: ldloc.s      V_45
+  IL_1593: ldc.r4       0
+  IL_1598: ldc.r4       0
+  IL_159d: ldc.i4.s     100
+  IL_159f: ldloca.s     V_21
+  IL_15a1: initobj      Microsoft.Xna.Framework.Color
+  IL_15a7: ldloc.s      V_21
+  IL_15a9: ldc.r4       1
+  IL_15ae: call         Dust::NewDust
+  IL_15b3: stloc.s      V_47
+  IL_15b5: ldsfld       Main::dust
+  IL_15ba: ldloc.s      V_47
+  IL_15bc: ldelem.ref   
+  IL_15bd: ldloc.s      V_46
+  IL_15bf: stfld        Dust::position
+  IL_15c4: ldsfld       Main::dust
+  IL_15c9: ldloc.s      V_47
+  IL_15cb: ldelem.ref   
+  IL_15cc: ldc.i4.1     
+  IL_15cd: stfld        Dust::noGravity
+  IL_15d2: ldsfld       Main::dust
+  IL_15d7: ldloc.s      V_47
+  IL_15d9: ldelem.ref   
+  IL_15da: call         Vector2::get_Zero
+  IL_15df: stfld        Dust::velocity
+  IL_15e4: ldsfld       Main::dust
+  IL_15e9: ldloc.s      V_47
+  IL_15eb: ldelem.ref   
+  IL_15ec: ldc.r4       1.3
+  IL_15f1: stfld        Dust::scale
+  IL_15f6: ldsfld       Main::dust
+  IL_15fb: ldloc.s      V_47
+  IL_15fd: ldelem.ref   
+  IL_15fe: ldarg.0      
+  IL_15ff: stfld        Dust::customData
+  IL_1604: ldloc.s      V_44
+  IL_1606: ldc.i4.1     
+  IL_1607: add          
+  IL_1608: stloc.s      V_44
+  IL_160a: ldloc.s      V_44
+  IL_160c: ldc.i4.2     
+  IL_160d: blt          IL_1535
+  IL_1612: ldarg.0      
+  IL_1613: ldfld        Entity::whoAmI
+  IL_1618: ldsfld       Main::myPlayer
+  IL_161d: bne.un.s     IL_1660
+  IL_161f: ldarg.0      
+  IL_1620: ldfld        Player::itemTimeMax
+  IL_1625: brfalse.s    IL_1637
+  IL_1627: ldarg.0      
+  IL_1628: ldfld        Player::itemTime
+  IL_162d: ldarg.0      
+  IL_162e: ldfld        Player::itemTimeMax
+  IL_1633: ceq          
+  IL_1635: br.s         IL_1638
+  IL_1637: ldc.i4.0     
+  IL_1638: ldloc.1      
+  IL_1639: callvirt     Item::get_IsAir
+  IL_163e: brtrue.s     IL_164e
+  IL_1640: ldloc.1      
+  IL_1641: ldarg.0      
+  IL_1642: ldfld        Player::lastVisualizedSelectedItem
+  IL_1647: callvirt     Item::IsNotTheSameAs
+  IL_164c: br.s         IL_164f
+  IL_164e: ldc.i4.0     
+  IL_164f: or           
+  IL_1650: brfalse.s    IL_166c
+  IL_1652: ldarg.0      
+  IL_1653: ldloc.1      
+  IL_1654: callvirt     Item::Clone
+  IL_1659: stfld        Player::lastVisualizedSelectedItem
+  IL_165e: br.s         IL_166c
+  IL_1660: ldarg.0      
+  IL_1661: ldloc.1      
+  IL_1662: callvirt     Item::Clone
+  IL_1667: stfld        Player::lastVisualizedSelectedItem
+  IL_166c: ldarg.0      
+  IL_166d: ldfld        Entity::whoAmI
+  IL_1672: ldsfld       Main::myPlayer
+  IL_1677: bne.un       IL_18c2
+  IL_167c: ldarg.0      
+  IL_167d: ldfld        Player::dontConsumeWand
+  IL_1682: brtrue       IL_1733
+  IL_1687: ldarg.0      
+  IL_1688: ldfld        Player::itemTimeMax
+  IL_168d: brfalse      IL_1733
+  IL_1692: ldarg.0      
+  IL_1693: ldfld        Player::itemTime
+  IL_1698: ldarg.0      
+  IL_1699: ldfld        Player::itemTimeMax
+  IL_169e: bne.un       IL_1733
+  IL_16a3: ldloc.1      
+  IL_16a4: ldfld        Item::tileWand
+  IL_16a9: ldc.i4.0     
+  IL_16aa: ble          IL_1733
+  IL_16af: ldloc.1      
+  IL_16b0: ldfld        Item::tileWand
+  IL_16b5: stloc.s      V_48
+  IL_16b7: ldc.i4.0     
+  IL_16b8: stloc.s      V_49
+  IL_16ba: br.s         IL_172d
+  IL_16bc: ldloc.s      V_48
+  IL_16be: ldarg.0      
+  IL_16bf: ldfld        Player::inventory
+  IL_16c4: ldloc.s      V_49
+  IL_16c6: ldelem.ref   
+  IL_16c7: ldfld        Item::type
+  IL_16cc: bne.un.s     IL_1727
+  IL_16ce: ldarg.0      
+  IL_16cf: ldfld        Player::inventory
+  IL_16d4: ldloc.s      V_49
+  IL_16d6: ldelem.ref   
+  IL_16d7: ldfld        Item::stack
+  IL_16dc: ldc.i4.0     
+  IL_16dd: ble.s        IL_1727
+  IL_16df: ldarg.0      
+  IL_16e0: ldfld        Player::inventory
+  IL_16e5: ldloc.s      V_49
+  IL_16e7: ldelem.ref   
+  IL_16e8: ldarg.0      
+  IL_16e9: call         ItemLoader::ConsumeItem
+  IL_16ee: brfalse.s    IL_1706
+  IL_16f0: ldarg.0      
+  IL_16f1: ldfld        Player::inventory
+  IL_16f6: ldloc.s      V_49
+  IL_16f8: ldelem.ref   
+  IL_16f9: dup          
+  IL_16fa: ldfld        Item::stack
+  IL_16ff: ldc.i4.1     
+  IL_1700: sub          
+  IL_1701: stfld        Item::stack
+  IL_1706: ldarg.0      
+  IL_1707: ldfld        Player::inventory
+  IL_170c: ldloc.s      V_49
+  IL_170e: ldelem.ref   
+  IL_170f: ldfld        Item::stack
+  IL_1714: ldc.i4.0     
+  IL_1715: bgt.s        IL_1733
+  IL_1717: ldarg.0      
+  IL_1718: ldfld        Player::inventory
+  IL_171d: ldloc.s      V_49
+  IL_171f: newobj       Item::.ctor
+  IL_1724: stelem.ref   
+  IL_1725: br.s         IL_1733
+  IL_1727: ldloc.s      V_49
+  IL_1729: ldc.i4.1     
+  IL_172a: add          
+  IL_172b: stloc.s      V_49
+  IL_172d: ldloc.s      V_49
+  IL_172f: ldc.i4.s     58
+  IL_1731: blt.s        IL_16bc
+  IL_1733: ldarg.0      
+  IL_1734: ldfld        Player::itemTimeMax
+  IL_1739: brfalse      IL_1882
+  IL_173e: ldarg.0      
+  IL_173f: ldfld        Player::itemTime
+  IL_1744: ldarg.0      
+  IL_1745: ldfld        Player::itemTimeMax
+  IL_174a: bne.un       IL_1882
+  IL_174f: ldloc.1      
+  IL_1750: ldfld        Item::consumable
+  IL_1755: brfalse      IL_1882
+  IL_175a: ldloc.2      
+  IL_175b: ldfld        ItemCheckContext::SkipItemConsumption
+  IL_1760: brtrue       IL_1882
+  IL_1765: ldc.i4.1     
+  IL_1766: stloc.s      V_50
+  IL_1768: ldloc.1      
+  IL_1769: callvirt     Item::get_ranged
+  IL_176e: brfalse.s    IL_17d1
+  IL_1770: ldarg.0      
+  IL_1771: ldfld        Player::huntressAmmoCost90
+  IL_1776: brfalse.s    IL_1789
+  IL_1778: call         Main::get_rand
+  IL_177d: ldc.i4.s     10
+  IL_177f: callvirt     UnifiedRandom::Next
+  IL_1784: brtrue.s     IL_1789
+  IL_1786: ldc.i4.0     
+  IL_1787: stloc.s      V_50
+  IL_1789: ldarg.0      
+  IL_178a: ldfld        Player::chloroAmmoCost80
+  IL_178f: brfalse.s    IL_17a1
+  IL_1791: call         Main::get_rand
+  IL_1796: ldc.i4.5     
+  IL_1797: callvirt     UnifiedRandom::Next
+  IL_179c: brtrue.s     IL_17a1
+  IL_179e: ldc.i4.0     
+  IL_179f: stloc.s      V_50
+  IL_17a1: ldarg.0      
+  IL_17a2: ldfld        Player::ammoCost80
+  IL_17a7: brfalse.s    IL_17b9
+  IL_17a9: call         Main::get_rand
+  IL_17ae: ldc.i4.5     
+  IL_17af: callvirt     UnifiedRandom::Next
+  IL_17b4: brtrue.s     IL_17b9
+  IL_17b6: ldc.i4.0     
+  IL_17b7: stloc.s      V_50
+  IL_17b9: ldarg.0      
+  IL_17ba: ldfld        Player::ammoCost75
+  IL_17bf: brfalse.s    IL_17d1
+  IL_17c1: call         Main::get_rand
+  IL_17c6: ldc.i4.4     
+  IL_17c7: callvirt     UnifiedRandom::Next
+  IL_17cc: brtrue.s     IL_17d1
+  IL_17ce: ldc.i4.0     
+  IL_17cf: stloc.s      V_50
+  IL_17d1: ldloc.1      
+  IL_17d2: call         DamageClass::get_Throwing
+  IL_17d7: callvirt     Item::CountsAsClass
+  IL_17dc: brfalse.s    IL_1814
+  IL_17de: ldarg.0      
+  IL_17df: call         Player::get_ThrownCost50
+  IL_17e4: brfalse.s    IL_17f9
+  IL_17e6: call         Main::get_rand
+  IL_17eb: ldc.i4.s     100
+  IL_17ed: callvirt     UnifiedRandom::Next
+  IL_17f2: ldc.i4.s     50
+  IL_17f4: bge.s        IL_17f9
+  IL_17f6: ldc.i4.0     
+  IL_17f7: stloc.s      V_50
+  IL_17f9: ldarg.0      
+  IL_17fa: call         Player::get_ThrownCost33
+  IL_17ff: brfalse.s    IL_1814
+  IL_1801: call         Main::get_rand
+  IL_1806: ldc.i4.s     100
+  IL_1808: callvirt     UnifiedRandom::Next
+  IL_180d: ldc.i4.s     33
+  IL_180f: bge.s        IL_1814
+  IL_1811: ldc.i4.0     
+  IL_1812: stloc.s      V_50
+  IL_1814: ldloc.1      
+  IL_1815: callvirt     Item::get_IsACoin
+  IL_181a: brfalse.s    IL_181f
+  IL_181c: ldc.i4.1     
+  IL_181d: stloc.s      V_50
+  IL_181f: ldsfld       Sets::ForceConsumption
+  IL_1824: ldloc.1      
+  IL_1825: ldfld        Item::type
+  IL_182a: ldelem.any   System.Nullable`1<System.Boolean>
+  IL_182f: stloc.s      V_51
+  IL_1831: ldloca.s     V_51
+  IL_1833: call         Nullable`1::get_HasValue
+  IL_1838: brfalse.s    IL_1843
+  IL_183a: ldloca.s     V_51
+  IL_183c: call         Nullable`1::get_Value
+  IL_1841: stloc.s      V_50
+  IL_1843: ldloc.s      V_50
+  IL_1845: brfalse.s    IL_1882
+  IL_1847: ldloc.1      
+  IL_1848: ldarg.0      
+  IL_1849: call         ItemLoader::ConsumeItem
+  IL_184e: brfalse.s    IL_1882
+  IL_1850: ldloc.1      
+  IL_1851: ldfld        Item::stack
+  IL_1856: ldc.i4.0     
+  IL_1857: ble.s        IL_1867
+  IL_1859: ldloc.1      
+  IL_185a: dup          
+  IL_185b: ldfld        Item::stack
+  IL_1860: ldc.i4.1     
+  IL_1861: sub          
+  IL_1862: stfld        Item::stack
+  IL_1867: ldloc.1      
+  IL_1868: ldfld        Item::stack
+  IL_186d: ldc.i4.0     
+  IL_186e: bgt.s        IL_1882
+  IL_1870: ldarg.0      
+  IL_1871: ldarg.0      
+  IL_1872: ldfld        Player::itemAnimation
+  IL_1877: stfld        Player::itemTime
+  IL_187c: ldc.i4.1     
+  IL_187d: stsfld       Main::blockMouse
+  IL_1882: ldloc.1      
+  IL_1883: ldfld        Item::stack
+  IL_1888: ldc.i4.0     
+  IL_1889: bgt.s        IL_18a5
+  IL_188b: ldarg.0      
+  IL_188c: ldfld        Player::itemAnimation
+  IL_1891: brtrue.s     IL_18a5
+  IL_1893: ldarg.0      
+  IL_1894: ldfld        Player::inventory
+  IL_1899: ldarg.0      
+  IL_189a: ldfld        Player::selectedItem
+  IL_189f: newobj       Item::.ctor
+  IL_18a4: stelem.ref   
+  IL_18a5: ldarg.0      
+  IL_18a6: ldfld        Player::selectedItem
+  IL_18ab: ldc.i4.s     58
+  IL_18ad: bne.un.s     IL_18c2
+  IL_18af: ldarg.0      
+  IL_18b0: ldfld        Player::itemAnimation
+  IL_18b5: brfalse.s    IL_18c2
+  IL_18b7: ldloc.1      
+  IL_18b8: callvirt     Item::Clone
+  IL_18bd: stsfld       Main::mouseItem
+  IL_18c2: ldarg.0      
+  IL_18c3: ldfld        Player::itemAnimation
+  IL_18c8: brtrue.s     IL_18d1
+  IL_18ca: ldarg.0      
+  IL_18cb: ldc.i4.0     
+  IL_18cc: stfld        Player::JustDroppedAnItem
+  IL_18d1: ldarg.0      
+  IL_18d2: ldfld        Entity::whoAmI
+  IL_18d7: ldsfld       Main::myPlayer
+  IL_18dc: ceq          
+  IL_18de: ldloc.3      
+  IL_18df: and          
+  IL_18e0: brfalse.s    IL_18e7
+  IL_18e2: call         PlayerInput::TryEndingFastUse
+  IL_18e7: ret          

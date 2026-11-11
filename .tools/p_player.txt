@@ -1,0 +1,1810 @@
+﻿type Terraria.Player : Terraria.Entity
+  field Int32 emoteTime
+  field CreativeUnlocksTracker creativeTracker
+  field Byte[] ENCRYPTION_KEY
+  field OverheadMessage chatOverhead
+  field SelectionRadial DpadRadial
+  field SelectionRadial CircularRadial
+  field SelectionRadial QuicksRadial
+  field Boolean alchemyTable
+  field Int32 HotbarOffset
+  field Boolean GoingDownWithGrapple
+  field Byte spelunkerTimer
+  field Boolean[] hideInfo
+  field Int32[] builderAccStatus
+  field Int64 lostCoins
+  field String lostCoinString
+  field Int32 soulDrain
+  field Single drainBoost
+  field Boolean dd2Accessory
+  field Boolean disabledBlizzardGraphic
+  field Boolean disabledBlizzardSound
+  field Single _blizzardSoundVolume
+  field SlotId _strongBlizzardSound
+  field SlotId _insideBlizzardSound
+  field String name
+  field Int32 taxMoney
+  field Double taxTimer
+  field Double taxRate
+  field Int32 numberOfDeathsPVE
+  field Int32 numberOfDeathsPVP
+  field Int32 crystalLeafDamage
+  field Int32 crystalLeafKB
+  field Single basiliskCharge
+  field Vector2 lastDeathPostion
+  field DateTime lastDeathTime
+  field Boolean showLastDeath
+  field Boolean usedAegisCrystal
+  field Boolean usedAegisFruit
+  field Boolean usedArcaneCrystal
+  field Boolean usedGalaxyPearl
+  field Boolean usedGummyWorm
+  field Boolean usedAmbrosia
+  field Int32 extraAccessorySlots
+  field Boolean extraAccessory
+  field Boolean dontConsumeWand
+  field Int32 tankPet
+  field Boolean tankPetReset
+  field Int32 stringColor
+  field Int32 counterWeight
+  field Boolean yoyoString
+  field Boolean yoyoGlove
+  field Int32 beetleOrbs
+  field Single beetleCounter
+  field Int32 beetleCountdown
+  field Boolean beetleDefense
+  field Boolean beetleOffense
+  field Boolean beetleBuff
+  field Int32 solarShields
+  field Int32 solarCounter
+  field Int32 maxSolarShields = 3
+  field Vector2[] solarShieldPos
+  field Vector2[] solarShieldVel
+  field Boolean solarDashing
+  field Boolean solarDashConsumedFlare
+  field Int32 nebulaMaxLevel = 3
+  field Int32 nebulaLevelLife
+  field Int32 nebulaLevelMana
+  field Int32 nebulaManaCounter
+  field Int32 nebulaLevelDamage
+  field Boolean manaMagnet
+  field Boolean lifeMagnet
+  field Boolean treasureMagnet
+  field Boolean chiselSpeed
+  field Boolean lifeForce
+  field Boolean calmed
+  field Boolean inferno
+  field Single flameRingRot
+  field Single flameRingScale
+  field Byte flameRingFrame
+  field Byte flameRingAlpha
+  field Int32 netManaTime
+  field Int32 netLifeTime
+  field Boolean netMana
+  field Boolean netLife
+  field Vector2[] beetlePos
+  field Vector2[] beetleVel
+  field Int32 beetleFrame
+  field Int32 beetleFrameCounter
+  field Int32 manaSickTime
+  field Int32 manaSickTimeMax
+  field Single manaSickLessDmg
+  field Single manaSickReduction
+  field Boolean manaSick
+  field Int32 afkCounter
+  field Boolean stairFall
+  field Int32 loadStatus
+  field Vector2[] itemFlamePos
+  field Int32 itemFlameCount
+  field Boolean outOfRange
+  field Single lifeSteal
+  field Single ghostDmg
+  field Boolean teleporting
+  field Single teleportTime
+  field Int32 teleportStyle
+  field Boolean sloping
+  field Boolean chilled
+  field Boolean dazed
+  field Boolean frozen
+  field Boolean stoned
+  field Boolean lastStoned
+  field Boolean ichor
+  field Boolean webbed
+  field Boolean tipsy
+  field Boolean noBuilding
+  field Int32 ropeCount
+  field Int32 manaRegenBonus
+  field Single manaRegenDelayBonus
+  field Int32 dashType
+  field Int32 dash
+  field Int32 dashTime
+  field Int32 timeSinceLastDashStarted
+  field Int32 dashDelay
+  field Int32 eocDash
+  field Int32 eocHit
+  field Single accRunSpeed
+  field Boolean cordage
+  field Int32 gem
+  field Int32 gemCount
+  field BitsByte ownedLargeGems
+  field Byte meleeEnchant
+  field Byte pulleyDir
+  field Boolean pulley
+  field Int32 pulleyFrame
+  field Single pulleyFrameCounter
+  field Boolean blackBelt
+  field Boolean sliding
+  field Int32 slideDir
+  field Int32 snowBallLauncherInteractionCooldown
+  field Boolean iceSkate
+  field Boolean carpet
+  field Int32 spikedBoots
+  field Int32 carpetFrame
+  field Single carpetFrameCounter
+  field Boolean canCarpet
+  field Int32 carpetTime
+  field Int32 miscCounter
+  field Int32 infernoCounter
+  field Int32 insanityShadowCooldown
+  field Int32 starCloakCooldown
+  field Boolean _sandStormLogicEnabled
+  field Boolean crimsonRegen
+  field Boolean ghostHeal
+  field Boolean ghostHurt
+  field Boolean sticky
+  field Boolean slippy
+  field Boolean slippy2
+  field Boolean powerrun
+  field Boolean runningOnSand
+  field Boolean flapSound
+  field Boolean iceBarrier
+  field Boolean dangerSense
+  field Byte luckPotion
+  field Byte oldLuckPotion
+  field Single endurance
+  field Single whipRangeMultiplier
+  field Boolean loveStruck
+  field Boolean stinky
+  field Boolean resistCold
+  field Boolean electrified
+  field Boolean dryadWard
+  field Boolean panic
+  field Item brainOfConfusionItem
+  field Int32 brainOfConfusionDodgeAnimationCounter
+  field Byte iceBarrierFrame
+  field Byte iceBarrierFrameCounter
+  field Boolean shadowDodge
+  field Single shadowDodgeCount
+  field Boolean palladiumRegen
+  field Boolean onHitDodge
+  field Boolean onHitRegen
+  field Boolean onHitPetal
+  field Boolean onHitTitaniumStorm
+  field Int32 titaniumStormCooldown
+  field Boolean hasTitaniumStormBuff
+  field Int32 petalTimer
+  field Int32 shadowDodgeTimer
+  field Int32 boneGloveTimer
+  field Int32 phantomPhoneixCounter
+  field Int32 fishingSkill
+  field Boolean cratePotion
+  field Boolean sonarPotion
+  field Boolean accFishingLine
+  field Boolean accFishingBobber
+  field Boolean accTackleBox
+  field Boolean accLavaFishing
+  field Int32 maxMinions
+  field Int32 numMinions
+  field Single slotsMinions
+  field Boolean pygmy
+  field Boolean raven
+  field Boolean slime
+  field Boolean hornetMinion
+  field Boolean impMinion
+  field Boolean twinsMinion
+  field Boolean spiderMinion
+  field Int32 nextCycledSpiderMinionType
+  field Boolean pirateMinion
+  field Boolean sharknadoMinion
+  field Boolean UFOMinion
+  field Boolean DeadlySphereMinion
+  field Boolean stardustMinion
+  field Boolean stardustGuardian
+  field Boolean stardustDragon
+  field Boolean batsOfLight
+  field Boolean babyBird
+  field Boolean vampireFrog
+  field Boolean stormTiger
+  field Int32 highestStormTigerGemOriginalDamage
+  field Boolean smolstar
+  field Boolean empressBlade
+  field Boolean flinxMinion
+  field Boolean abigailMinion
+  field Int32 highestAbigailCounterOriginalDamage
+  field Single wingTime
+  field Int32 wings
+  field Int32 wingsLogic
+  field Int32 wingTimeMax
+  field Int32 wingFrame
+  field Int32 wingFrameCounter
+  field Int32 skinVariant
+  field Boolean ghost
+  field Int32 ghostFrame
+  field Int32 ghostFrameCounter
+  field Int32 miscTimer
+  field Int32 environmentBuffImmunityTimer
+  field Int32 _framesLeftEligibleForDeadmansChestDeathAchievement
+  field Boolean pvpDeath
+  field BitsByte zone1
+  field BitsByte zone2
+  field BitsByte zone3
+  field BitsByte zone4
+  field BitsByte zone5
+  field Boolean _wasInShimmerZone
+  field Boolean boneArmor
+  field Boolean frostArmor
+  field Boolean honey
+  field Boolean crystalLeaf
+  field Int32 crystalLeafCooldown
+  field PortableStoolUsage portableStoolInfo
+  field Boolean preventAllItemPickups
+  field Boolean dontHurtCritters
+  field Boolean hasLucyTheAxe
+  field Boolean dontHurtNature
+  field Int32[] doubleTapCardinalTimer
+  field Int32[] holdDownCardinalTimer
+  field Boolean defendedByPaladin
+  field Boolean hasPaladinShield
+  field Single[] speedSlice
+  field Single townNPCs
+  field Double headFrameCounter
+  field Double bodyFrameCounter
+  field Double legFrameCounter
+  field Int32 netSkip
+  field Int32 oldSelectItem
+  field Boolean immune
+  field Boolean immuneNoBlink
+  field Int32 immuneTime
+  field Int32 immuneAlphaDirection
+  field Int32 immuneAlpha
+  field Int32 team
+  field Int32 _timeSinceLastImmuneGet
+  field Int32 _immuneStrikes
+  field Boolean hbLocked
+  field Int32 nameLen
+  field Single maxRegenDelay
+  field Int32 sign
+  field Boolean editedChestName
+  field Int32 reuseDelay
+  field Int32 aggro
+  field Single nearbyActiveNPCs
+  field Boolean creativeInterface
+  field Boolean mouseInterface
+  field Boolean lastMouseInterface
+  field Int32 noThrow
+  field Int32 changeItem
+  field Int32 selectedItem
+  field Int32 SupportedSlotsArmor = 3
+  field Int32 SupportedSlotsAccs = 7
+  field Int32 SupportedSlotSets = 10
+  field Int32 InitialAccSlotCount = 5
+  field Int32 miscSlotPet = 0
+  field Int32 miscSlotLight = 1
+  field Int32 miscSlotCart = 2
+  field Int32 miscSlotMount = 3
+  field Int32 miscSlotHook = 4
+  field Int32 SupportedMiscSlotCount = 5
+  field Item[] armor
+  field Item[] dye
+  field Item[] miscEquips
+  field Item[] miscDyes
+  field Item trashItem
+  field Single itemRotation
+  field Int32 itemWidth
+  field Int32 itemHeight
+  field Vector2 itemLocation
+  field Boolean poundRelease
+  field Single ghostFade
+  field Single ghostDir
+  field Int32[] buffType
+  field Int32[] buffTime
+  field Boolean[] buffImmune
+  field Int32 heldProj
+  field Int32 breathCD
+  field Int32 breathMax
+  field Int32 breath
+  field Int32 lavaCD
+  field Int32 lavaMax
+  field Int32 lavaTime
+  field Boolean ignoreWater
+  field Boolean armorEffectDrawShadow
+  field Boolean armorEffectDrawShadowSubtle
+  field Boolean armorEffectDrawOutlines
+  field Boolean armorEffectDrawShadowLokis
+  field Boolean armorEffectDrawShadowBasilisk
+  field Boolean armorEffectDrawOutlinesForbidden
+  field Boolean armorEffectDrawShadowEOCShield
+  field Boolean socialShadowRocketBoots
+  field Boolean socialGhost
+  field Boolean shroomiteStealth
+  field Boolean ashWoodBonus
+  field Boolean socialIgnoreLight
+  field Int32 stealthTimer
+  field Single stealth
+  field Int32 beardGrowthTimer
+  field Boolean isDisplayDollOrInanimate
+  field Boolean isFullbright
+  field Boolean isHatRackDoll
+  field Boolean isFirstFractalAfterImage
+  field Single firstFractalAfterImageOpacity
+  field String setBonus
+  field Item[] inventory
+  field Boolean[] inventoryChestStack
+  field Item lastVisualizedSelectedItem
+  field Chest bank
+  field Chest bank2
+  field Chest bank3
+  field Chest bank4
+  field BitsByte voidVaultInfo
+  field Single headRotation
+  field Single bodyRotation
+  field Single legRotation
+  field Vector2 headPosition
+  field Vector2 bodyPosition
+  field Vector2 legPosition
+  field Vector2 headVelocity
+  field Vector2 bodyVelocity
+  field Vector2 legVelocity
+  field Single fullRotation
+  field Vector2 fullRotationOrigin
+  field Int32 fartKartCloudDelay
+  field Int32 fartKartCloudDelayMax = 20
+  field Int32 nonTorch
+  field Single gfxOffY
+  field Single stepSpeed
+  field Boolean deadForGood
+  field Boolean dead
+  field Int32 respawnTimer
+  field Int32 respawnTimerMax = 3600
+  field Int64 lastTimePlayerWasSaved
+  field Int32 attackCD
+  field Int32 potionDelay
+  field Byte difficulty
+  field Byte wetSlime
+  field HitTile hitTile
+  field HitTile hitReplace
+  field Int32 jump
+  field Int32 head
+  field Int32 body
+  field Int32 legs
+  field Int32 handon
+  field Int32 handoff
+  field Int32 back
+  field Int32 front
+  field Int32 shoe
+  field Int32 waist
+  field Int32 shield
+  field Int32 neck
+  field Int32 face
+  field Int32 balloon
+  field Int32 backpack
+  field Int32 tail
+  field Int32 faceHead
+  field Int32 faceFlower
+  field Int32 balloonFront
+  field Int32 beard
+  field Boolean[] hideVisibleAccessory
+  field BitsByte hideMisc
+  field Rectangle headFrame
+  field Rectangle bodyFrame
+  field Rectangle legFrame
+  field Rectangle hairFrame
+  field DirectionalInputSyncCache LocalInputCache
+  field Boolean controlLeft
+  field Boolean controlRight
+  field Boolean controlUp
+  field Boolean controlDown
+  field Boolean controlJump
+  field Boolean controlUseItem
+  field Boolean controlUseTile
+  field Boolean controlThrow
+  field Boolean controlInv
+  field Boolean controlHook
+  field Boolean controlTorch
+  field Boolean controlMap
+  field Boolean controlSmart
+  field Boolean controlMount
+  field Boolean releaseJump
+  field Boolean releaseUp
+  field Boolean releaseUseItem
+  field Boolean releaseUseTile
+  field Boolean releaseInventory
+  field Boolean releaseHook
+  field Boolean releaseThrow
+  field Boolean releaseQuickMana
+  field Boolean releaseQuickHeal
+  field Boolean releaseLeft
+  field Boolean releaseRight
+  field Boolean releaseSmart
+  field Boolean releaseMount
+  field Boolean releaseDown
+  field Boolean controlQuickMana
+  field Boolean controlQuickHeal
+  field Boolean controlCreativeMenu
+  field Boolean releaseCreativeMenu
+  field Boolean tileInteractionHappened
+  field Boolean tileInteractAttempted
+  field Boolean controlDownHold
+  field Boolean isOperatingAnotherEntity
+  field Boolean autoReuseAllWeapons
+  field Boolean isControlledByFilm
+  field Boolean tryKeepingHoveringDown
+  field Boolean tryKeepingHoveringUp
+  field Int32 altFunctionUse
+  field Boolean mapZoomIn
+  field Boolean mapZoomOut
+  field Boolean mapAlphaUp
+  field Boolean mapAlphaDown
+  field Boolean mapFullScreen
+  field Boolean mapStyle
+  field Boolean releaseMapFullscreen
+  field Boolean releaseMapStyle
+  field Int32 leftTimer
+  field Int32 rightTimer
+  field Boolean delayUseItem
+  field Int32 defaultWidth = 20
+  field Int32 defaultHeight = 42
+  field Boolean cursorItemIconEnabled
+  field Boolean cursorItemIconReversed
+  field Int32 cursorItemIconID
+  field Int32 cursorItemIconPush
+  field String cursorItemIconText
+  field Int32 runSoundDelay
+  field Single opacityForAnimation
+  field Int32 shadowMax = 3
+  field Vector2[] shadowPos
+  field Single[] shadowRotation
+  field Vector2[] shadowOrigin
+  field Int32[] shadowDirection
+  field Int32 shadowCount
+  field Single manaCost
+  field Boolean fireWalk
+  field Boolean channel
+  field Int32 step
+  field ChannelCancelKey _channelShotCache
+  field Boolean skipAnimatingValuesInPlayerFrame
+  field RabbitOrderFrameHelper rabbitOrderFrame
+  field Boolean creativeGodMode
+  field Int32 MaxAdvancedShadows = 60
+  field Int32 availableAdvancedShadowsCount
+  field EntityShadowInfo[] _advancedShadows
+  field Int32 _lastAddedAvancedShadow
+  field CompositeArmData compositeFrontArm
+  field CompositeArmData compositeBackArm
+  field Int32 anglerQuestsFinished
+  field Int32 golferScoreAccumulated
+  field Int32 bartenderQuestLog
+  field Boolean downedDD2EventAnyDifficulty
+  field DefenseStat statDefense
+  field MultipliableFloat DefenseEffectiveness
+  field Int32 statLifeMax
+  field Int32 statLifeMax2
+  field Int32 statLife
+  field Int32 statMana
+  field Int32 statManaMax
+  field Int32 statManaMax2
+  field Int32 lifeRegen
+  field Int32 lifeRegenCount
+  field Single lifeRegenTime
+  field Int32 manaRegen
+  field Int32 manaRegenCount
+  field Single manaRegenDelay
+  field Boolean manaRegenBuff
+  field Boolean noKnockback
+  field Boolean shimmerImmune
+  field Boolean spaceGun
+  field Single gravDir
+  field Boolean chloroAmmoCost80
+  field Boolean huntressAmmoCost90
+  field Boolean ammoCost80
+  field Boolean ammoCost75
+  field Int32 stickyBreak
+  field Boolean magicQuiver
+  field Boolean magmaStone
+  field Boolean lavaRose
+  field Boolean hasMoltenQuiver
+  field Int32 phantasmTime
+  field Boolean ammoBox
+  field Boolean ammoPotion
+  field Boolean chaosState
+  field Boolean strongBees
+  field Boolean sporeSac
+  field Boolean shinyStone
+  field Boolean empressBrooch
+  field Boolean volatileGelatin
+  field Int32 volatileGelatinCounter
+  field Boolean hasMagiluminescence
+  field Boolean shadowArmor
+  field Boolean dontStarveShader
+  field Boolean eyebrellaCloud
+  field Int32 yoraiz0rEye
+  field Boolean yoraiz0rDarkness
+  field Boolean hasUnicornHorn
+  field Boolean hasAngelHalo
+  field Boolean hasRainbowCursor
+  field Boolean leinforsHair
+  field Boolean stardustMonolithShader
+  field Boolean nebulaMonolithShader
+  field Boolean vortexMonolithShader
+  field Boolean solarMonolithShader
+  field Boolean moonLordMonolithShader
+  field Boolean bloodMoonMonolithShader
+  field Boolean shimmerMonolithShader
+  field Int32 overrideFishingBobber
+  field Boolean unlockedBiomeTorches
+  field Boolean ateArtisanBread
+  field Boolean unlockedSuperCart
+  field Boolean enabledSuperCart
+  field Boolean suspiciouslookingTentacle
+  field Boolean crimsonHeart
+  field Boolean lightOrb
+  field Boolean blueFairy
+  field Boolean redFairy
+  field Boolean greenFairy
+  field Boolean bunny
+  field Boolean turtle
+  field Boolean eater
+  field Boolean penguin
+  field Boolean HasGardenGnomeNearby
+  field Boolean magicLantern
+  field Boolean rabid
+  field Boolean sunflower
+  field Boolean wellFed
+  field Boolean puppy
+  field Boolean grinch
+  field Boolean miniMinotaur
+  field Boolean flowerBoots
+  field Boolean fairyBoots
+  field Boolean hellfireTreads
+  field Boolean moonLordLegs
+  field Boolean arcticDivingGear
+  field Boolean coolWhipBuff
+  field Boolean wearsRobe
+  field Boolean minecartLeft
+  field Boolean onWrongGround
+  field Boolean onTrack
+  field Int32 cartRampTime
+  field Boolean cartFlip
+  field Single trackBoost
+  field Vector2 lastBoost
+  field Mount mount
+  field Boolean blackCat
+  field Boolean spider
+  field Boolean squashling
+  field Boolean petFlagDD2Gato
+  field Boolean petFlagDD2Ghost
+  field Boolean petFlagDD2Dragon
+  field Boolean petFlagUpbeatStar
+  field Boolean petFlagSugarGlider
+  field Boolean petFlagBabyShark
+  field Boolean petFlagLilHarpy
+  field Boolean petFlagFennecFox
+  field Boolean petFlagGlitteryButterfly
+  field Boolean petFlagBabyImp
+  field Boolean petFlagBabyRedPanda
+  field Boolean petFlagPlantero
+  field Boolean petFlagDynamiteKitten
+  field Boolean petFlagBabyWerewolf
+  field Boolean petFlagShadowMimic
+  field Boolean petFlagVoltBunny
+  field Boolean petFlagKingSlimePet
+  field Boolean petFlagEyeOfCthulhuPet
+  field Boolean petFlagEaterOfWorldsPet
+  field Boolean petFlagBrainOfCthulhuPet
+  field Boolean petFlagSkeletronPet
+  field Boolean petFlagQueenBeePet
+  field Boolean petFlagDestroyerPet
+  field Boolean petFlagTwinsPet
+  field Boolean petFlagSkeletronPrimePet
+  field Boolean petFlagPlanteraPet
+  field Boolean petFlagGolemPet
+  field Boolean petFlagDukeFishronPet
+  field Boolean petFlagLunaticCultistPet
+  field Boolean petFlagMoonLordPet
+  field Boolean petFlagFairyQueenPet
+  field Boolean petFlagPumpkingPet
+  field Boolean petFlagEverscreamPet
+  field Boolean petFlagIceQueenPet
+  field Boolean petFlagMartianPet
+  field Boolean petFlagDD2OgrePet
+  field Boolean petFlagDD2BetsyPet
+  field Boolean petFlagQueenSlimePet
+  field Boolean petFlagBerniePet
+  field Boolean petFlagGlommerPet
+  field Boolean petFlagDeerclopsPet
+  field Boolean petFlagPigPet
+  field Boolean petFlagChesterPet
+  field Boolean petFlagJunimoPet
+  field Boolean petFlagBlueChickenPet
+  field Boolean petFlagSpiffo
+  field Boolean petFlagCaveling
+  field Boolean petFlagDirtiestBlock
+  field Boolean companionCube
+  field Boolean babyFaceMonster
+  field Boolean magicCuffs
+  field Boolean coldDash
+  field Boolean sailDash
+  field Boolean desertDash
+  field Boolean desertBoots
+  field Boolean eyeSpring
+  field Boolean snowman
+  field Boolean scope
+  field Boolean dino
+  field Boolean skeletron
+  field Boolean hornet
+  field Boolean zephyrfish
+  field Boolean tiki
+  field Boolean parrot
+  field Boolean truffle
+  field Boolean sapling
+  field Boolean cSapling
+  field Boolean wisp
+  field Boolean lizard
+  field Boolean archery
+  field Boolean poisoned
+  field Boolean venom
+  field Boolean blind
+  field Boolean blackout
+  field Boolean headcovered
+  field Boolean frostBurn
+  field Boolean onFrostBurn
+  field Boolean onFrostBurn2
+  field Boolean burned
+  field Boolean shimmering
+  field Int32 timeShimmering
+  field Single shimmerTransparency
+  field ShimmerUnstuckHelper shimmerUnstuckHelper
+  field Boolean suffocating
+  field Byte suffocateDelay
+  field Boolean dripping
+  field Boolean drippingSlime
+  field Boolean drippingSparkleSlime
+  field Boolean onFire
+  field Boolean onFire2
+  field Boolean onFire3
+  field Boolean noItems
+  field Boolean cursed
+  field Boolean hungry
+  field Boolean starving
+  field Boolean heartyMeal
+  field Boolean windPushed
+  field Boolean wereWolf
+  field Boolean wolfAcc
+  field Boolean hideMerman
+  field Boolean hideWolf
+  field Boolean forceMerman
+  field Boolean forceWerewolf
+  field Boolean rulerGrid
+  field Boolean rulerLine
+  field Boolean bleed
+  field Boolean confused
+  field Boolean accMerman
+  field Boolean merman
+  field Boolean trident
+  field Boolean brokenArmor
+  field Boolean silence
+  field Boolean slow
+  field Boolean gross
+  field Boolean tongued
+  field Boolean kbGlove
+  field Boolean autoReuseGlove
+  field Boolean meleeScaleGlove
+  field Boolean kbBuff
+  field Boolean remoteVisionForDrone
+  field Item starCloakItem
+  field Item starCloakItem_manaCloakOverrideItem
+  field Item starCloakItem_starVeilOverrideItem
+  field Item starCloakItem_beeCloakOverrideItem
+  field Boolean longInvince
+  field Boolean pStone
+  field Single PhilosopherStoneDurationMultiplier
+  field Boolean manaFlower
+  field Boolean moonLeech
+  field Boolean vortexDebuff
+  field Boolean trapDebuffSource
+  field Boolean witheredArmor
+  field Boolean witheredWeapon
+  field Boolean slowOgreSpit
+  field Boolean parryDamageBuff
+  field Boolean ballistaPanic
+  field Boolean JustDroppedAnItem
+  field StatModifier arrowDamage
+  field StatModifier bulletDamage
+  field StatModifier specialistDamage
+  field Single moveSpeed
+  field Single pickSpeed
+  field Single wallSpeed
+  field Single tileSpeed
+  field Boolean autoPaint
+  field Boolean autoActuator
+  field Int32 SpawnX
+  field Int32 SpawnY
+  field Nullable`1 PotionOfReturnOriginalUsePosition
+  field Nullable`1 PotionOfReturnHomePosition
+  field Int32[] spX
+  field Int32[] spY
+  field String[] spN
+  field Int32[] spI
+  field Int32 tileRangeX
+  field Int32 tileRangeY
+  field Int32 lastTileRangeX
+  field Int32 lastTileRangeY
+  field Int32 tileTargetX
+  field Int32 tileTargetY
+  field Single defaultGravity
+  field Int32 jumpHeight
+  field Single jumpSpeed
+  field Single gravity
+  field Single maxFallSpeed
+  field Single maxRunSpeed
+  field Single runAcceleration
+  field Single runSlowdown
+  field Boolean adjWater
+  field Boolean adjHoney
+  field Boolean adjShimmer
+  field Boolean adjLava
+  field Boolean oldAdjWater
+  field Boolean oldAdjHoney
+  field Boolean oldAdjLava
+  field Boolean oldAdjShimmer
+  field Boolean[] _adjTile
+  field Boolean[] _oldAdjTile
+  field Int32 defaultItemGrabRange
+  field Single itemGrabSpeed
+  field Single itemGrabSpeedMax
+  field Int32 hairDye
+  field Color hairDyeColor
+  field Single hairDyeVar
+  field Int32 skinDyePacked
+  field Color hairColor
+  field Color skinColor
+  field Color eyeColor
+  field Color shirtColor
+  field Color underShirtColor
+  field Color pantsColor
+  field Color shoeColor
+  field Int32 hair
+  field Boolean hostile
+  field SoundPlaySet hermesStepSound
+  field Vector2 instantMovementAccumulatedThisFrame
+  field Int32 accCompass
+  field Int32 accWatch
+  field Int32 accDepthMeter
+  field Boolean accFishFinder
+  field Boolean accWeatherRadio
+  field Boolean accJarOfSouls
+  field Boolean accCalendar
+  field Int32 lastCreatureHit
+  field Boolean accThirdEye
+  field Byte accThirdEyeCounter
+  field Byte accThirdEyeNumber
+  field Boolean accStopwatch
+  field Boolean accOreFinder
+  field Boolean accCritterGuide
+  field Byte accCritterGuideCounter
+  field Byte accCritterGuideNumber
+  field Boolean accDreamCatcher
+  field Boolean hasFootball
+  field Boolean drawingFootball
+  field Boolean ActuationRodLock
+  field Boolean ActuationRodLockSetting
+  field Boolean InfoAccMechShowWires
+  field DateTime dpsStart
+  field DateTime dpsEnd
+  field DateTime dpsLastHit
+  field Int32 dpsDamage
+  field Boolean dpsStarted
+  field String displayedFishingInfo
+  field Boolean discountEquipped
+  field Boolean discountAvailable
+  field Boolean hasLuckyCoin
+  field Item boneGloveItem
+  field Boolean goldRing
+  field Boolean accDivingHelm
+  field Boolean hasLuck_LuckyCoin
+  field Boolean hasLuck_LuckyHorseshoe
+  field Boolean isPerformingPogostickTricks
+  field Boolean autoJump
+  field Boolean justJumped
+  field Single jumpSpeedBoost
+  field Int32 extraFall
+  field Boolean canFloatInWater
+  field Boolean hasFloatingTube
+  field Boolean frogLegJumpBoost
+  field Boolean skyStoneEffects
+  field Boolean spawnMax
+  field Int32 blockRange
+  field Int32[] grappling
+  field Int32 grapCount
+  field Int32 rocketTime
+  field Int32 rocketTimeMax
+  field Int32 rocketDelay
+  field Int32 rocketDelay2
+  field Int32 rocketSoundDelay
+  field Boolean rocketRelease
+  field Boolean rocketFrame
+  field Int32 rocketBoots
+  field Int32 vanityRocketBoots
+  field Boolean canRocket
+  field Boolean jumpBoost
+  field Boolean noFallDmg
+  field Int32 swimTime
+  field Boolean killGuide
+  field Boolean killClothier
+  field Single equipmentBasedLuckBonus
+  field Single lastEquipmentBasedLuckBonus
+  field Boolean hasCreditsSceneMusicBox
+  field Boolean lavaImmune
+  field Boolean gills
+  field Boolean slowFall
+  field Boolean findTreasure
+  field Boolean biomeSight
+  field Boolean invis
+  field Boolean detectCreature
+  field Boolean nightVision
+  field Boolean enemySpawns
+  field Single thorns
+  field Boolean turtleArmor
+  field Boolean turtleThorns
+  field Boolean cactusThorns
+  field Boolean spiderArmor
+  field Boolean anglerSetSpawnReduction
+  field Boolean CanSeeInvisibleBlocks
+  field Boolean setSolar
+  field Boolean setVortex
+  field Boolean setNebula
+  field Int32 nebulaCD
+  field Boolean setStardust
+  field Boolean setForbidden
+  field Boolean setForbiddenCooldownLocked
+  field Boolean setSquireT3
+  field Boolean setHuntressT3
+  field Boolean setApprenticeT3
+  field Boolean setMonkT3
+  field Boolean setSquireT2
+  field Boolean setHuntressT2
+  field Boolean setApprenticeT2
+  field Boolean setMonkT2
+  field Int32 maxTurrets
+  field Int32 maxTurretsOld
+  field Boolean vortexStealthActive
+  field Boolean waterWalk
+  field Boolean waterWalk2
+  field Int32 forcedGravity
+  field Boolean gravControl
+  field Boolean gravControl2
+  field Item honeyCombItem
+  field Int32 wireOperationsCooldown
+  field Int32 lastChest
+  field TrackedProjectileReference piggyBankProjTracker
+  field TrackedProjectileReference voidLensChest
+  field Int32 chest
+  field Int32 chestX
+  field Int32 chestY
+  field Int32 fallStart
+  field Int32 fallStart2
+  field Int32 potionDelayTime
+  field Int32 restorationDelayTime
+  field Int32 mushroomDelayTime
+  field Boolean _batbatCanHeal
+  field Boolean _spawnTentacleSpikes
+  field Boolean _spawnBloodButcherer
+  field Boolean _spawnVolcanoExplosion
+  field Boolean _spawnMuramasaCut
+  field Boolean isPettingAnimal
+  field Boolean isTheAnimalBeingPetSmall
+  field PlayerSittingHelper sitting
+  field PlayerSleepingHelper sleeping
+  field PlayerEyeHelper eyeHelper
+  field PlayerInteractionAnchor tileEntityAnchor
+  field DoorOpeningHelper doorHelper
+  field ShoppingSettings currentShoppingSettings
+  field Int32 cHead
+  field Int32 cBody
+  field Int32 cLegs
+  field Int32 cHandOn
+  field Int32 cHandOff
+  field Int32 cBack
+  field Int32 cFront
+  field Int32 cShoe
+  field Int32 cWaist
+  field Int32 cShield
+  field Int32 cNeck
+  field Int32 cFace
+  field Int32 cFaceHead
+  field Int32 cFaceFlower
+  field Int32 cBalloon
+  field Int32 cBalloonFront
+  field Int32 cWings
+  field Int32 cCarpet
+  field Int32 cFloatingTube
+  field Int32 cBackpack
+  field Int32 cTail
+  field Int32 cShieldFallback
+  field Int32 cGrapple
+  field Int32 cMount
+  field Int32 cMinecart
+  field Int32 cPet
+  field Int32 cLight
+  field Int32 cYorai
+  field Int32 cPortableStool
+  field Int32 cUnicornHorn
+  field Int32 cAngelHalo
+  field Int32 cBeard
+  field Int32 cMinion
+  field Int32 cLeinShampoo
+  field Int32 cFlameWaker
+  field Int32[] ownedProjectileCounts
+  field Boolean[] npcTypeNoAggro
+  field Int32 lastPortalColorIndex
+  field Int32 _portalPhysicsTime
+  field Boolean portalPhysicsFlag
+  field Int32 lastTeleportPylonStyleUsed
+  field Single MountFishronSpecialCounter
+  field Vector2 MinionRestTargetPoint
+  field Int32 MinionAttackTargetNPC
+  field List`1 TouchedTiles
+  field Int32 itemAnimation
+  field Int32 itemAnimationMax
+  field Int32 itemTime
+  field Int32 itemTimeMax
+  field Int32 toolTime
+  field Int32 BlockInteractionWithProjectiles
+  field Int32 SafeItemAnimationTimeForPreventingExploits = 20
+  field HashSet`1 _blackListedTileCoordsForGrappling
+  field Boolean makeStrongBee
+  field Boolean equippedAnyTileRangeAcc
+  field Boolean equippedAnyTileSpeedAcc
+  field Boolean equippedAnyWallSpeedAcc
+  field List`1 _hallucinationCandidates
+  field Boolean behindBackWall
+  field Int32 _funkytownAchievementCheckCooldown
+  field Single _stormShaderObstruction
+  field Single _shaderObstructionInternalValue
+  field Int32 graveImmediateTime
+  field Single airLightDecay
+  field Single solidLightDecay
+  field Single _deerclopsBlizzardSmoothedEffect
+  field Int32 ChairSittingMaxDistance = 40
+  field SmartInteractSystem _smartInteractSys
+  field Int32 _lastSmartCursorToolStrategy
+  field Boolean[] nearbyTorch
+  field Boolean dryCoralTorch
+  field Int32 luckyTorchCounter
+  field Int32 nearbyTorches
+  field Single torchLuck
+  field Vector2 _nextTorchLuckCheckCenter
+  field Boolean happyFunTorchTime
+  field Int32 torchFunTimer
+  field Int32 torchGodCooldown
+  field Int32 numberOfTorchAttacksMade
+  field Int32 maxTorchAttacks
+  field Int32[] unlitTorchX
+  field Int32[] unlitTorchY
+  field Int32[] _torchAttackPosX
+  field Int32[] _torchAttackPosY
+  field Double ladyBugLuckTimeLeft
+  field Single luck
+  field Single luckMinimumCap
+  field Single luckMaximumCap
+  field Single coinLuck
+  field Boolean luckNeedsSync
+  field Int32 disableVoidBag
+  field Int32 _quickGrappleCooldown
+  field PlayerMovementAccsCache movementAbilitiesCache
+  field Single wingAccRunSpeed
+  field Single wingRunAccelerationMult
+  field Int32 SHIELD_PARRY_DURATION = 20
+  field Int32 SHIELD_PARRY_DURATION_DRAWING_TWEAKER = 20
+  field Int32 SHIELD_PARRY_DAMAGE_BUFF_MULTIPLIER = 5
+  field Boolean hasRaisableShield
+  field Boolean shieldRaised
+  field Int32 shieldParryTimeLeft
+  field Int32 shield_parry_cooldown
+  field Boolean _forceForwardCursor
+  field Point _inputMouseCoordsForward
+  field Point _mainMouseCoordsForward
+  field Boolean _forceSmartSelectCursor
+  field Point _inputMouseCoordsSmartSelect
+  field Point _mainMouseCoordsSmartSelect
+  field Point _tileTargetSmartSelect
+  field Boolean botherWithUnaimedMinecartTracks
+  field List`1 _projectilesToInteractWith
+  field Int32 _lockTileInteractionsTimer
+  field Int32[] hurtCooldowns
+  field Int32 FlexibleWandRandomSeed
+  field Int32 FlexibleWandCycleOffset
+  field Point FlexibleWandLastPosition
+  field Boolean lastPound
+  field Point[] _tentacleSpikesMax5
+  field Point[] _bloodButchererMax5
+  field Int32[] meleeNPCHitCooldown
+  field Int32 musicNotes
+  field Single musicDist
+  field List`1 _oldestProjCheckList
+  field EquipmentLoadout[] Loadouts
+  field Int32 CurrentLoadoutIndex
+  field SavedPlayerDataWithAnnoyingRules savedPerPlayerFieldsThatArentInThePlayerClass
+  field Int32 SaveSlotIndex_MouseItem = 0
+  field Int32 SaveSlotIndex_CreativeSacrifice = 1
+  field Int32 SaveSlotIndex_GuideItem = 2
+  field Int32 SaveSlotIndex_TinkererItem = 3
+  field Int32 SaveSlotIndexCount = 4
+  field Item[] _temporaryItemSlots
+  field PlayerFileData _visualCloneDummyData
+  field MemoryStream _visualCloneStream
+  field BinaryWriter _visualCloneWriter
+  field BinaryReader _visualCloneReader
+  field Int32 <talkNPC>k__BackingField
+  field Player _clientClone
+  field IList`1 usedMods
+  field Dictionary`2 <ModSaveErrors>k__BackingField
+  field String modPack
+  field ModPlayer[] modPlayers
+  field Item equippedWings
+  field Boolean hasGemRobe
+  field Boolean selectItemOnNextUse
+  field Int32 consumedLifeCrystals
+  field Int32 LifeCrystalMax = 15
+  field Int32 consumedLifeFruit
+  field Int32 LifeFruitMax = 20
+  field Int32 consumedManaCrystals
+  field Int32 ManaCrystalMax = 9
+  field StatModifier breathEffectiveness
+  field StatModifier PotionDelayModifier
+  field HashSet`1 <NearbyModTorch>k__BackingField
+  field DamageClassData[] damageData
+  field Single <ThrownVelocity>k__BackingField
+  field Boolean <ThrownCost33>k__BackingField
+  field Boolean <ThrownCost50>k__BackingField
+  field SceneEffectInstance <CurrentSceneEffect>k__BackingField
+  field BitArray modBiomeFlags
+  field Boolean <ZonePurity>k__BackingField
+  field Int32 <ItemUsesThisAnimation>k__BackingField
+  field ExtraJumpState[] extraJumps
+  field Boolean blockExtraJumps
+  field Boolean _customCCed
+  prop Boolean sandStorm
+  prop Int32 maxBuffs
+  prop Int32 MaxBuffs
+  prop Single& armorPenetration
+  prop Single& allCrit
+  prop Single& meleeCrit
+  prop Single& magicCrit
+  prop Single& rangedCrit
+  prop StatModifier& allDamage
+  prop StatModifier& meleeDamage
+  prop StatModifier& magicDamage
+  prop StatModifier& rangedDamage
+  prop StatModifier& arrowDamageAdditiveStack
+  prop StatModifier& minionDamage
+  prop StatModifier& allKB
+  prop Single& minionKB
+  prop Single& meleeSpeed
+  prop Single inverseMeleeSpeed
+  prop Single& summonerWeaponSpeedBonus
+  prop Boolean[] adjTile
+  prop Boolean[] oldAdjTile
+  prop Boolean accFlipper
+  prop Boolean hasJumpOption_Cloud
+  prop Boolean hasJumpOption_Sandstorm
+  prop Boolean hasJumpOption_Blizzard
+  prop Boolean hasJumpOption_Fart
+  prop Boolean hasJumpOption_Sail
+  prop Boolean hasJumpOption_Unicorn
+  prop Boolean hasJumpOption_Santank
+  prop Boolean hasJumpOption_WallOfFleshGoat
+  prop Boolean hasJumpOption_Basilisk
+  prop Vector2 BlehOldPositionFixer
+  prop Single HeightOffsetVisual
+  prop Single HeightOffsetHitboxCenter
+  prop Single MountXOffset
+  prop Int32 HeightOffsetBoost
+  prop Int32 HeightMapOffset
+  prop Rectangle HitboxForBestiaryNearbyCheck
+  prop Boolean IsStandingStillForSpecialEffects
+  prop Vector2 MountedCenter
+  prop Boolean TileReplacementEnabled
+  prop Vector2 VisualPosition
+  prop Boolean CCed
+  prop Single miscCounterNormalized
+  prop Boolean Male
+  prop Boolean ZoneDungeon
+  prop Boolean ZoneCorrupt
+  prop Boolean ZoneHallow
+  prop Boolean ZoneMeteor
+  prop Boolean ZoneJungle
+  prop Boolean ZoneSnow
+  prop Boolean ZoneCrimson
+  prop Boolean ZoneWaterCandle
+  prop Boolean ZonePeaceCandle
+  prop Boolean ZoneTowerSolar
+  prop Boolean ZoneTowerVortex
+  prop Boolean ZoneTowerNebula
+  prop Boolean ZoneTowerStardust
+  prop Boolean ZoneDesert
+  prop Boolean ZoneGlowshroom
+  prop Boolean ZoneUndergroundDesert
+  prop Boolean ZoneSkyHeight
+  prop Boolean ZoneOverworldHeight
+  prop Boolean ZoneDirtLayerHeight
+  prop Boolean ZoneRockLayerHeight
+  prop Boolean ZoneUnderworldHeight
+  prop Boolean ZoneBeach
+  prop Boolean ZoneRain
+  prop Boolean ZoneSandstorm
+  prop Boolean ZoneOldOneArmy
+  prop Boolean ZoneGranite
+  prop Boolean ZoneMarble
+  prop Boolean ZoneHive
+  prop Boolean ZoneGemCave
+  prop Boolean ZoneLihzhardTemple
+  prop Boolean ZoneGraveyard
+  prop Boolean ZoneShadowCandle
+  prop Boolean ZoneShimmer
+  prop Boolean ShoppingZone_AnyBiome
+  prop Boolean ShoppingZone_BelowSurface
+  prop Boolean ShoppingZone_Forest
+  prop Vector2 Directions
+  prop Item HeldItem
+  prop Int32 breathCDMax
+  prop Boolean ShouldFloatInWater
+  prop Boolean CanBeTalkedTo
+  prop Boolean IsVoidVaultEnabled
+  prop Boolean DeadOrGhost
+  prop Boolean TryingToHoverUp
+  prop Boolean TryingToHoverDown
+  prop Vector2 DefaultSize
+  prop Boolean UsingBiomeTorches
+  prop Boolean UsingSuperCart
+  prop Boolean ShouldNotDraw
+  prop Int32 talkNPC
+  prop NPC TalkNPC
+  prop Boolean isLockedToATile
+  prop Boolean PortalPhysicsEnabled
+  prop Boolean MountFishronSpecial
+  prop Boolean HasMinionRestTarget
+  prop Boolean HasMinionAttackTargetNPC
+  prop Boolean ItemTimeIsZero
+  prop Boolean ItemAnimationJustStarted
+  prop Single NormalizedLuck
+  prop Boolean SlimeDontHyperJump
+  prop Nullable`1 MouthPosition
+  prop Nullable`1 HandPosition
+  prop Dictionary`2 ModSaveErrors
+  prop Int32 ConsumedLifeCrystals
+  prop Int32 ConsumedLifeFruit
+  prop Int32 ConsumedManaCrystals
+  prop Boolean MeleeEnchantActive
+  prop RefReadOnlyArray`1 ModPlayers
+  prop RefReadOnlyArray`1 Terraria.ModLoader.IEntityWithInstances<Terraria.ModLoader.ModPlayer>.Instances
+  prop HashSet`1 NearbyModTorch
+  prop Single ThrownVelocity
+  prop Boolean ThrownCost33
+  prop Boolean ThrownCost50
+  prop Boolean AnyThrownCostReduction
+  prop SceneEffectInstance CurrentSceneEffect
+  prop Boolean ZonePurity
+  prop Boolean ZoneForest
+  prop Boolean ZoneNormalCaverns
+  prop Boolean ZoneNormalUnderground
+  prop Boolean ZoneNormalSpace
+  prop Boolean ItemAnimationActive
+  prop Boolean ItemAnimationEndingOrEnded
+  prop Int32 ItemUsesThisAnimation
+  prop Span`1 ExtraJumps
+  method Boolean get_sandStorm()
+  method Void set_sandStorm(Boolean value)
+  method Int32 get_MaxBuffs()
+  method Boolean[] get_adjTile()
+  method Void set_adjTile(Boolean[] value)
+  method Boolean[] get_oldAdjTile()
+  method Void set_oldAdjTile(Boolean[] value)
+  method Boolean get_accFlipper()
+  method Void set_accFlipper(Boolean value)
+  method Vector2 get_BlehOldPositionFixer()
+  method Single get_HeightOffsetVisual()
+  method Single get_HeightOffsetHitboxCenter()
+  method Single get_MountXOffset()
+  method Int32 get_HeightOffsetBoost()
+  method Int32 get_HeightMapOffset()
+  method Rectangle get_HitboxForBestiaryNearbyCheck()
+  method Boolean get_IsStandingStillForSpecialEffects()
+  method Vector2 get_MountedCenter()
+  method Void set_MountedCenter(Vector2 value)
+  method Boolean get_TileReplacementEnabled()
+  method Vector2 get_VisualPosition()
+  method Boolean get_CCed()
+  method Single get_miscCounterNormalized()
+  method Boolean get_Male()
+  method Void set_Male(Boolean value)
+  method Boolean get_ZoneDungeon()
+  method Void set_ZoneDungeon(Boolean value)
+  method Boolean get_ZoneCorrupt()
+  method Void set_ZoneCorrupt(Boolean value)
+  method Boolean get_ZoneHallow()
+  method Void set_ZoneHallow(Boolean value)
+  method Boolean get_ZoneMeteor()
+  method Void set_ZoneMeteor(Boolean value)
+  method Boolean get_ZoneJungle()
+  method Void set_ZoneJungle(Boolean value)
+  method Boolean get_ZoneSnow()
+  method Void set_ZoneSnow(Boolean value)
+  method Boolean get_ZoneCrimson()
+  method Void set_ZoneCrimson(Boolean value)
+  method Boolean get_ZoneWaterCandle()
+  method Void set_ZoneWaterCandle(Boolean value)
+  method Boolean get_ZonePeaceCandle()
+  method Void set_ZonePeaceCandle(Boolean value)
+  method Boolean get_ZoneTowerSolar()
+  method Void set_ZoneTowerSolar(Boolean value)
+  method Boolean get_ZoneTowerVortex()
+  method Void set_ZoneTowerVortex(Boolean value)
+  method Boolean get_ZoneTowerNebula()
+  method Void set_ZoneTowerNebula(Boolean value)
+  method Boolean get_ZoneTowerStardust()
+  method Void set_ZoneTowerStardust(Boolean value)
+  method Boolean get_ZoneDesert()
+  method Void set_ZoneDesert(Boolean value)
+  method Boolean get_ZoneGlowshroom()
+  method Void set_ZoneGlowshroom(Boolean value)
+  method Boolean get_ZoneUndergroundDesert()
+  method Void set_ZoneUndergroundDesert(Boolean value)
+  method Boolean get_ZoneSkyHeight()
+  method Void set_ZoneSkyHeight(Boolean value)
+  method Boolean get_ZoneOverworldHeight()
+  method Void set_ZoneOverworldHeight(Boolean value)
+  method Boolean get_ZoneDirtLayerHeight()
+  method Void set_ZoneDirtLayerHeight(Boolean value)
+  method Boolean get_ZoneRockLayerHeight()
+  method Void set_ZoneRockLayerHeight(Boolean value)
+  method Boolean get_ZoneUnderworldHeight()
+  method Void set_ZoneUnderworldHeight(Boolean value)
+  method Boolean get_ZoneBeach()
+  method Void set_ZoneBeach(Boolean value)
+  method Boolean get_ZoneRain()
+  method Void set_ZoneRain(Boolean value)
+  method Boolean get_ZoneSandstorm()
+  method Void set_ZoneSandstorm(Boolean value)
+  method Boolean get_ZoneOldOneArmy()
+  method Void set_ZoneOldOneArmy(Boolean value)
+  method Boolean get_ZoneGranite()
+  method Void set_ZoneGranite(Boolean value)
+  method Boolean get_ZoneMarble()
+  method Void set_ZoneMarble(Boolean value)
+  method Boolean get_ZoneHive()
+  method Void set_ZoneHive(Boolean value)
+  method Boolean get_ZoneGemCave()
+  method Void set_ZoneGemCave(Boolean value)
+  method Boolean get_ZoneLihzhardTemple()
+  method Void set_ZoneLihzhardTemple(Boolean value)
+  method Boolean get_ZoneGraveyard()
+  method Void set_ZoneGraveyard(Boolean value)
+  method Boolean get_ZoneShadowCandle()
+  method Void set_ZoneShadowCandle(Boolean value)
+  method Boolean get_ZoneShimmer()
+  method Void set_ZoneShimmer(Boolean value)
+  method Boolean get_ShoppingZone_AnyBiome()
+  method Boolean get_ShoppingZone_BelowSurface()
+  method Boolean get_ShoppingZone_Forest()
+  method Vector2 get_Directions()
+  method Item get_HeldItem()
+  method Int32 get_breathCDMax()
+  method Boolean get_ShouldFloatInWater()
+  method Boolean get_CanBeTalkedTo()
+  method Boolean get_IsVoidVaultEnabled()
+  method Void set_IsVoidVaultEnabled(Boolean value)
+  method Boolean get_DeadOrGhost()
+  method Boolean get_TryingToHoverUp()
+  method Boolean get_TryingToHoverDown()
+  method Vector2 get_DefaultSize()
+  method Boolean get_UsingBiomeTorches()
+  method Void set_UsingBiomeTorches(Boolean value)
+  method Boolean get_UsingSuperCart()
+  method Void set_UsingSuperCart(Boolean value)
+  method Boolean get_ShouldNotDraw()
+  method Int32 get_talkNPC()
+  method NPC get_TalkNPC()
+  method Boolean get_isLockedToATile()
+  method Boolean get_PortalPhysicsEnabled()
+  method Boolean get_MountFishronSpecial()
+  method Boolean get_HasMinionRestTarget()
+  method Boolean get_HasMinionAttackTargetNPC()
+  method Boolean get_ItemTimeIsZero()
+  method Boolean get_ItemAnimationJustStarted()
+  method Single get_NormalizedLuck()
+  method Boolean get_SlimeDontHyperJump()
+  method Nullable`1 get_MouthPosition()
+  method Nullable`1 get_HandPosition()
+  method Void RotateRelativePoint(Single& x, Single& y)
+  method Vector2 RotatedRelativePointOld(Vector2 pos, Boolean rotateForward)
+  method Vector2 RotatedRelativePoint(Vector2 pos, Boolean reverseRotation, Boolean addGfxOffY)
+  method Boolean CanDemonHeartAccessoryBeShown()
+  method Boolean CanMasterModeAccessoryBeShown()
+  method Int32 GetAmountOfExtraAccessorySlotsToShow()
+  method EntityShadowInfo GetAdvancedShadow(Int32 shadowIndex)
+  method Void UpdateAdvancedShadows()
+  method Void ResetAdvancedShadows()
+  method Void SetCompositeArmFront(Boolean enabled, CompositeArmStretchAmount stretch, Single rotation)
+  method Void SetCompositeArmBack(Boolean enabled, CompositeArmStretchAmount stretch, Single rotation)
+  method Void SetTalkNPC(Int32 npcIndex, Boolean fromNet)
+  method Void SetItemTime(Int32 frames)
+  method Void ApplyItemTime(Item sItem, Single multiplier, Nullable`1 callUseItem)
+  method Void SetDummyItemTime(Int32 frames)
+  method Void SetItemAnimation(Int32 frames)
+  method Void ApplyItemAnimation(Item sItem)
+  method Void ApplyItemAnimation(Item sItem, Single multiplier, Nullable`1 itemReuseDelay)
+  method Void MatchItemTimeToItemAnimation()
+  method Boolean InOpposingTeam(Player otherPlayer)
+  method Boolean TeamChangeAllowed()
+  method Void HealEffect(Int32 healAmount, Boolean broadcast)
+  method Void ManaEffect(Int32 manaAmount)
+  method Void InterruptItemUsageIfOverTile(Int32 tileTypeToBeOver)
+  method Vector2 GetHairDrawOffset(Int32 hairID, Boolean hatHair)
+  method Vector2 GetHelmetDrawOffset()
+  method Vector2 GetBeardDrawOffsetFromHelmet()
+  method Vector2 GetFaceHeadOffsetFromHelmet()
+  method Vector2 GetHelmetOffsetAddonFromFaceHead(Vector2 headOffset)
+  method Vector2 GetLegsDrawOffset()
+  method Void AccumulateGolfingScore(Int32 score)
+  method Byte FindClosest(Vector2 Position, Int32 Width, Int32 Height)
+  method Void ToggleInv()
+  method Void ToggleCreativeMenu()
+  method Void dropItemCheck()
+  method Void DropSelectedItem()
+  method Void DropSelectedItem(Int32 slot, Item& theItemWeDrop)
+  method Void PlayDroppedItemAnimation(Int32 time)
+  method Int32 FindBuffIndex(Int32 type)
+  method Void AddBuff(Int32 type, Int32 timeToAdd, Boolean quiet, Boolean foodHack)
+  method Void DelBuff(Int32 b)
+  method Void ClearBuff(Int32 type)
+  method Int32 CountBuffs()
+  method Void QuickHeal()
+  method Item QuickHeal_GetItemToUse()
+  method Void QuickMana()
+  method Item QuickMana_GetItemToUse()
+  method Void TrySwitchingLoadout(Int32 loadoutIndex)
+  method Void QuickBuff()
+  method Void QuickMount()
+  method Boolean CanFitSpace(Int32 heightBoost)
+  method Item QuickMount_GetItemToUse()
+  method Void ClearGrapplingBlacklist()
+  method Boolean IsBlacklistedForGrappling(Point p)
+  method Void UpdateBlacklistedTilesForGrappling()
+  method Void QuickGrapple()
+  method Item QuickGrapple_GetItemToUse()
+  method Void StatusToNPC(Int32 type, Int32 i)
+  method Void StatusToPlayerPvP(Int32 type, Int32 i)
+  method Void Ghost()
+  method Void OnHit(Single x, Single y, Entity victim)
+  method Void OpenPresent(Int32 itemType)
+  method Void OpenLegacyPresent(Int32 itemType)
+  method Int32 QuickSpawnItem(IEntitySource source, Int32 item, Int32 stack)
+  method Void OpenBossBag(Int32 type)
+  method Void TryGettingDevArmor(IEntitySource source)
+  method Void OpenFishingCrate(Int32 crateItemID)
+  method Int32 CountItem(Int32 type, Int32 stopCountingAt)
+  method Boolean ConsumeItem(Int32 type, Boolean reverseOrder, Boolean includeVoidBag)
+  method Void OpenShadowLockbox(Int32 boxType)
+  method Void OpenLockBox(Int32 lockboxItemType)
+  method Void OpenHerbBag(Int32 bagType)
+  method Void OpenCanofWorms(Int32 sourceItemType)
+  method Void OpenOyster(Int32 sourceItemType)
+  method Void OpenGoodieBag(Int32 itemType)
+  method Void UpdateDyes()
+  method Int32 ArmorSetDye()
+  method IEntitySource GetSource_Buff(Int32 buffIndex)
+  method Void UpdateBuffs(Int32 i)
+  method Void TryToResetHungerToNeutral()
+  method Void UpdateHungerBuffs()
+  method Void UpdateStarvingState(Boolean withEmote)
+  method Void BuffHandle_SpawnPetIfNeededAndSetTime(Int32 buffIndex, Boolean& petBool, Int32 petProjID, Int32 buffTimeToGive)
+  method Void BuffHandle_SpawnPetIfNeeded(Boolean& petBool, Int32 petProjID, Int32 buffIndex)
+  method Void Counterweight(Vector2 hitPos, Int32 dmg, Single kb)
+  method Int32 beeType()
+  method Int32 beeDamage(Int32 dmg)
+  method Single beeKB(Single KB)
+  method Void Yoraiz0rEye()
+  method Boolean IsItemSlotUnlockedAndUsable(Int32 slot)
+  method Void RefreshInfoAccs()
+  method Void RefreshInfoAccsFromTeamPlayers()
+  method Void RefreshInfoAccsFromItemType(Item item)
+  method Void RefreshMechanicalAccsFromItemType(Int32 accType)
+  method Void UpdatePermanentBoosters()
+  method Void UpdateEquips(Int32 i)
+  method Void GrantArmorBenefits(Item armorPiece)
+  method Void GrantPrefixBenefits(Item item)
+  method Void DoBootsEffect(TileActionAttempt theEffectMethod)
+  method Boolean DoBootsEffect_PlaceFlamesOnTile(Int32 X, Int32 Y)
+  method Boolean DoBootsEffect_PlaceFlowersOnTile(Int32 X, Int32 Y)
+  method Void ApplyEquipVanity(Item currentItem)
+  method WingStats GetWingStats(Int32 wingID)
+  method Void ApplyEquipFunctional(Item currentItem, Boolean hideVisual)
+  method Void UpdateArmorSets(Int32 i)
+  method Void UpdateSocialShadow()
+  method Void UpdateTeleportVisuals()
+  method Void ForceUpdateBiomes()
+  method Boolean CanSeeShimmerEffects()
+  method Void UpdateBiomes()
+  method Void ManageSpecialBiomeVisuals(String biomeName, Boolean inZone, Vector2 activationSource)
+  method Void GetHairSettings(Boolean& fullHair, Boolean& hatHair, Boolean& hideHair, Boolean& backHairDraw, Boolean& drawsBackHairWithoutHeadgear)
+  method Void UpdateDead()
+  method Void UpdatePet(Int32 i)
+  method Void UpdatePetLight(Int32 i)
+  method Void TogglePet()
+  method Void ToggleLight()
+  method Boolean IsWithinSnappngRangeToTile(Int32 x, Int32 y, Int32 distanceInPixels)
+  method Void SmartInteractLookup()
+  method Void SmartSelectLookup()
+  method Void AddCoinLuck(Vector2 coinPosition, Int32 coinAmount)
+  method Single GetClosestPlayersLuck(Point Position)
+  method Single GetClosestPlayersLuck(Vector2 Position)
+  method Int32 RollLuck(Int32 range)
+  method Single GetClosestRollLuck(Vector2 position, Int32 range)
+  method Single GetClosestRollLuck(Int32 x, Int32 y, Int32 range)
+  method Void ResetEffects()
+  method Void UpdateImmunity()
+  method Void UpdateLifeRegen()
+  method Void UpdateManaRegen()
+  method Void UpdateJumpHeight()
+  method Void FindPulley()
+  method Void HorizontalMovement()
+  method Int32 CollideWithNPCs(Rectangle myRect, Single Damage, Single Knockback, Int32 NPCImmuneTime, Int32 PlayerImmuneTime, DamageClass damageType)
+  method Void ApplyBannerOffenseBuff(NPC npc, HitModifiers& modifiers)
+  method Void ApplyBannerOffenseBuff(Int32 bannerId, HitModifiers& modifiers)
+  method Void ApplyBannerDefenseBuff(NPC npc, HurtModifiers& modifiers)
+  method Void ApplyBannerDefenseBuff(Int32 bannerId, HurtModifiers& modifiers)
+  method Void ApplyDamageToNPC(NPC npc, Int32 damage, Single knockback, Int32 direction, Boolean crit, DamageClass damageType, Boolean damageVariation)
+  method Void StrikeNPCDirect(NPC npc, HitInfo hit)
+  method Void OnKillNPC(NPCKillAttempt& attempt, Object externalKillingBlowSource)
+  method Void GiveImmuneTimeForCollisionAttack(Int32 time)
+  method Boolean CanNPCBeHitByPlayerOrPlayerProjectile(NPC npc, Projectile projectile)
+  method Void JumpMovement()
+  method Void DashMovement()
+  method Void WallslideMovement()
+  method Void CarpetMovement()
+  method Void DoubleJumpVisuals()
+  method Void WingMovement()
+  method Void MoonLeechRope()
+  method Void WOFTongue()
+  method Void StatusFromNPC(NPC npc)
+  method Void GrappleMovement()
+  method Void DoQueenSlimeHookTeleport(Vector2 targetPosition)
+  method Void RefreshMovementAbilities(Boolean doubleJumps)
+  method Void RefreshExtraJumps()
+  method Void ConsumeAllExtraJumps()
+  method Void StickyMovement()
+  method Boolean HasLockedInventory()
+  method Boolean IsStackingItems()
+  method List`1 GetNearbyContainerProjectilesList()
+  method Void UpdateNearbyInteractibleProjectilesList()
+  method Boolean IsProjectileInteractibleAndInInteractionRange(Projectile proj, Vector2& compareSpot)
+  method Boolean useVoidBag()
+  method Void QuickStackAllChests()
+  method Void CheckDrowning()
+  method Void CheckCrackedBrickBreak()
+  method Void CheckIceBreak()
+  method Void SlopeDownMovement()
+  method Void ShimmerCollision(Boolean fallThrough, Boolean ignorePlats, Boolean noCollision)
+  method Void HoneyCollision(Boolean fallThrough, Boolean ignorePlats)
+  method Void WaterCollision(Boolean fallThrough, Boolean ignorePlats)
+  method Void DryCollision(Boolean fallThrough, Boolean ignorePlats)
+  method Void SlopingCollision(Boolean fallThrough, Boolean ignorePlats)
+  method Void FloorVisuals(Boolean Falling)
+  method Void ResetFloorFlags()
+  method Nullable`1 GetFloorTile(Int32 x, Int32 y)
+  method Int32 GetFloorTileType(Int32 x, Int32 y)
+  method Void BordersMovement()
+  method Void CollectTaxes()
+  method Void GamepadEnableGrappleCooldown()
+  method Void TryInterruptingItemUsage()
+  method Void UpdateHairDyeDust()
+  method Void Update(Int32 i)
+  method Void UpdateLuck()
+  method Void TryOpeningFullscreenMap()
+  method Void UpdateLuckFactors()
+  method Void RecalculateLuck()
+  method Int32 GetMouseScrollDelta()
+  method Void UpdateMiscCounter()
+  method Void WingFrame(Boolean wingFlap, Boolean isCustomWings)
+  method Boolean ShouldDrawWingsThatAreAlwaysAnimated()
+  method Boolean IsInInteractionRangeToMultiTileHitbox(Int32 chestPointX, Int32 chestPointY)
+  method Void ResetVisibleAccessories()
+  method Void UpdateArmorLights()
+  method Void Update_NPCCollision()
+  method Boolean CanParryAgainst(Rectangle blockingPlayerRect, Rectangle enemyRect, Vector2 enemyVelocity)
+  method Void ItemCheck_ManageRightClickFeatures()
+  method Void ItemCheck_ManageRightClickFeatures_ShieldRaise(Boolean theGeneralCheck)
+  method Void TryTogglingShield(Boolean shouldGuard)
+  method Void ScrollHotbar(Int32 Offset)
+  method List`1 GetListOfProjectilesToInteractWithHack()
+  method Void LockGamepadTileInteractions()
+  method Void LookForTileInteractions()
+  method Boolean InInteractionRange(Int32 interactX, Int32 interactY, TileReachCheckSettings settings)
+  method Boolean IsInTileInteractionRange(Int32 targetX, Int32 targetY, TileReachCheckSettings settings)
+  method Void TileInteractionsCheck(Int32 myX, Int32 myY)
+  method Boolean IsHoveringOverABottomSideOfABed(Int32 myX, Int32 myY)
+  method Void PetAnimal(Int32 animalNpcIndex)
+  method Boolean CanSnapToPosition(Vector2 offset)
+  method Void StopVanityActions(Boolean multiplayerBroadcast)
+  method Void OpenChest(Int32 x, Int32 y, Int32 newChest)
+  method Void CloseSign()
+  method Void RemoveAllGrapplingHooks()
+  method Void RemoveAllFishingBobbers()
+  method Color ChatColor()
+  method Boolean CanAcceptItemIntoInventory(Item item)
+  method Void Heal(Int32 amount)
+  method Int32 GetItemGrabRange(Item item)
+  method Boolean SellItem(Item item, Int32 stack)
+  method Void RefreshItems(Boolean onlyIfVariantChanged)
+  method Void GetItemExpectedPrice(Item item, Int64& calcForSelling, Int64& calcForBuying)
+  method Boolean BuyItem(Int64 price, Int32 customCurrency)
+  method Boolean CanAfford(Int64 price, Int32 customCurrency)
+  method Boolean PayCurrency(Int64 price, Int32 customCurrency)
+  method Void AdjTiles()
+  method Boolean IsTileTypeInInteractionRange(Int32 targetTileType, TileReachCheckSettings settings)
+  method Void DisplayDollUpdate()
+  method Boolean IsColorfulDye(Int32 dye)
+  method Boolean ShouldDrawFootball()
+  method Void PlayerFrame()
+  method Void CancelAllBootRunVisualEffects()
+  method Boolean ItemIsVisuallyIncompatible(Item item)
+  method Void UpdateVisibleAccessory(Int32 itemSlot, Item item, Boolean modded)
+  method Void SetArmorEffectVisuals(Player drawPlayer)
+  method Int32 SetMatch(SetMatchRequest request, Boolean& somethingSpecial)
+  method Void Teleport(Vector2 newPos, Int32 Style, Int32 extraInfo)
+  method Void DoPotionOfReturnTeleportationAndSetTheComebackPoint()
+  method Void DoPotionOfReturnReturnToOriginalUsePosition()
+  method Void AutoFinchStaff()
+  method Void Spawn(PlayerSpawnContext context)
+  method Boolean Spawn_GetPositionAtWorldSpawn(Int32& floorX, Int32& floorY)
+  method Void SetImmuneTimeForAllTypes(Int32 time)
+  method Void ShadowDodge()
+  method Void BrainOfConfusionDodge()
+  method Void NinjaDodge()
+  method Void ApplyArmorSoundAndDustChanges()
+  method Double Hurt(PlayerDeathReason damageSource, Int32 Damage, Int32 hitDirection, Boolean pvp, Boolean quiet, Int32 cooldownCounter, Boolean dodgeable, Single armorPenetration, Single scalingArmorPenetration, Single knockback)
+  method Double Hurt(PlayerDeathReason damageSource, Int32 Damage, Int32 hitDirection, HurtInfo& info, Boolean pvp, Boolean quiet, Int32 cooldownCounter, Boolean dodgeable, Single armorPenetration, Single scalingArmorPenetration, Single knockback)
+  method Void Hurt(HurtInfo info, Boolean quiet)
+  method Void KillMeForGood()
+  method Void KillMe(PlayerDeathReason damageSource, Double dmg, Int32 hitDirection, Boolean pvp)
+  method Void DropTombstone(Int64 coinsOwned, NetworkText deathText, Int32 hitDirection)
+  method Boolean CanPullItem(Item item, ItemSpaceStatus status)
+  method ItemSpaceStatus ItemSpace(Item newItem)
+  method Boolean ItemSpaceForCofveve(Item newItem)
+  method Boolean CanItemSlotAccept(Item theSlot, Item theItemToAccept)
+  method Boolean CanGoIntoAmmoOnPickup(Item theSlot, Item theItemToAccept)
+  method Void DoCoins(Int32 i)
+  method Item FillAmmo(Int32 plr, Item newItem, GetItemSettings settings)
+  method Item GetItem(Int32 plr, Item newItem, GetItemSettings settings)
+  method Void PlaceThing(ItemCheckContext& context)
+  method Item GetBestPickaxe()
+  method Void PlaceThing_Tiles_PlaceIt_ConsumeFlexibleWandMaterial()
+  method Int32 BiomeTorchPlaceStyle(Int32& type, Int32& style)
+  method Int32 BiomeTorchHoldStyle(Int32 style)
+  method Int32 BiomeCampfirePlaceStyle(Int32& type, Int32& style)
+  method Int32 BiomeCampfireHoldStyle(Int32 itemType)
+  method Item FindPaintOrCoating()
+  method Void ChangeDir(Int32 dir)
+  method Rectangle getRect()
+  method Void HorsemansBlade_SpawnPumpkin(Int32 npcIndex, Int32 dmg, Single kb)
+  method Void PutItemInInventoryFromItemUsage(Int32 type, Int32 theSelectedItem)
+  method Boolean SummonItemCheck(Item item)
+  method PlayerFishingConditions GetFishingConditions()
+  method Boolean HasUnityPotion()
+  method Void TakeUnityPotion()
+  method Void UnityTeleport(Vector2 telePos)
+  method Void SporeSac(Item sourceItem)
+  method Void VolatileGelatin(Item sourceItem)
+  method Boolean CanHit(Entity ent)
+  method Rectangle GetItemDrawFrame(Int32 type)
+  method Single GetAdjustedItemScale(Item item)
+  method Void ApplyMeleeScale(Single& scale)
+  method Vector2 ApplyRangeCompensation(Single rangeCompensation, Vector2 startPos, Vector2 targetPos)
+  method Void ItemCheck()
+  method Boolean HasNPCBannerBuff(Int32 bannerType)
+  method Void ResetMeleeHitCooldowns()
+  method Void UpdateMeleeHitCooldowns()
+  method Boolean CanHitNPCWithMeleeHit(Int32 npcIndex)
+  method Void SetMeleeHitCooldown(Int32 npcIndex, Int32 timeInFrames)
+  method Void TakeDamageFromJellyfish(Int32 npcIndex)
+  method Void ApplyAttackCooldown()
+  method Void ApplyAttackCooldown(Int32 frames)
+  method Boolean[] GetTileCutIgnorance(Boolean allowRegrowth, Boolean fromTrap)
+  method Void UseManaMaxIncreasingItem(Int32 increase)
+  method Void UseHealthMaxIncreasingItem(Int32 increase)
+  method Void LimitPointToPlayerReachableArea(Vector2& pointPoisition)
+  method Boolean CanPlayerSmashWall(Int32 X, Int32 Y)
+  method Void PickWall(Int32 x, Int32 y, Int32 damage)
+  method Boolean IsTargetTileInItemRange(Item sItem)
+  method Void PlayGuitarChord(Single range)
+  method Void PlayDrums(Single range)
+  method Boolean CanDoWireStuffHere(Int32 x, Int32 y)
+  method Vector2 GetFarthestSpawnPositionOnLine(Vector2 startPos, Single speedX, Single speedY)
+  method Int32 SpawnMinionOnCursor(IEntitySource projectileSource, Int32 ownerIndex, Int32 minionProjectileId, Int32 originalDamageNotScaledByMinionDamage, Single KnockBack, Vector2 offsetFromCursor, Vector2 velocityOnSpawn)
+  method Boolean TryPlacingAGolfBallNearANearbyTee(Vector2 placePosition)
+  method Void GetPreferredGolfBallToUse(Int32& projType)
+  method Boolean CanVisuallyHoldItem(Item item)
+  method Vector2 GetFrontHandPosition(CompositeArmStretchAmount stretch, Single rotation)
+  method Vector2 GetBackHandPosition(CompositeArmStretchAmount stretch, Single rotation)
+  method Void ItemCheck_ApplyUseStyle(Single mountOffset, Item sItem, Rectangle heldItemFrame)
+  method Void FlipItemLocationAndRotationForGravity()
+  method Boolean CanAutoReuseItem(Item sItem)
+  method Void StartChanneling()
+  method Void StartChanneling(Item item)
+  method Void TryUpdateChannel(Projectile projectile)
+  method Void TryCancelChannel(Projectile projectile)
+  method Boolean WouldSpotOverlapWithSentry(Int32 worldX, Int32 worldY, Boolean lightningAura)
+  method Void FindSentryRestingSpot(Int32 checkProj, Int32& worldX, Int32& worldY, Int32& pushYUp)
+  method Void UpdateMaxTurrets()
+  method Single GetWeaponKnockback(Item sItem)
+  method Single GetWeaponKnockback(Item sItem, Single baseKnockback)
+  method Int32 GetWeaponCrit(Item sItem)
+  method Int32 GetWeaponDamage(Item sItem, Boolean forTooltip)
+  method Boolean HasAmmo(Item sItem)
+  method Boolean PickAmmo(Item weapon, Int32& projToShoot, Single& speed, Int32& damage, Single& knockBack, Int32& usedAmmoItemId, Boolean dontConsume)
+  method Item ChooseAmmo(Item weapon)
+  method Boolean IsAmmoFreeThisShot(Item weapon, Item ammo, Int32 projToShoot)
+  method Void GetOtherPlayersPickTile(Int32 x, Int32 y, Int32 pickDamage)
+  method Void PickTile(Int32 x, Int32 y, Int32 pickPower)
+  method Boolean isNearFairy()
+  method Boolean isNearNPC(Int32 type, Single range)
+  method Boolean HasEnoughPickPowerToHurtTile(Int32 x, Int32 y)
+  method Boolean ItemFitsWeaponRack(Item i)
+  method Void PlaceWeapon(Int32 x, Int32 y)
+  method Boolean ItemFitsItemFrame(Item i)
+  method Color GetImmuneAlpha(Color newColor, Single alphaReduction)
+  method Color GetImmuneAlphaPure(Color newColor, Single alphaReduction)
+  method Color GetDeathAlpha(Color newColor)
+  method Void addDPS(Int32 dmg)
+  method Void checkDPSTime()
+  method Int32 getDPS()
+  method Int64 DropCoins()
+  method Void DropItems()
+  method Void TryDroppingSingleItem(IEntitySource source, Item theItem)
+  method Object Clone()
+  method Void CopyVisuals(Player other)
+  method Player clientClone()
+  method Boolean CheckSpawn(Int32 x, Int32 y)
+  method Void FindSpawn()
+  method Void RemoveSpawn()
+  method Void ChangeSpawn(Int32 x, Int32 y)
+  method Void SavePlayer(PlayerFileData playerFile, Boolean skipMapSave)
+  method Byte[] SavePlayerFile_Vanilla(PlayerFileData playerFile)
+  method Void SetPlayerDataToOutOfClassFields()
+  method Void ClearPlayerTempInfo()
+  method Void InternalSaveMap(Boolean isCloudSave)
+  method PlayerFileData LoadPlayer(String playerPath, Boolean cloudSave)
+  method PlayerFileData LoadPlayerFromStream(PlayerFileData playerFileData, Byte[] plrData, Byte[] tplrData)
+  method Player SerializedClone()
+  method Void FixLoadedData()
+  method Void FixLoadedData_EliminiateDuplicateAccessories(Item[] armorArray)
+  method PlayerFileData GetFileData(String file, Boolean cloudSave)
+  method Color GetHairColor(Boolean useLighting)
+  method Boolean HasItem(Int32 type)
+  method Boolean HasItem(Int32 type, Item[] collection)
+  method Boolean HasItemInInventoryOrOpenVoidBag(Int32 type)
+  method Boolean HasItemInAnyInventory(Int32 type)
+  method Int32 FindItem(Int32 netid)
+  method Int32 FindItem(List`1 netids)
+  method Int32 FindItem(Boolean[] validtypes)
+  method Int32 FindItem(Int32 type, Item[] collection)
+  method Int32 FindItemInInventoryOrOpenVoidBag(Int32 type, Boolean& inVoidBag)
+  method Void .ctor()
+  method Void MagicConch()
+  method Void Shellphone_Spawn()
+  method Void DemonConch()
+  method Void TeleportationPotion()
+  method Vector2 CheckForGoodTeleportationSpot(Boolean& canSpawn, Int32 teleportStartX, Int32 teleportRangeX, Int32 teleportStartY, Int32 teleportRangeY, RandomTeleportationAttemptSettings settings)
+  method Void GetAnglerReward(NPC angler, Int32 questItemType)
+  method Single GetAnglerRewardRarityMultiplier(Int32 questsDone)
+  method Boolean DropAnglerAccByMissing(List`1 itemIdsOfAccsWeWant, Single totalChance, Boolean& botheredRollingForADrop, Int32& itemIdToDrop)
+  method Void GetDyeTraderReward(NPC dyeTrader)
+  method Boolean CheckMana(Int32 amount, Boolean pay, Boolean blockQuickMana)
+  method Void TryPortalJumping()
+  method Boolean ConsumeSolarFlare()
+  method Void KeyDoubleTap(Int32 keyDir)
+  method Void UpdateForbiddenSetLock()
+  method Void CommandForbiddenStorm()
+  method Void KeyHoldDown(Int32 keyDir, Int32 holdTime)
+  method Void MinionNPCTargetAim(Boolean doNotDisableIfTheTargetIsTheSame)
+  method Void MinionRestTargetAim()
+  method Void UpdateMinionTarget()
+  method Void NebulaLevelup(Int32 type)
+  method Void UpdateTouchingTiles()
+  method Int32 get_ConsumedLifeCrystals()
+  method Void set_ConsumedLifeCrystals(Int32 value)
+  method Int32 get_ConsumedLifeFruit()
+  method Void set_ConsumedLifeFruit(Int32 value)
+  method Int32 get_ConsumedManaCrystals()
+  method Void set_ConsumedManaCrystals(Int32 value)
+  method Boolean get_MeleeEnchantActive()
+  method Void set_MeleeEnchantActive(Boolean value)
+  method RefReadOnlyArray`1 get_ModPlayers()
+  method HashSet`1 get_NearbyModTorch()
+  method T GetModPlayer()
+  method T GetModPlayer(T baseInstance)
+  method Boolean TryGetModPlayer(T& result)
+  method Boolean TryGetModPlayer(T baseInstance, T& result)
+  method Void DropFromItem(Int32 itemType)
+  method Int32 QuickSpawnClonedItem(IEntitySource source, Item item, Int32 stack)
+  method Int32 QuickSpawnItem(IEntitySource source, Item item, Int32 stack)
+  method Item QuickSpawnClonedItemDirect(IEntitySource source, Item item, Int32 stack)
+  method Item QuickSpawnItemDirect(IEntitySource source, Item item, Int32 stack)
+  method Item QuickSpawnItemDirect(IEntitySource source, Int32 type, Int32 stack)
+  method Boolean HasBuff(Int32 type)
+  method Boolean HasBuff()
+  method StatModifier& GetDamage()
+  method StatModifier& GetDamage(DamageClass damageClass)
+  method Single& GetCritChance()
+  method Single& GetCritChance(DamageClass damageClass)
+  method Single& GetAttackSpeed()
+  method Single& GetAttackSpeed(DamageClass damageClass)
+  method Single& GetArmorPenetration()
+  method Single& GetArmorPenetration(DamageClass damageClass)
+  method StatModifier& GetKnockback()
+  method StatModifier& GetKnockback(DamageClass damageClass)
+  method StatModifier GetTotalDamage()
+  method StatModifier GetTotalDamage(DamageClass damageClass)
+  method Single GetTotalCritChance()
+  method Single GetTotalCritChance(DamageClass damageClass)
+  method Single GetTotalAttackSpeed()
+  method Single GetTotalAttackSpeed(DamageClass damageClass)
+  method Single GetTotalArmorPenetration()
+  method Single GetTotalArmorPenetration(DamageClass damageClass)
+  method StatModifier GetTotalKnockback()
+  method StatModifier GetTotalKnockback(DamageClass damageClass)
+  method Int32 GetWeaponArmorPenetration(Item sItem)
+  method Single GetWeaponAttackSpeed(Item sItem)
+  method Single get_ThrownVelocity()
+  method Void set_ThrownVelocity(Single value)
+  method Boolean get_ThrownCost33()
+  method Void set_ThrownCost33(Boolean value)
+  method Boolean get_ThrownCost50()
+  method Void set_ThrownCost50(Boolean value)
+  method Boolean get_AnyThrownCostReduction()
+  method SceneEffectInstance get_CurrentSceneEffect()
+  method Void set_CurrentSceneEffect(SceneEffectInstance value)
+  method Boolean InModBiome(ModBiome baseInstance)
+  method Boolean InModBiome()
+  method Boolean get_ZonePurity()
+  method Void set_ZonePurity(Boolean value)
+  method Boolean InZonePurity()
+  method Boolean get_ZoneForest()
+  method Boolean get_ZoneNormalCaverns()
+  method Boolean get_ZoneNormalUnderground()
+  method Boolean get_ZoneNormalSpace()
+  method Void UpdateVisibleAccessories(Item item, Boolean invisible, Int32 slot, Boolean modded)
+  method Void DropItem(IEntitySource source, Vector2 position, Item& item)
+  method Int32 GetHealLife(Item item, Boolean quickHeal)
+  method Int32 GetHealMana(Item item, Boolean quickHeal)
+  method Int32 GetManaCost(Item item)
+  method Boolean CheckMana(Item item, Int32 amount, Boolean pay, Boolean blockQuickMana)
+  method Boolean get_ItemAnimationActive()
+  method Boolean get_ItemAnimationEndingOrEnded()
+  method Int32 get_ItemUsesThisAnimation()
+  method Void AddImmuneTime(Int32 cooldownCounterId, Int32 immuneTime)
+  method ExtraJumpState& GetJumpState(T baseInstance)
+  method ExtraJumpState& GetJumpState()
+  method Span`1 get_ExtraJumps()
+  method Boolean AnyExtraJumpUsable()
+  method Void StopExtraJumpInProgress()
+  method Boolean HasItem(Boolean[] itemSet)
+  method Void SetCCed()
+  method IEntitySource GetSource_Accessory(Item item, String context)
+  method IEntitySource GetSource_Accessory_OnHurt(Item item, Entity attacker, String context)
+  method IEntitySource GetSource_Accessory_OnHurt(Item item, PlayerDeathReason damageSource, String context)
+  method IEntitySource GetSource_OnHurt(PlayerDeathReason damageSource, String context)
+  method IEntitySource GetSource_OpenItem(Int32 itemType, String context)
+  method IEntitySource GetSource_ItemUse(Item item, String context)
+  method IEntitySource GetSource_ItemUse_WithPotentialAmmo(Item item, Int32 ammoItemId, String context)

@@ -5,6 +5,7 @@ using Terraria.ModLoader;
 
 namespace MyMod.MyItems.Weapons
 {
+    // 测试激光武器
     public class TestLaser : ModItem
     {
         public override void SetDefaults()

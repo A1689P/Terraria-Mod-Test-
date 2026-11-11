@@ -1,0 +1,77 @@
+﻿=== System.Void Terraria.Player::UpdateProjectileCaches(System.Int32)
+  param System.Int32 i
+  local Int32 V_0
+  local Int32 V_1
+  local Int32 V_2
+  local Int32 V_3
+  IL_0000: ldc.i4.0     
+  IL_0001: stloc.0      
+  IL_0002: br           IL_00a2
+  IL_0007: ldsfld       Main::projectile
+  IL_000c: ldloc.0      
+  IL_000d: ldelem.ref   
+  IL_000e: ldfld        Entity::active
+  IL_0013: brfalse      IL_009e
+  IL_0018: ldsfld       Main::projectile
+  IL_001d: ldloc.0      
+  IL_001e: ldelem.ref   
+  IL_001f: ldfld        Projectile::owner
+  IL_0024: ldarg.1      
+  IL_0025: bne.un.s     IL_009e
+  IL_0027: ldarg.0      
+  IL_0028: ldfld        Player::ownedProjectileCounts
+  IL_002d: ldsfld       Main::projectile
+  IL_0032: ldloc.0      
+  IL_0033: ldelem.ref   
+  IL_0034: ldfld        Projectile::type
+  IL_0039: ldelema      System.Int32
+  IL_003e: dup          
+  IL_003f: ldind.i4     
+  IL_0040: ldc.i4.1     
+  IL_0041: add          
+  IL_0042: stind.i4     
+  IL_0043: ldsfld       Main::projectile
+  IL_0048: ldloc.0      
+  IL_0049: ldelem.ref   
+  IL_004a: ldfld        Projectile::type
+  IL_004f: stloc.1      
+  IL_0050: ldloc.1      
+  IL_0051: ldc.i4       831
+  IL_0056: beq.s        IL_0062
+  IL_0058: ldloc.1      
+  IL_0059: ldc.i4       970
+  IL_005e: beq.s        IL_0081
+  IL_0060: br.s         IL_009e
+  IL_0062: ldsfld       Main::projectile
+  IL_0067: ldloc.0      
+  IL_0068: ldelem.ref   
+  IL_0069: ldfld        Projectile::originalDamage
+  IL_006e: stloc.2      
+  IL_006f: ldarg.0      
+  IL_0070: ldfld        Player::highestStormTigerGemOriginalDamage
+  IL_0075: ldloc.2      
+  IL_0076: bge.s        IL_009e
+  IL_0078: ldarg.0      
+  IL_0079: ldloc.2      
+  IL_007a: stfld        Player::highestStormTigerGemOriginalDamage
+  IL_007f: br.s         IL_009e
+  IL_0081: ldsfld       Main::projectile
+  IL_0086: ldloc.0      
+  IL_0087: ldelem.ref   
+  IL_0088: ldfld        Projectile::originalDamage
+  IL_008d: stloc.3      
+  IL_008e: ldarg.0      
+  IL_008f: ldfld        Player::highestAbigailCounterOriginalDamage
+  IL_0094: ldloc.3      
+  IL_0095: bge.s        IL_009e
+  IL_0097: ldarg.0      
+  IL_0098: ldloc.3      
+  IL_0099: stfld        Player::highestAbigailCounterOriginalDamage
+  IL_009e: ldloc.0      
+  IL_009f: ldc.i4.1     
+  IL_00a0: add          
+  IL_00a1: stloc.0      
+  IL_00a2: ldloc.0      
+  IL_00a3: ldc.i4       1000
+  IL_00a8: blt          IL_0007
+  IL_00ad: ret          

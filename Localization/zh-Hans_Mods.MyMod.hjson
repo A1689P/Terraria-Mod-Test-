@@ -1,0 +1,102 @@
+Items: {
+	LaserTest: {
+		// Tooltip: ""
+		// DisplayName: Laser Test
+	}
+
+	CENSORED_Spear: {
+		DisplayName: CENSORED矛
+		Tooltip: 来自脑叶公司
+	}
+
+	SinTest_Weapon: {
+		Tooltip: 测试以正弦方式运动的弹幕
+		DisplayName: 正弦
+	}
+
+	CircleTest_Weapon: {
+		DisplayName: 测试以圆周方式运动的弹幕
+		Tooltip: 圆周
+	}
+
+	TrackWeapon: {
+		Tooltip: 测试追踪弹幕
+		DisplayName: 追踪武器
+	}
+
+	LightningStaff: {
+		Tooltip:
+			'''
+			鸡煲是最强的
+			鸡煲是最强
+			鸡煲是最
+			...
+			'''
+		DisplayName: 闪电球法杖
+	}
+
+	TDragon1Staff: {
+		// DisplayName: T Dragon1 Staff
+		// Tooltip: ""
+	}
+
+	TestLance: {
+		DisplayName: 测试骑枪
+		Tooltip: (失败作)
+	}
+
+	TestLaser: {
+		DisplayName: 测试激光
+		Tooltip: 用来测试自定义绘制以及碰撞
+	}
+
+	TestPotion: {
+		// DisplayName: Test Potion
+		// Tooltip: ""
+	}
+
+	DragonStaff: {
+		DisplayName: 龙法杖
+		Tooltip: 召唤一条龙
+	}
+}
+
+Projectiles: {
+	Laser.DisplayName: Laser
+	CENSORED.DisplayName: C E N S O R E D
+	SinTest.DisplayName: Sin Test
+	CircleTest.DisplayName: Circle Test
+	TrackBullet.DisplayName: Track Bullet
+	LightningBall.DisplayName: Lightning Ball
+	TestLogicProj.DisplayName: Test Logic Proj
+	GoldenCudgelProj.DisplayName: Golden Cudgel Proj
+	TestLanceProj.DisplayName: Test Lance Proj
+	TestLaserProj.DisplayName: Test Laser Proj
+	// DragonBody.DisplayName: Dragon Body
+	// DragonHead.DisplayName: Dragon Head
+	// DragonTail.DisplayName: Dragon Tail
+}
+
+Buffs: {
+	Panic: {
+		Description: Mods.MyMod.Buffs.Panic.Description
+		DisplayName: 恐慌
+	}
+
+	LightningBallBuff: {
+		Description: 闪电球
+		DisplayName: 闪电球Buff
+	}
+
+	DragonBuff: {
+		DisplayName: 龙Buff
+		Description: 召唤一条龙
+	}
+
+	TestPotionBuff: {
+		// DisplayName: Test Potion Buff
+		// Description: Mods.MyMod.Buffs.TestPotionBuff.Description
+	}
+}
+
+NPCs.TestSilme.DisplayName: 测试史莱姆
