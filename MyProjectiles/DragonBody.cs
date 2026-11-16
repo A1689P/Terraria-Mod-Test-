@@ -13,6 +13,7 @@ namespace MyMod.MyProjectiles
         public override string Texture => "MyMod/MyProjectiles/DragonBody1";
         public static Asset<Texture2D> BodyTex1;
         public static Asset<Texture2D> BodyTex2;
+        Vector2 lastMove = Vector2.Zero;    
         public override void SetStaticDefaults()
         {
             BodyTex1 = ModContent.Request<Texture2D>("MyMod/MyProjectiles/DragonBody1");
@@ -25,7 +26,7 @@ namespace MyMod.MyProjectiles
         {
             Projectile.width = 30;
             Projectile.height = 18;
-            Projectile.friendly = false;
+            Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.minion = true;
             Projectile.DamageType = DamageClass.Summon; 
@@ -35,6 +36,8 @@ namespace MyMod.MyProjectiles
             Projectile.tileCollide = false; // 无视方块碰撞
         }
 
+        public override bool MinionContactDamage() => true;
+        
         public override void AI()
         {
             Projectile pre = FindPrev();
@@ -44,16 +47,30 @@ namespace MyMod.MyProjectiles
             if (player.ownedProjectileCounts[ModContent.ProjectileType<DragonHead>()] > 0)
                 Projectile.timeLeft = 2;
 
-            Vector2 tarPos = pre.Center;
-            Vector2 dir = tarPos - Projectile.Center;
-            dir = dir.SafeNormalize(Vector2.Zero);
-            int interval = 15;
+            // 沿龙头轨迹取点：本节 = 轨迹上「前一节的距离 + 间距」处
+            const float spacing = 16f;
+            Projectile.localAI[1] = pre.localAI[1] + spacing;
 
-            Projectile.Center = tarPos - dir * interval;    
-            Projectile.velocity = Vector2.Zero; 
-            Projectile.rotation = dir.ToRotation() + MathHelper.PiOver2;
-            Projectile.spriteDirection = dir.X >= 0 ? 1 : -1;
+            if (DragonTrail.Sample(Projectile.owner, Projectile.localAI[1], out Vector2 point))
+            {
+                Projectile.Center = point;
+            }
+            else
+            {
+                // 轨迹还不够长（刚生成）就先按直线摆开
+                Vector2 dir = (Projectile.Center - pre.Center).SafeNormalize(Vector2.UnitX);
+                Projectile.Center = pre.Center + dir * spacing;
+            }
+
+            Vector2 look = pre.Center - Projectile.Center;
+             if (look.LengthSquared() > 0.01f)
+            {
+                Projectile.rotation = look.ToRotation() + MathHelper.PiOver2;
+                Projectile.spriteDirection = look.X >= 0 ? 1 : -1;
+            }
+            Projectile.velocity = Vector2.Zero;
         }
+
 
         public override void OnSpawn(IEntitySource source) => Projectile.localAI[0] = -1;
 
@@ -113,6 +130,35 @@ namespace MyMod.MyProjectiles
             Main.EntitySpriteDraw(tex, Projectile.Center - Main.screenPosition, null, Color.White,
                 Projectile.rotation, tex.Size() * 0.5f, 1, effects);
             return false;
+        }
+
+        public override bool? CanHitNPC(NPC target)
+        {
+            Projectile head = FindHead();
+            if(head == null) return false;
+            return head.localNPCImmunity[target.whoAmI] <= 0;
+        }
+
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            Projectile head = FindHead();
+            if (head != null)
+                head.localNPCImmunity[target.whoAmI] = 8;        // 打上冷却，后面几节自动跳过
+        }
+
+        private Projectile FindHead(){
+            int headType = ModContent.ProjectileType<DragonHead>();
+            Projectile head = null;
+            for (int i = 0; i < Main.maxProjectiles; i++)
+            {
+                Projectile p = Main.projectile[i];
+                if (p.active && p.owner == Projectile.owner && p.type == headType)
+                {
+                    head = p;
+                    break;
+                }
+            }
+            return head;
         }
     }
 }

@@ -1,0 +1,13 @@
+C:\Users\34317\Documents\My Games\Terraria\tModLoader\ModSources\MyMod\bin\Debug\net8.0\MyMod.deps.json
+C:\Users\34317\Documents\My Games\Terraria\tModLoader\ModSources\MyMod\bin\Debug\net8.0\MyMod.dll
+C:\Users\34317\Documents\My Games\Terraria\tModLoader\ModSources\MyMod\bin\Debug\net8.0\MyMod.pdb
+C:\Users\34317\Documents\My Games\Terraria\tModLoader\ModSources\MyMod\obj\Debug\net8.0\MyMod.csproj.AssemblyReference.cache
+C:\Users\34317\Documents\My Games\Terraria\tModLoader\ModSources\MyMod\obj\Debug\net8.0\MyMod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\34317\Documents\My Games\Terraria\tModLoader\ModSources\MyMod\obj\Debug\net8.0\MyMod.AssemblyInfoInputs.cache
+C:\Users\34317\Documents\My Games\Terraria\tModLoader\ModSources\MyMod\obj\Debug\net8.0\MyMod.AssemblyInfo.cs
+C:\Users\34317\Documents\My Games\Terraria\tModLoader\ModSources\MyMod\obj\Debug\net8.0\MyMod.csproj.CoreCompileInputs.cache
+C:\Users\34317\Documents\My Games\Terraria\tModLoader\ModSources\MyMod\obj\Debug\net8.0\MyMod.sourcelink.json
+C:\Users\34317\Documents\My Games\Terraria\tModLoader\ModSources\MyMod\obj\Debug\net8.0\MyMod.dll
+C:\Users\34317\Documents\My Games\Terraria\tModLoader\ModSources\MyMod\obj\Debug\net8.0\refint\MyMod.dll
+C:\Users\34317\Documents\My Games\Terraria\tModLoader\ModSources\MyMod\obj\Debug\net8.0\MyMod.pdb
+C:\Users\34317\Documents\My Games\Terraria\tModLoader\ModSources\MyMod\obj\Debug\net8.0\ref\MyMod.dll
